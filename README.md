@@ -112,8 +112,15 @@ python3 generate_labels.py
   captured order data yet — worth confirming against a real vege/vegan
   order before this goes into production use.
 
-ToDo : 
+###ToDo : 
 1. Find at least 2-3 more response that can used for testing, need to find gluten free, extra instructions, and special instructions
 3. Fix the print format, what size, in windows. follow from photoship print. 
 4. Collect Data response at least 3-5 for Nanyang. and get all the templates for this as well. 
 5. A design - maybe we can add open button for this psd in photoshop app directly to edit, and print. 
+
+
+###Simple step by step instructions : 
+1. fn + F12 
+2. ctr + r (refresh page)
+3. ctr + f, search for any related item on page, go to response, copy 
+4. paste in platform space and generate 
