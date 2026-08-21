@@ -65,6 +65,74 @@
       text-decoration: none;
     }
     hr { border: none; border-top: 1px solid #eee; margin: 32px 0; }
+
+    .viewer {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0 28px;
+      text-align: center;
+    }
+    .viewer-caption { margin-bottom: 10px; }
+    .viewer-caption .position { color: #888; font-size: 0.8rem; }
+    .viewer-caption .who { font-size: 1.05rem; font-weight: 600; }
+    .viewer-caption .review-flag { color: #b45309; font-size: 0.85rem; margin-top: 2px; }
+    .viewer-image-wrap {
+      background: #fafafa;
+      border-radius: 6px;
+      padding: 12px;
+    }
+    #viewer-image { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+    .viewer-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .viewer-controls button.nav {
+      background: #f0f0f0;
+      color: #1a1a1a;
+      padding: 8px 16px;
+    }
+    .viewer-controls button.nav:hover { background: #e2e2e2; }
+    .viewer-controls button:disabled { opacity: 0.4; cursor: default; }
+    .viewer-controls button.print-btn { background: #1a1a1a; }
+    .viewer-controls button.print-btn:hover { background: #333; }
+
+    #print-all-area { display: none; }
+    #print-all-area img { width: 100%; page-break-after: always; }
+    #print-all-area img:last-child { page-break-after: auto; }
+
+    @media print {
+      body * { visibility: hidden; }
+
+      #print-area, #print-area * { visibility: visible; }
+      #print-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      /* When printing all labels, show the full-batch area instead of
+         the single-image viewer area. */
+      body.printing-all #print-area,
+      body.printing-all #print-area * {
+        visibility: hidden;
+      }
+      body.printing-all #print-all-area,
+      body.printing-all #print-all-area * {
+        visibility: visible;
+      }
+      body.printing-all #print-all-area {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -96,17 +164,31 @@
         </div>
       {% endif %}
 
+      <div class="viewer">
+        <div class="viewer-caption">
+          <div class="position">Label <span id="viewer-index">1</span> of {{ result.generated|length }}</div>
+          <div class="who" id="viewer-who"></div>
+          <div class="review-flag" id="viewer-flags"></div>
+        </div>
+        <div class="viewer-image-wrap" id="print-area">
+          <img id="viewer-image" alt="Label preview">
+        </div>
+        <div class="viewer-controls">
+          <button type="button" class="nav" id="viewer-prev">&larr; Previous</button>
+          <button type="button" class="print-btn" id="viewer-print">Print This Label</button>
+          <button type="button" class="nav" id="viewer-next">Next &rarr;</button>
+        </div>
+      </div>
+
       <table>
         <tr><th>Customer</th><th>Dish</th><th></th></tr>
         {% for gen in result.generated %}
           <tr>
             <td>
               {{ gen.customer_name }}
-              {% for r in result.review_needed %}
-                {% if r.customer_name == gen.customer_name and r.dish_label == gen.dish_label %}
-                  <div class="review-flag">&#9888; {{ r.flags|join(', ') }}</div>
-                {% endif %}
-              {% endfor %}
+              {% if gen.flags %}
+                <div class="review-flag">&#9888; {{ gen.flags|join(', ') }}</div>
+              {% endif %}
             </td>
             <td>{{ gen.dish_label }}</td>
             <td><a href="{{ url_for('download', run_id=run_id, filename=gen.filename) }}">Download</a></td>
@@ -124,6 +206,18 @@
       </ul>
     {% endif %}
 
+    {% if result.generated %}
+      <div class="row">
+        <button type="button" class="print-btn" id="viewer-print-bottom">Print All ({{ result.generated|length }}) Labels</button>
+      </div>
+
+      <div id="print-all-area">
+        {% for gen in result.generated %}
+          <img src="{{ gen.view_url }}" alt="{{ gen.customer_name }} - {{ gen.dish_label }}">
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <hr>
     <p class="subtitle">Paste another order below.</p>
   {% endif %}
@@ -139,5 +233,55 @@
       <button type="submit">Generate Labels</button>
     </div>
   </form>
+
+  {% if result and result.generated %}
+    <script>
+      const labels = {{ result.generated|tojson }};
+      let current = 0;
+
+      const img = document.getElementById("viewer-image");
+      const indexEl = document.getElementById("viewer-index");
+      const whoEl = document.getElementById("viewer-who");
+      const flagsEl = document.getElementById("viewer-flags");
+      const prevBtn = document.getElementById("viewer-prev");
+      const nextBtn = document.getElementById("viewer-next");
+      const printBtn = document.getElementById("viewer-print");
+      const printBtnBottom = document.getElementById("viewer-print-bottom");
+
+      function render() {
+        const label = labels[current];
+        img.src = label.view_url;
+        img.alt = label.customer_name + " - " + label.dish_label;
+        indexEl.textContent = current + 1;
+        whoEl.textContent = label.customer_name + " — " + label.dish_label;
+        flagsEl.textContent = label.flags.length ? "⚠ " + label.flags.join(", ") : "";
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === labels.length - 1;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (current > 0) { current -= 1; render(); }
+      });
+      nextBtn.addEventListener("click", () => {
+        if (current < labels.length - 1) { current += 1; render(); }
+      });
+      printBtn.addEventListener("click", () => window.print());
+
+      printBtnBottom.addEventListener("click", () => {
+        document.body.classList.add("printing-all");
+        window.print();
+      });
+      window.addEventListener("afterprint", () => {
+        document.body.classList.remove("printing-all");
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") prevBtn.click();
+        if (e.key === "ArrowRight") nextBtn.click();
+      });
+
+      render();
+    </script>
+  {% endif %}
 </body>
 </html>

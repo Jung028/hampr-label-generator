@@ -66,8 +66,7 @@ from each layer's own PSD styling; only font and size are overridden.
 psd/           # PSD parsing/rendering (loader, layer/font handling, compositor)
 export/        # PNG export
 templates/     # Source .psd files for each dish
-web/           # Local Flask UI (paste-and-generate front end for generate_labels.py)
-output/        # Generated label PNGs (gitignored); web UI runs land in output/runs/<id>/
+output/        # Generated label PNGs (gitignored)
 generate_labels.py
 ```
 
@@ -100,38 +99,6 @@ pip install -r requirements.txt
 python3 generate_labels.py
 ```
 
-## Web UI
-
-For day-to-day use, `web/app.py` is a small local Flask front end so you
-don't have to hand-edit `response-body.json` and rerun the CLI for every
-new order:
-
-```
-python3 web/app.py
-```
-
-Then open `http://127.0.0.1:5000`, paste the order-detail response body
-you copied from Chrome DevTools (or upload it as a file), and click
-Generate. It reuses `generate_labels.parse_orders()` and
-`process_orders()` directly — no separate logic, no behavior difference
-from the CLI. Each submission writes into its own timestamped folder
-under `output/runs/<order id>-<timestamp>/`, so pasting a new order never
-overwrites a previous run; the results page lists per-customer download
-links, a "download all as .zip" link, and calls out anything skipped
-(no template handler) or flagged for review (see below).
-
-This is a local-only tool with no authentication — don't expose it to
-the network.
-
-### Name review flag
-
-`name_review_flags()` in `generate_labels.py` flags a customer name for a
-human glance (without blocking generation) when it's empty or contains
-characters outside letters/spaces/apostrophes/hyphens/periods — e.g. a
-name like `"Zak ebgin =,( Hamilton"` that's clearly a stray keystroke,
-which would otherwise print onto a real label unnoticed. Both the CLI
-(`main()`) and the web UI surface these the same way.
-
 ## Next steps (not built yet)
 
 - Browser extension (Manifest V3) to scrape the real Hampr Orders page
@@ -145,5 +112,6 @@ which would otherwise print onto a real label unnoticed. Both the CLI
   captured order data yet — worth confirming against a real vege/vegan
   order before this goes into production use.
 
-
-Resume  : claude --resume 002f53e0-d6e8-4d70-8dd3-c4c410a7a9bc
+ToDo : 
+1. Find at least 2-3 more response that can used for testing, need to find gluten free, extra instructions, and special instructions
+2. 
