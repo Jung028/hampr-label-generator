@@ -384,10 +384,14 @@ def process_orders(orders, output_dir=None):
     the web app, so they share one code path. Returns:
 
         {
-            "generated": [{"customer_name", "dish_label", "out_path"}, ...],
+            "generated": [{"customer_name", "dish_label", "variant", "full_dish_name", "out_path"}, ...],
             "skipped": [{"customer_name", "dish_name"}, ...],
             "review_needed": [{"customer_name", "dish_label", "flags"}, ...],
         }
+
+    full_dish_name is dish_label with its variant suffix appended (e.g.
+    "Nasi Goreng - Beef"), matching the text actually printed on the
+    label — the unit a kitchen-prep dish summary should count by.
     """
 
     if output_dir is None:
@@ -409,9 +413,13 @@ def process_orders(orders, output_dir=None):
         psd_filename, dish_label, variant_suffix = resolver(order)
         out_path = generate_label(order, psd_filename, dish_label, variant_suffix, output_dir=output_dir)
 
+        full_dish_name = f"{dish_label} - {variant_suffix}" if variant_suffix else dish_label
+
         result["generated"].append({
             "customer_name": order["customer_name"],
             "dish_label": dish_label,
+            "variant": variant_suffix,
+            "full_dish_name": full_dish_name,
             "out_path": out_path,
         })
 

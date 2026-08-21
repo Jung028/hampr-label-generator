@@ -16,6 +16,7 @@ import json
 import os
 import sys
 import zipfile
+from collections import Counter
 from datetime import datetime
 
 from flask import Flask, render_template, request, send_file, send_from_directory, abort, url_for
@@ -91,7 +92,24 @@ def generate():
         gen["flags"] = flags_by_name.get((gen["customer_name"], gen["dish_label"]), [])
         gen["view_url"] = url_for("view", run_id=run_id, filename=gen["filename"])
 
-    return render_template("index.html", result=result, run_id=run_id, order_id=order_id)
+    # Kitchen-prep summary: how many of each exact printed dish (base
+    # name + protein/variant, e.g. "Nasi Goreng - Beef") need making,
+    # sorted biggest batch first.
+    dish_counts = Counter(gen["full_dish_name"] for gen in result["generated"])
+    dish_summary = sorted(
+        ({"dish_name": name, "quantity": qty} for name, qty in dish_counts.items()),
+        key=lambda d: (-d["quantity"], d["dish_name"]),
+    )
+    total_dishes = sum(dish_counts.values())
+
+    return render_template(
+        "index.html",
+        result=result,
+        run_id=run_id,
+        order_id=order_id,
+        dish_summary=dish_summary,
+        total_dishes=total_dishes,
+    )
 
 
 @app.route("/download/<run_id>/<filename>")

@@ -66,6 +66,29 @@
     }
     hr { border: none; border-top: 1px solid #eee; margin: 32px 0; }
 
+    .tabs {
+      display: flex;
+      gap: 4px;
+      border-bottom: 2px solid #eee;
+      margin: 20px 0 0;
+    }
+    .tab-btn {
+      background: none;
+      color: #666;
+      padding: 8px 16px;
+      border-radius: 6px 6px 0 0;
+      margin-bottom: -2px;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-btn:hover { background: #f7f7f7; color: #1a1a1a; }
+    .tab-btn.active {
+      color: #e65100;
+      border-bottom: 2px solid #e65100;
+      background: none;
+    }
+    .tab-panel { padding-top: 16px; }
+    .total-dishes { font-size: 0.95rem; margin-top: 12px; }
+
     .viewer {
       border: 1px solid #eee;
       border-radius: 8px;
@@ -164,58 +187,86 @@
         </div>
       {% endif %}
 
-      <div class="viewer">
-        <div class="viewer-caption">
-          <div class="position">Label <span id="viewer-index">1</span> of {{ result.generated|length }}</div>
-          <div class="who" id="viewer-who"></div>
-          <div class="review-flag" id="viewer-flags"></div>
+      <div class="tabs">
+        <button type="button" class="tab-btn active" id="tab-btn-labels" data-tab="labels">View Dishes</button>
+        <button type="button" class="tab-btn" id="tab-btn-summary" data-tab="summary">View Summary</button>
+      </div>
+
+      <div id="tab-panel-labels" class="tab-panel">
+        <div class="viewer">
+          <div class="viewer-caption">
+            <div class="position">Label <span id="viewer-index">1</span> of {{ result.generated|length }}</div>
+            <div class="who" id="viewer-who"></div>
+            <div class="review-flag" id="viewer-flags"></div>
+          </div>
+          <div class="viewer-image-wrap" id="print-area">
+            <img id="viewer-image" alt="Label preview">
+          </div>
+          <div class="viewer-controls">
+            <button type="button" class="nav" id="viewer-prev">&larr; Previous</button>
+            <button type="button" class="print-btn" id="viewer-print">Print This Label</button>
+            <button type="button" class="nav" id="viewer-next">Next &rarr;</button>
+          </div>
         </div>
-        <div class="viewer-image-wrap" id="print-area">
-          <img id="viewer-image" alt="Label preview">
+
+        <table>
+          <tr><th>Customer</th><th>Dish</th><th></th></tr>
+          {% for gen in result.generated %}
+            <tr>
+              <td>
+                {{ gen.customer_name }}
+                {% if gen.flags %}
+                  <div class="review-flag">&#9888; {{ gen.flags|join(', ') }}</div>
+                {% endif %}
+              </td>
+              <td>{{ gen.dish_label }}</td>
+              <td><a href="{{ url_for('download', run_id=run_id, filename=gen.filename) }}">Download</a></td>
+            </tr>
+          {% endfor %}
+        </table>
+
+        {% if result.skipped %}
+          <p><strong>Skipped &mdash; no template handler yet:</strong></p>
+          <ul class="skip-list">
+            {% for s in result.skipped %}
+              <li>{{ s.customer_name }} &mdash; {{ s.dish_name }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <div class="row">
+          <button type="button" class="print-btn" id="viewer-print-bottom">Print All ({{ result.generated|length }}) Labels</button>
         </div>
-        <div class="viewer-controls">
-          <button type="button" class="nav" id="viewer-prev">&larr; Previous</button>
-          <button type="button" class="print-btn" id="viewer-print">Print This Label</button>
-          <button type="button" class="nav" id="viewer-next">Next &rarr;</button>
+
+        <div id="print-all-area">
+          {% for gen in result.generated %}
+            <img src="{{ gen.view_url }}" alt="{{ gen.customer_name }} - {{ gen.dish_label }}">
+          {% endfor %}
         </div>
       </div>
 
-      <table>
-        <tr><th>Customer</th><th>Dish</th><th></th></tr>
-        {% for gen in result.generated %}
-          <tr>
-            <td>
-              {{ gen.customer_name }}
-              {% if gen.flags %}
-                <div class="review-flag">&#9888; {{ gen.flags|join(', ') }}</div>
-              {% endif %}
-            </td>
-            <td>{{ gen.dish_label }}</td>
-            <td><a href="{{ url_for('download', run_id=run_id, filename=gen.filename) }}">Download</a></td>
-          </tr>
-        {% endfor %}
-      </table>
+      <div id="tab-panel-summary" class="tab-panel" style="display: none;">
+        <table>
+          <tr><th>Dish</th><th>Quantity</th></tr>
+          {% for d in dish_summary %}
+            <tr><td>{{ d.dish_name }}</td><td>{{ d.quantity }}</td></tr>
+          {% endfor %}
+        </table>
+        <p class="total-dishes">
+          Total: <strong>{{ total_dishes }}</strong> dish{{ '' if total_dishes == 1 else 'es' }}
+          across <strong>{{ dish_summary|length }}</strong> distinct
+          {{ 'item' if dish_summary|length == 1 else 'items' }}.
+        </p>
+      </div>
     {% endif %}
 
-    {% if result.skipped %}
+    {% if not result.generated and result.skipped %}
       <p><strong>Skipped &mdash; no template handler yet:</strong></p>
       <ul class="skip-list">
         {% for s in result.skipped %}
           <li>{{ s.customer_name }} &mdash; {{ s.dish_name }}</li>
         {% endfor %}
       </ul>
-    {% endif %}
-
-    {% if result.generated %}
-      <div class="row">
-        <button type="button" class="print-btn" id="viewer-print-bottom">Print All ({{ result.generated|length }}) Labels</button>
-      </div>
-
-      <div id="print-all-area">
-        {% for gen in result.generated %}
-          <img src="{{ gen.view_url }}" alt="{{ gen.customer_name }} - {{ gen.dish_label }}">
-        {% endfor %}
-      </div>
     {% endif %}
 
     <hr>
@@ -281,6 +332,22 @@
       });
 
       render();
+
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const tabPanels = {
+        labels: document.getElementById("tab-panel-labels"),
+        summary: document.getElementById("tab-panel-summary"),
+      };
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          tabButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          Object.entries(tabPanels).forEach(([name, panel]) => {
+            panel.style.display = name === btn.dataset.tab ? "" : "none";
+          });
+        });
+      });
     </script>
   {% endif %}
 </body>
