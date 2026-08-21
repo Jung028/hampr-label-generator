@@ -114,5 +114,6 @@ python3 generate_labels.py
 
 ToDo : 
 1. Find at least 2-3 more response that can used for testing, need to find gluten free, extra instructions, and special instructions
-2. Collect Data response at least 3-5 for Nanyang. and get all the templates for this as well. 
-3. A design - maybe we can add open button for this psd in photoshop app directly to edit, and print. 
+3. Fix the print format, what size, in windows. follow from photoship print. 
+4. Collect Data response at least 3-5 for Nanyang. and get all the templates for this as well. 
+5. A design - maybe we can add open button for this psd in photoshop app directly to edit, and print. 
