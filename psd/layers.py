@@ -52,6 +52,41 @@ def find_special_instructions_layer(psd):
     return None
 
 
+def find_dish_name_layer(psd):
+    """
+    Find the dish-name text layer.
+
+    Every template renders the dish name on top of a pixel layer named
+    "RedBand" (the coloured strip across the label). That's a more
+    reliable signal than the layer's own name or text, which vary
+    per-template (e.g. "Nasi Lemak - Chicken" vs. "Ipoh Hor Fun" vs.
+    " Beef Rendang Roti Canai") and sometimes coexist with unrelated
+    long-form placeholder text layers (e.g. a lorem-ipsum description on
+    the Beef Rendang Roti template).
+    """
+
+    red_band = None
+
+    for layer in psd.descendants():
+        if layer.name.strip() == "RedBand":
+            red_band = layer
+            break
+
+    if red_band is None:
+        return None
+
+    _, band_top, _, band_bottom = red_band.bbox
+
+    for layer in get_text_layers(psd):
+
+        _, top, _, bottom = layer.bbox
+
+        if top >= band_top and bottom <= band_bottom:
+            return layer
+
+    return None
+
+
 def find_variant_layers(psd):
     """
     Find layers using:
@@ -195,13 +230,16 @@ def find_customer_name_layer(
         return None
 
     # Prefer a layer that is:
-    # 1. horizontally aligned
-    # 2. closest vertically
+    # 1. closest vertically (the customer name sits directly above the
+    #    dish name; other header text like the site URL can happen to be
+    #    marginally better horizontally-centered by a few px and must not
+    #    win over a layer that's actually adjacent)
+    # 2. horizontally aligned, as a tiebreaker
 
     candidates.sort(
         key=lambda x: (
-            x["horizontal_distance"],
             x["vertical_distance"],
+            x["horizontal_distance"],
         )
     )
 

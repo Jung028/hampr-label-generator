@@ -1,1 +1,3107 @@
-{"id":111148,"customerStatus":"PLACED","eventDate":"2026-08-21","eventTime":"12:00:00","numberOfAttendees":38,"dietPreferences":null,"eventComments":"","cutlery":false,"plates":false,"serviettes":false,"deliveryCompany":"Riot Games Pty Ltd","deliveryFloor":"Suite 8.01, Level 8 ","deliveryPlaceId":"ChIJrVcCmSOuEmsRKHHQKb_wt-g","deliveryLabel":"477 Pitt St, Haymarket NSW 2000, Australia","deliveryStreetNum":"477","deliveryStreet":"Pitt St","deliverySuburb":"Haymarket","deliveryPostcode":"2000","deliveryCity":"Sydney","deliveryState":"NSW","deliveryCountry":"AU","deliveryLat":"-33.8807122","deliveryLng":"151.206088","deliveryComments":"Access via Loading dock 1 on Parker Street","deliveryIsEstablishment":null,"deliveryEstablishmentName":null,"deliveryUtcOffsetMins":600,"deliveryHasDock":true,"deliveryDockInstructions":"Access via Loading dock 1 on Parker Street","contactName":" Tina Chanthapanya","contactPhone":"0426 644 089","deliveryAddressVaries":false,"purchaseContentDetails":{"partner":{"commissionRate":0.19,"id":161,"logo":"https://static.hampr.com.au/images/partners/ipoh-town/IPOH_TOWN_Primary_Logo18_Orange_RGB.jpg","name":"Ipoh Town","slug":"ipoh-town","thumbnail":"https://static.hampr.com.au/images/partners/ipoh-town/yaurkmspi403kyzkx3ub_720x540.png","publicPhonePrimary":"0404420077","publicPhoneSecondary":""},"items":[{"configs":[{"config":[{"selectedChoices":[{"id":47738,"name":"Chicken Curry","uuid":"56a3e338-06bb-4eeb-81d6-4fe855655c87","isHot":false,"isCold":false,"dietTags":[{"id":17,"name":"Contains Soy","ProgramChoiceDietTag":{"id":53539,"createdAt":"2026-06-24T00:04:23.150Z","dietTagId":17,"updatedAt":"2026-06-24T00:04:23.150Z","programChoiceId":47738}},{"id":18,"name":"Contains Sesame","ProgramChoiceDietTag":{"id":53538,"createdAt":"2026-06-24T00:04:23.149Z","dietTagId":18,"updatedAt":"2026-06-24T00:04:23.149Z","programChoiceId":47738}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"0","costWithTax":"0","costWithoutTax":"0"}],"uuid":"d0e4bd35-327f-4154-aead-e615a25227b2","ruleId":12419,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Morgan Wall","uuid":"ba425e3d-dd0d-43b6-8e6b-b9f679140514","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"29de4148-d35a-4f44-9a76-d96a4e339be7","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":16.96,"collectionCostWithoutTax":15.42,"collectionCommWithTax":3.22,"collectionCommWithoutTax":2.93,"uuid":"1c4cfb27-15f9-4097-be64-b24731e398de","quantity":1}],"item":{"supplyCost":16.96,"commissionRate":0.19,"id":10794,"name":"Nasi Lemak","image":"https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Nasi Lemak_68c90ff96ae234b0816930575916fe81316321782cdf97d774ea224be687b3f4.jfif","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":24786,"createdAt":"2026-06-24T00:04:23.154Z","dietTagId":5,"updatedAt":"2026-06-24T00:04:23.154Z","programItemId":10794}},{"id":15,"name":"Contains Nuts","ProgramItemDietTag":{"id":24785,"createdAt":"2026-06-24T00:04:23.152Z","dietTagId":15,"updatedAt":"2026-06-24T00:04:23.152Z","programItemId":10794}},{"id":19,"name":"Contains Seafood","ProgramItemDietTag":{"id":24787,"createdAt":"2026-06-24T00:04:23.154Z","dietTagId":19,"updatedAt":"2026-06-24T00:04:23.154Z","programItemId":10794}}],"serveTags":[],"description":"<p>Popular in Malaysia, Nasi Lemak is a fragrant coconut rice dish served with traditional accompaniments such as crispy anchovies, cucumbers, peanuts, pickled vegetables &amp; with your choice of curry on the side.</p><p>Presented in individual box with disposable cutlery &amp; napkin.</p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"e299a554-bf0b-4f01-bdbd-ccad87f7ca2e"},{"configs":[{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Patrick Nolan","uuid":"1501726f-1ee4-40c1-9a28-ea2112a9bb77","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"e204b31c-1500-42a3-bb8e-c6721a003cf7","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":16.96,"collectionCostWithoutTax":15.42,"collectionCommWithTax":3.22,"collectionCommWithoutTax":2.93,"uuid":"85c3ccb0-819e-4926-a6d6-69f6ca10f21a","quantity":1}],"item":{"supplyCost":16.96,"commissionRate":0.19,"id":10795,"name":"Vegan Ipoh Char Kway Teow","image":"https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Vegan Ipoh Char Kway Teow_6a697a44a9deb3e6dac187b00a0861999e6866a1536f04fc5720b1166d25d606.jfif","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":1,"name":"Vegetarian","ProgramItemDietTag":{"id":24791,"createdAt":"2026-06-24T00:12:13.427Z","dietTagId":1,"updatedAt":"2026-06-24T00:12:13.427Z","programItemId":10795}},{"id":2,"name":"Vegan","ProgramItemDietTag":{"id":24790,"createdAt":"2026-06-24T00:12:13.425Z","dietTagId":2,"updatedAt":"2026-06-24T00:12:13.425Z","programItemId":10795}},{"id":3,"name":"Dairy Free","ProgramItemDietTag":{"id":24788,"createdAt":"2026-06-24T00:12:13.421Z","dietTagId":3,"updatedAt":"2026-06-24T00:12:13.421Z","programItemId":10795}},{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":24789,"createdAt":"2026-06-24T00:12:13.423Z","dietTagId":5,"updatedAt":"2026-06-24T00:12:13.423Z","programItemId":10795}},{"id":17,"name":"Contains Soy","ProgramItemDietTag":{"id":24792,"createdAt":"2026-06-24T00:12:13.429Z","dietTagId":17,"updatedAt":"2026-06-24T00:12:13.429Z","programItemId":10795}}],"serveTags":[],"description":"<p>Stir fried thin flat rice noodles with special soy sauce with plant-based protein.</p><p><em>Presented in individual box with disposable cutlery &amp; napkin.</em></p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"2b4edb5c-e44f-4d18-a194-6edccdf28771"},{"configs":[{"config":[{"selectedChoices":[{"id":47926,"name":"Standard","uuid":"02385b61-876a-46d2-a3b2-6e12d50a52e7","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"0","costWithTax":"0","costWithoutTax":"0"}],"uuid":"bdd4db0f-03be-4eb9-9edf-b0e457df4b9b","ruleId":12489,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":47928,"name":"Chicken Breast","uuid":"7be9a449-6759-453e-abd8-9b7be7f909e1","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"0","costWithTax":"0","costWithoutTax":"0"}],"uuid":"3e42c82d-e23a-48b1-8df9-b0bdfc128ec3","ruleId":12490,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Yue Song","uuid":"58df1b42-5495-493a-a317-734178779f3c","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"bdf88851-be9f-4fd6-aa22-5e6ff93e263e","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":16.96,"collectionCostWithoutTax":15.42,"collectionCommWithTax":3.22,"collectionCommWithoutTax":2.93,"uuid":"edbdf732-bd90-4237-873e-d777f1a5acfa","quantity":1},{"config":[{"selectedChoices":[{"id":47926,"name":"Standard","uuid":"da5e5db1-f9ed-4d7a-a926-c547408b02bc","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"0","costWithTax":"0","costWithoutTax":"0"}],"uuid":"b03ba260-3b94-43d1-ba55-9f93f7a23fdf","ruleId":12489,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":47928,"name":"Chicken Breast","uuid":"c3b06c03-26b7-4b86-a012-270832e7d267","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"0","costWithTax":"0","costWithoutTax":"0"}],"uuid":"654ee969-6c3c-4aee-a404-037b04531176","ruleId":12490,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Valentino Ciccarone","uuid":"c79e1f8a-d175-4af4-b435-28e8423fdcf2","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"b336e01f-fa69-463a-87b6-9cd08100a92f","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":16.96,"collectionCostWithoutTax":15.42,"collectionCommWithTax":3.22,"collectionCommWithoutTax":2.93,"uuid":"3ce7bd14-8c58-46ef-9018-d5b4c22b3837","quantity":1},{"config":[{"selectedChoices":[{"id":47926,"name":"Standard","uuid":"f9fae175-e266-4cf4-9f96-690a628bc193","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"0","costWithTax":"0","costWithoutTax":"0"}],"uuid":"54274d7d-b971-4de3-bcc4-e94bc8ff423b","ruleId":12489,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":47928,"name":"Chicken Breast","uuid":"f13cb63b-fb6e-4fcc-935a-c037e052ad3a","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"0","costWithTax":"0","costWithoutTax":"0"}],"uuid":"1fd9efc0-dce7-4cc2-9dea-422fd6ba3788","ruleId":12490,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Nina Estrella","uuid":"5cb95d86-9fe3-47e1-8156-fe398f361557","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"51a62520-232e-4e05-abfe-2e39dab2af12","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":16.96,"collectionCostWithoutTax":15.42,"collectionCommWithTax":3.22,"collectionCommWithoutTax":2.93,"uuid":"ff4913b7-65f6-4966-8fe4-eab58b9b4653","quantity":1},{"config":[{"selectedChoices":[{"id":47926,"name":"Standard","uuid":"306baf90-c2f8-439e-9de8-09034dd30ac6","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"0","costWithTax":"0","costWithoutTax":"0"}],"uuid":"940d7c1f-db84-49a5-9805-3c658f761122","ruleId":12489,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":47929,"name":"Chicken Thigh","uuid":"6dfce9c1-1d56-48d9-8422-20c3be1cc8ca","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"0","costWithTax":"0","costWithoutTax":"0"}],"uuid":"3033be72-1301-4529-af20-027d545ef566","ruleId":12490,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Gabriella Tindick","uuid":"c10e2929-7791-4919-9805-67b59df6ff9b","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"a71cc6ef-1c23-482f-9ace-7d08305a1c55","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":16.96,"collectionCostWithoutTax":15.42,"collectionCommWithTax":3.22,"collectionCommWithoutTax":2.93,"uuid":"30793dd3-3b55-4a1f-80cc-7dc765ac338d","quantity":1}],"item":{"supplyCost":16.96,"commissionRate":0.19,"id":10838,"name":"Hainanese Chicken with Steamed Rice","image":"https://static.hampr.com.au/images/partners/ipoh-town/items/HaineseChickenRice_1008x560.jpg","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":24885,"createdAt":"2026-06-28T23:33:51.608Z","dietTagId":5,"updatedAt":"2026-06-28T23:33:51.608Z","programItemId":10838}}],"serveTags":[],"description":"<p>Boneless poached chicken with  rice cooked in our special home made chicken stock &amp; ginger paste served with broth &amp; condiments on the side. Presented in individual box with disposable cutlery &amp; napkin. Soup &amp; condiments are served in a separate container.</p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"5f938653-b6ac-4015-bf0e-6b3fb80186de"},{"configs":[{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Mia Park","uuid":"20165cf5-f6f1-4358-8c88-861998d3c802","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"2e309af1-c118-4411-9c71-cd35edc2eb28","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":16.96,"collectionCostWithoutTax":15.42,"collectionCommWithTax":3.22,"collectionCommWithoutTax":2.93,"uuid":"b0d72f42-cd3c-466a-a028-57805f13b437","quantity":1},{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Tina Chanthapanya","uuid":"5ef99674-7ea3-4763-9bb3-b890669158c6","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"6b30c2af-fe1d-4c4f-bf95-e3af53ca9c6f","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":16.96,"collectionCostWithoutTax":15.42,"collectionCommWithTax":3.22,"collectionCommWithoutTax":2.93,"uuid":"160d721e-1807-46e4-b72a-241ffd58dd85","quantity":1}],"item":{"supplyCost":16.96,"commissionRate":0.19,"id":2154,"name":"Ipoh Hor Fun","image":"https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Ipoh Hor Fun_fadbb180ea5bde5cef802c845f2e7ccc2dee5771815d516e4639c8cefb39e39e.jfif","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13493,"createdAt":"2025-02-28T04:09:32.121Z","dietTagId":5,"updatedAt":"2025-02-28T04:09:32.121Z","programItemId":2154}},{"id":19,"name":"Contains Seafood","ProgramItemDietTag":{"id":24692,"createdAt":"2026-06-21T23:33:34.865Z","dietTagId":19,"updatedAt":"2026-06-21T23:33:34.865Z","programItemId":2154}}],"serveTags":[],"description":"<p>Made famous in Ipoh, Ipoh hor fun or sar hor fun, is a silky smooth rice noodles served in a rich chicken &amp; prawn broth.</p><p>Dry ingredients &amp; soup are presented in separate individual bowls with disposable cutlery &amp; napkin.</p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"474cdb97-0e07-4822-8c15-0edd5c2eddf6"},{"configs":[{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Timothy Pilien","uuid":"6cb5d0f5-32bc-4dd8-aa76-9892b0e9004d","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"807383d1-7982-4bb4-8cd7-5a02e706a55e","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"b3c216d9-e9a7-49ec-ae39-590809c11724","quantity":1},{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Helen Liu","uuid":"456f331e-5394-4849-bb24-baf148b4177c","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"48c520f7-8fef-44b4-93bc-0d9f377375e2","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"e2f48692-9092-4f50-9751-8f2595988585","quantity":1}],"item":{"supplyCost":18.02,"commissionRate":0.19,"id":2155,"name":"Wonton Noodle Soup","image":"https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Wonton Noodle Soup_edbefb6d95ee6361f6b828a19cf62b81d26b2edc125cb1930cab3542c53bde68.jfif","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13492,"createdAt":"2025-02-28T04:09:26.482Z","dietTagId":5,"updatedAt":"2025-02-28T04:09:26.482Z","programItemId":2155}},{"id":16,"name":"Contains Egg","ProgramItemDietTag":{"id":24690,"createdAt":"2026-06-21T23:18:54.721Z","dietTagId":16,"updatedAt":"2026-06-21T23:18:54.721Z","programItemId":2155}}],"serveTags":[],"description":"<p>Egg noodle served in a rich chicken broth with home made wonton dumplings &amp; mixed seasonal vegetables. Dry ingredients &amp; soup are presented in separate individual bowls with disposable cutlery &amp; napkin.</p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"3bd2a78c-5139-438d-badf-1188a83412cb"},{"configs":[{"config":[{"selectedChoices":[{"id":6682,"name":"Chicken","uuid":"ac0d31e2-e375-4b9b-82bf-1a8d07128504","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"16.96","costWithTax":"16.96","costWithoutTax":"15.42"}],"uuid":"db4c148a-8e2e-4b16-b901-7660166e73a8","ruleId":1384,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Anne He","uuid":"de107400-c483-468f-b4a0-a6b2cef64dda","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"29e80df7-45fe-4b00-bfa4-f7db4daca212","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":16.96,"collectionCostWithoutTax":15.42,"collectionCommWithTax":3.22,"collectionCommWithoutTax":2.93,"uuid":"e6d21581-7dc3-4ee9-a14c-cbcf2e259cd0","quantity":1},{"config":[{"selectedChoices":[{"id":6684,"name":"Steamed Wonton ","uuid":"8b8dad17-6691-4314-acd1-659344e827ba","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"9b7ac5ae-fa54-467b-9d03-fba1bbd180e6","ruleId":1384,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Renee Mott","uuid":"945af40c-43f4-49b3-8392-9838efe1452a","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"af313b23-42a8-4e84-82e2-ac8c2f7a5160","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"3d08d023-6d96-490d-8f65-a6d7b6a2c082","quantity":1},{"config":[{"selectedChoices":[{"id":6685,"name":"Prawn","uuid":"2597c4bb-6b0e-4ad9-ac56-3733d1139d36","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"1cef3a9f-44e6-465c-9578-308fdb3170be","ruleId":1384,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Hebe Ye","uuid":"93d3bc56-d2b6-4716-bbbf-1dbae271291c","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"6a6b3bdb-13d9-4032-873d-64fae9626370","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"0593d8ba-9c1a-4256-8697-f234a6a75e3e","quantity":1},{"config":[{"selectedChoices":[{"id":6685,"name":"Prawn","uuid":"69091b5f-226f-418a-a0d8-39ed028139dd","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"b4010f79-7ea2-40a4-965b-32b859733a69","ruleId":1384,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Antonio Covelo","uuid":"53d306dd-ee34-4f05-81c3-9d1821d9bddc","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"313b1359-56f7-462d-b9dd-2eae19a55a5d","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"574d4d2d-6f8a-4108-879a-5ece27f71941","quantity":1},{"config":[{"selectedChoices":[{"id":6686,"name":"Combination","uuid":"7755f179-f52d-4ea9-b375-9732d6448b27","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"19.08","costWithTax":"19.08","costWithoutTax":"17.35"}],"uuid":"5421ecbe-069e-4921-9ecf-08bab4f55e40","ruleId":1384,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Luke L","uuid":"be36f3cb-325b-49a1-8fe6-d7b0ef9c990c","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"0b5c4042-39f2-4415-ab71-f6718699c897","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":19.08,"collectionCostWithoutTax":17.35,"collectionCommWithTax":3.63,"collectionCommWithoutTax":3.3,"uuid":"c038ea6d-05b1-4d51-81e9-21a213950555","quantity":1}],"item":{"supplyCost":0,"commissionRate":0.19,"id":2156,"name":"Laksa","image":"https://static.hampr.com.au/images/partners/ipoh-town/items/Laksa_784x560.jpg","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13491,"createdAt":"2025-02-28T04:09:23.508Z","dietTagId":5,"updatedAt":"2025-02-28T04:09:23.508Z","programItemId":2156}},{"id":15,"name":"Contains Nuts","ProgramItemDietTag":{"id":10744,"createdAt":"2024-05-10T02:32:50.019Z","dietTagId":15,"updatedAt":"2024-05-10T02:32:50.019Z","programItemId":2156}},{"id":19,"name":"Contains Seafood","ProgramItemDietTag":{"id":10743,"createdAt":"2024-05-10T02:29:50.606Z","dietTagId":19,"updatedAt":"2024-05-10T02:29:50.606Z","programItemId":2156}}],"serveTags":[],"description":"<p>A popular rich &amp; creamy spicy coconut-based curry shrimp noodle soup served with mixed noodles &amp; cooked with chilli, lemongrass, galangal &amp; candlenut. Dry ingredients &amp; soup are presented in separate individual bowls with disposable cutlery &amp; napkin.</p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"1044ea5e-2c47-4a6e-8116-c59d82838e92"},{"configs":[{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Samantha Turner","uuid":"c66a1606-f1f8-4223-bb17-79266d36cc00","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"b8877491-7de5-4f42-9c82-14a95fa3e4f1","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":15.9,"collectionCostWithoutTax":14.45,"collectionCommWithTax":3.02,"collectionCommWithoutTax":2.75,"uuid":"d73c31ab-fbbe-4950-a7ca-3e7ccf55f544","quantity":1},{"config":[{"selectedChoices":[{"id":"comments","name":"Name: SIMON HAWKLIGHT","uuid":"e2a3c23d-f883-4356-b632-0cb78b9204fb","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"7933d186-5d7a-4844-8697-13f434448464","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":15.9,"collectionCostWithoutTax":14.45,"collectionCommWithTax":3.02,"collectionCommWithoutTax":2.75,"uuid":"7cf98eff-7b93-4dbe-a09d-32e545074a36","quantity":1}],"item":{"supplyCost":15.9,"commissionRate":0.19,"id":2160,"name":"Beef Rendang with Jasmine Rice","image":"https://static.hampr.com.au/images/partners/ipoh-town/programItems/Beef Rendang Rice_744x560.jpg","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":4,"name":"Gluten Free","ProgramItemDietTag":{"id":6976,"createdAt":"2023-08-29T06:00:30.193Z","dietTagId":4,"updatedAt":"2023-08-29T06:00:30.193Z","programItemId":2160}},{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13488,"createdAt":"2025-02-28T04:09:04.145Z","dietTagId":5,"updatedAt":"2025-02-28T04:09:04.145Z","programItemId":2160}}],"serveTags":[],"description":"<p>Spicy tender beef stewed in a caramelised curry on a bed of steamed jasmine rice.</p><p><em>Served in individual box with disposable cutlery &amp; napkin.</em></p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"b41da377-3aa5-4749-a48b-e07651fbae7c"},{"configs":[{"config":[{"selectedChoices":[{"id":6309,"name":"Chicken","uuid":"428453cf-9534-40df-903f-d6c83948f76a","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53496,"createdAt":"2026-06-21T23:24:23.847Z","dietTagId":16,"updatedAt":"2026-06-21T23:24:23.847Z","programChoiceId":6309}},{"id":19,"name":"Contains Seafood","ProgramChoiceDietTag":{"id":53497,"createdAt":"2026-06-21T23:24:23.847Z","dietTagId":19,"updatedAt":"2026-06-21T23:24:23.847Z","programChoiceId":6309}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"7a50db98-39ef-4984-a7c6-27286a229063","ruleId":1318,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Ryan Hurst","uuid":"41755a40-f2b4-46c6-9b8b-3df172235904","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"d132bcd7-6613-4b90-a2f7-535e89c0b304","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"0e0fe90f-8edd-4e00-a5c4-a623fad7bf70","quantity":1},{"config":[{"selectedChoices":[{"id":6309,"name":"Chicken","uuid":"8d9175ef-cdc4-4218-a9d7-993d4b717da3","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53496,"createdAt":"2026-06-21T23:24:23.847Z","dietTagId":16,"updatedAt":"2026-06-21T23:24:23.847Z","programChoiceId":6309}},{"id":19,"name":"Contains Seafood","ProgramChoiceDietTag":{"id":53497,"createdAt":"2026-06-21T23:24:23.847Z","dietTagId":19,"updatedAt":"2026-06-21T23:24:23.847Z","programChoiceId":6309}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"839b062e-8d21-4e6d-869e-e4b62ff441c3","ruleId":1318,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Brad Gordon","uuid":"62df9d06-37fa-4571-bbca-bc19f32f5146","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"c7ea6b85-b7c7-4630-9fba-1bb822cac48a","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"21d1546a-9cc5-49b4-81ef-5abe75c8e416","quantity":1},{"config":[{"selectedChoices":[{"id":6310,"name":"Beef","uuid":"e2c19134-be0d-4159-bb76-76a76f773bc2","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53498,"createdAt":"2026-06-21T23:24:23.849Z","dietTagId":16,"updatedAt":"2026-06-21T23:24:23.849Z","programChoiceId":6310}},{"id":19,"name":"Contains Seafood","ProgramChoiceDietTag":{"id":53499,"createdAt":"2026-06-21T23:24:23.850Z","dietTagId":19,"updatedAt":"2026-06-21T23:24:23.850Z","programChoiceId":6310}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"51655969-9b12-4429-91c7-cc7c27665d12","ruleId":1318,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Reani Champion","uuid":"964ed7b3-e579-415e-bd7d-ab67d4893a3f","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"6b064a72-16b6-447a-815d-a9130ad059be","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"5975ef7b-50fd-4ae5-867c-277dbd452031","quantity":1},{"config":[{"selectedChoices":[{"id":6311,"name":"Prawn","uuid":"1f5ad947-d315-42e1-a2a9-a04f0c9c2123","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53502,"createdAt":"2026-06-21T23:24:23.855Z","dietTagId":16,"updatedAt":"2026-06-21T23:24:23.855Z","programChoiceId":6311}},{"id":19,"name":"Contains Seafood","ProgramChoiceDietTag":{"id":53503,"createdAt":"2026-06-21T23:24:23.856Z","dietTagId":19,"updatedAt":"2026-06-21T23:24:23.856Z","programChoiceId":6311}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"19.08","costWithTax":"19.08","costWithoutTax":"17.35"}],"uuid":"a7b1bc25-7380-4981-85e0-f2106b443992","ruleId":1318,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Yan Liu","uuid":"a7b8a6b9-ef31-4e8e-a972-4df5caabdc80","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"92c29a1b-a78f-4bd2-8a8e-120a9311a44c","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":19.08,"collectionCostWithoutTax":17.35,"collectionCommWithTax":3.63,"collectionCommWithoutTax":3.3,"uuid":"a736467c-5058-4260-b1e1-e6ec6ea5d74b","quantity":1},{"config":[{"selectedChoices":[{"id":6312,"name":"Seafood","uuid":"08cd268b-704d-44e7-8be3-203f64ee37f0","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53500,"createdAt":"2026-06-21T23:24:23.852Z","dietTagId":16,"updatedAt":"2026-06-21T23:24:23.852Z","programChoiceId":6312}},{"id":19,"name":"Contains Seafood","ProgramChoiceDietTag":{"id":53501,"createdAt":"2026-06-21T23:24:23.853Z","dietTagId":19,"updatedAt":"2026-06-21T23:24:23.853Z","programChoiceId":6312}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"19.08","costWithTax":"19.08","costWithoutTax":"17.35"}],"uuid":"023fb395-a627-47aa-b4f8-e3404b2f68cf","ruleId":1318,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Chris Tonkin","uuid":"82ced767-1c25-46f4-a441-20970bd16538","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"7d7b8c35-c041-45cc-9d2f-3bb928205295","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":19.08,"collectionCostWithoutTax":17.35,"collectionCommWithTax":3.63,"collectionCommWithoutTax":3.3,"uuid":"8f61747e-c451-4f91-b53f-02ccb009804a","quantity":1},{"config":[{"selectedChoices":[{"id":6313,"name":"Combination","uuid":"f155871e-501e-4323-8381-9b2110ff5835","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53504,"createdAt":"2026-06-21T23:24:23.858Z","dietTagId":16,"updatedAt":"2026-06-21T23:24:23.858Z","programChoiceId":6313}},{"id":19,"name":"Contains Seafood","ProgramChoiceDietTag":{"id":53505,"createdAt":"2026-06-21T23:24:23.858Z","dietTagId":19,"updatedAt":"2026-06-21T23:24:23.858Z","programChoiceId":6313}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"20.14","costWithTax":"20.14","costWithoutTax":"18.31"}],"uuid":"08e4be81-07f1-46f5-9400-485574c6f203","ruleId":1318,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Patrick Gilfillan","uuid":"f432068b-7747-457c-b207-defd491c6703","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"3c5278fe-0170-48f9-8052-48e0c0cdd94a","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":20.14,"collectionCostWithoutTax":18.31,"collectionCommWithTax":3.83,"collectionCommWithoutTax":3.48,"uuid":"f6860317-cdec-4c60-9fb7-385cc59162cc","quantity":1}],"item":{"supplyCost":0,"commissionRate":0.19,"id":2161,"name":"Nasi Goreng","image":"https://static.hampr.com.au/images/partners/ipoh-town/items/NasiGoreng_784x560.jpg","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":3,"name":"Dairy Free","ProgramItemDietTag":{"id":6977,"createdAt":"2023-08-29T06:07:58.760Z","dietTagId":3,"updatedAt":"2023-08-29T06:07:58.760Z","programItemId":2161}},{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13487,"createdAt":"2025-02-28T04:09:00.240Z","dietTagId":5,"updatedAt":"2025-02-28T04:09:00.240Z","programItemId":2161}},{"id":17,"name":"Contains Soy","ProgramItemDietTag":{"id":24728,"createdAt":"2026-06-23T06:49:34.147Z","dietTagId":17,"updatedAt":"2026-06-23T06:49:34.147Z","programItemId":2161}}],"serveTags":[],"description":"<p>Malaysian styled fried rice with sambal consisting of mixed vegetables, eggs, shrimps &amp; with your choice of protein.</p><p>Presented in individual box with disposable cutlery &amp; napkin.</p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"75d6e5d7-353b-40c0-b539-3b651ac67b48"},{"configs":[{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Angus Fan","uuid":"7aa49f69-a8c0-4ffd-b6f1-b86306947b81","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"97986a90-8987-4996-a689-f3ddf52438a6","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":15.9,"collectionCostWithoutTax":14.45,"collectionCommWithTax":3.02,"collectionCommWithoutTax":2.75,"uuid":"d1f39e57-3bc1-4aab-ba8c-8267aae9e4fe","quantity":1},{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Alex Carlyle","uuid":"f62f7dcd-ef2c-4bce-8627-033021940935","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"240b72bc-39e5-4bcd-b7ee-5e1298dae7e0","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":15.9,"collectionCostWithoutTax":14.45,"collectionCommWithTax":3.02,"collectionCommWithoutTax":2.75,"uuid":"846f041f-161e-490b-a60d-bc6cb9bc2f8b","quantity":1}],"item":{"supplyCost":15.9,"commissionRate":0.19,"id":2162,"name":"Chicken Curry with Jasmine Rice","image":"https://static.hampr.com.au/images/partners/ipoh-town/items/CurryChickenRice_784x560.jpg","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":4,"name":"Gluten Free","ProgramItemDietTag":{"id":6569,"createdAt":"2023-08-18T02:24:51.094Z","dietTagId":4,"updatedAt":"2023-08-18T02:24:51.094Z","programItemId":2162}},{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13486,"createdAt":"2025-02-28T04:08:54.070Z","dietTagId":5,"updatedAt":"2025-02-28T04:08:54.070Z","programItemId":2162}}],"serveTags":[],"description":"<p>Malaysian chicken curry with traditional herbs &amp; spices on a bed of steamed jasmine rice.</p><p><em>Served in individual box with disposable cutlery &amp; napkin.</em></p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"b8eaeea5-4e64-4d63-b19f-02d0303e2e8a"},{"configs":[{"config":[{"selectedChoices":[{"id":6318,"name":"Beef (Sliced Pieces)","uuid":"6988594b-75b4-49a3-8931-d4ae1327d93b","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53508,"createdAt":"2026-06-21T23:26:36.045Z","dietTagId":16,"updatedAt":"2026-06-21T23:26:36.045Z","programChoiceId":6318}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"8c90eee5-8e80-47d6-99db-dd3c93fe06ff","ruleId":1319,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Thomas Dizon","uuid":"2c502c63-2aeb-4f0e-9561-f9e9deb205d5","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"bda6f4db-a65b-4355-ac9c-70986071a961","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"f5216a57-cbf2-48ef-8492-4e9d719b7c7e","quantity":1},{"config":[{"selectedChoices":[{"id":6318,"name":"Beef (Sliced Pieces)","uuid":"408de194-d883-4211-97ba-882e3961a931","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53508,"createdAt":"2026-06-21T23:26:36.045Z","dietTagId":16,"updatedAt":"2026-06-21T23:26:36.045Z","programChoiceId":6318}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"a44a18d7-80f7-4353-bb87-74c93ddc7931","ruleId":1319,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Ridley Rein","uuid":"b8722323-45ce-4416-8571-4585c8d706b9","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"69d68164-b933-43dc-91ba-e1c842bed52d","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"3974b4f6-9e9c-4a46-aec3-7f6bb45731a3","quantity":1},{"config":[{"selectedChoices":[{"id":6319,"name":"Prawn","uuid":"ab6d5f5c-4cf4-4f00-a21f-e1f560ab2219","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53511,"createdAt":"2026-06-21T23:26:36.065Z","dietTagId":16,"updatedAt":"2026-06-21T23:26:36.065Z","programChoiceId":6319}},{"id":19,"name":"Contains Seafood","ProgramChoiceDietTag":{"id":53512,"createdAt":"2026-06-21T23:26:36.069Z","dietTagId":19,"updatedAt":"2026-06-21T23:26:36.069Z","programChoiceId":6319}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"19.08","costWithTax":"19.08","costWithoutTax":"17.35"}],"uuid":"61e9388f-ec39-43c8-9a40-29b77bdf418a","ruleId":1319,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Aidan Boneham","uuid":"1744d9a4-7fe7-475f-a253-4581b736172a","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"bd6ac1a7-3f2c-4fa8-8b64-e04f23a1795a","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":19.08,"collectionCostWithoutTax":17.35,"collectionCommWithTax":3.63,"collectionCommWithoutTax":3.3,"uuid":"6f338035-517f-485d-9c64-a22828a53363","quantity":1}],"item":{"supplyCost":0,"commissionRate":0.19,"id":2163,"name":"Mee Goreng","image":"https://static.hampr.com.au/images/partners/ipoh-town/items/MeeGoreng_784x560.jpg","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13485,"createdAt":"2025-02-28T04:08:48.356Z","dietTagId":5,"updatedAt":"2025-02-28T04:08:48.356Z","programItemId":2163}},{"id":17,"name":"Contains Soy","ProgramItemDietTag":{"id":24691,"createdAt":"2026-06-21T23:26:36.085Z","dietTagId":17,"updatedAt":"2026-06-21T23:26:36.085Z","programItemId":2163}}],"serveTags":[],"description":"<p>A signature Indian Malaysian stir-fried Hokkien noodles with tomato &amp; chilli sauce served with fish cake, prawn cake, bean curd &amp; potato.</p><p><em>Presented in individual box with disposable cutlery &amp; napkin.</em></p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"3008f741-cf30-45b0-87d7-3326d689de62"},{"configs":[{"config":[{"selectedChoices":[{"id":6698,"name":"Chicken (Sliced Pieces)","uuid":"d5ceab9e-6355-4936-adcc-44762411b6d5","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53516,"createdAt":"2026-06-21T23:36:18.760Z","dietTagId":16,"updatedAt":"2026-06-21T23:36:18.760Z","programChoiceId":6698}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"fcf569fc-423e-40a1-ac16-d334ae42e28d","ruleId":1387,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Nikki Slade","uuid":"41e5505f-ddab-405e-8d22-49b7f713d12b","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"3c00c759-1da3-4a8e-bf7e-c3db5e9b57f0","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"707e3850-0b98-4c6e-95d4-e1823a1742f0","quantity":1},{"config":[{"selectedChoices":[{"id":6699,"name":"Beef (Sliced Pieces)","uuid":"1cc0ddb8-abc8-49a0-a989-2cebe1f88a1a","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53517,"createdAt":"2026-06-21T23:36:18.763Z","dietTagId":16,"updatedAt":"2026-06-21T23:36:18.763Z","programChoiceId":6699}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"203309f3-f7a3-4857-abbb-df162c2354e8","ruleId":1387,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Tom K","uuid":"aecf1965-9b37-4a3e-a4cb-a5f4124409cb","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"65a03e4d-0c7c-4b88-97e3-e2aa6b216e2a","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"2e8fbaa1-4259-41aa-8954-718131558e9a","quantity":1},{"config":[{"selectedChoices":[{"id":6699,"name":"Beef (Sliced Pieces)","uuid":"534e7768-aeb3-4a4d-9fd3-c0724b86ba26","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53517,"createdAt":"2026-06-21T23:36:18.763Z","dietTagId":16,"updatedAt":"2026-06-21T23:36:18.763Z","programChoiceId":6699}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"d9f6cd15-b150-4d9a-a274-df94cfc61a48","ruleId":1387,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Robert Bruessel","uuid":"94ecaef8-0566-4b76-b0f7-17f05df89cd0","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"765b5275-5d85-429f-baf5-71995f40f5e3","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"6c76addf-59b1-44d1-b423-4340086eafd1","quantity":1},{"config":[{"selectedChoices":[{"id":6699,"name":"Beef (Sliced Pieces)","uuid":"a4144325-6a1a-4bd7-90b3-e0f06d925f00","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53517,"createdAt":"2026-06-21T23:36:18.763Z","dietTagId":16,"updatedAt":"2026-06-21T23:36:18.763Z","programChoiceId":6699}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"cef2e79d-2e22-4db4-8b54-9380c32b60d8","ruleId":1387,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Derrick Lin","uuid":"51298a2d-5398-4ff5-9940-54188287808e","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"6a667c7e-f834-4b3c-8eb1-c0dc0b29e58f","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"b10c9354-f352-4c06-8ec4-2a345b8a24f0","quantity":1},{"config":[{"selectedChoices":[{"id":6702,"name":"Combination","uuid":"2b3698e0-65ee-467d-b450-7747c9374de1","isHot":false,"isCold":false,"dietTags":[{"id":16,"name":"Contains Egg","ProgramChoiceDietTag":{"id":53523,"createdAt":"2026-06-21T23:36:18.780Z","dietTagId":16,"updatedAt":"2026-06-21T23:36:18.780Z","programChoiceId":6702}},{"id":19,"name":"Contains Seafood","ProgramChoiceDietTag":{"id":53522,"createdAt":"2026-06-21T23:36:18.778Z","dietTagId":19,"updatedAt":"2026-06-21T23:36:18.778Z","programChoiceId":6702}}],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"20.14","costWithTax":"20.14","costWithoutTax":"18.31"}],"uuid":"5ae35b82-000f-4f5e-8e07-111b8f776605","ruleId":1387,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Emily Ngo","uuid":"93b4471e-30ed-4268-8381-392e6a7fc3a9","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"cd2ba97d-7145-44cc-a196-cc41b4d243e7","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":20.14,"collectionCostWithoutTax":18.31,"collectionCommWithTax":3.83,"collectionCommWithoutTax":3.48,"uuid":"ddec36f2-caa7-4db7-aa6a-f75a10754625","quantity":1}],"item":{"supplyCost":0,"commissionRate":0.19,"id":2165,"name":"Ipoh Char Kway Teow","image":"https://static.hampr.com.au/images/partners/ipoh-town/items/CharKwayTeow_784x560.jpg","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13483,"createdAt":"2025-02-28T04:08:35.606Z","dietTagId":5,"updatedAt":"2025-02-28T04:08:35.606Z","programItemId":2165}},{"id":17,"name":"Contains Soy","ProgramItemDietTag":{"id":24693,"createdAt":"2026-06-21T23:36:18.785Z","dietTagId":17,"updatedAt":"2026-06-21T23:36:18.785Z","programItemId":2165}}],"serveTags":[],"description":"<p>Stir fried thin flat rice noodles with special soy sauce &amp; your choice of protein.</p><p>Presented in an individual box with disposable cutlery &amp; napkin.</p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"ba8a9139-cb16-4289-bc47-2b4c3989cba6"},{"configs":[{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Zak ebgin =,( Hamilton","uuid":"e5bfddd6-71ba-4a4f-bcc5-ae2c5dc304ae","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"9186f487-a8b0-4211-9e39-5948c3d3e6dd","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":14.84,"collectionCostWithoutTax":13.49,"collectionCommWithTax":2.82,"collectionCommWithoutTax":2.56,"uuid":"e3b45617-88ee-4c08-9abe-f265ce8a8bb4","quantity":1},{"config":[{"selectedChoices":[{"id":"comments","name":"Name: Bilal Akil","uuid":"55e6dffa-e1c1-4846-b915-8d9099b610b1","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"8fddd39f-f7fc-4856-8be0-8fee00fb9f5e","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":14.84,"collectionCostWithoutTax":13.49,"collectionCommWithTax":2.82,"collectionCommWithoutTax":2.56,"uuid":"95754301-d1e6-463a-8cb4-158e2896ad71","quantity":1}],"item":{"supplyCost":14.84,"commissionRate":0.19,"id":2368,"name":"Beef Rendang Roti Canai","image":"https://static.hampr.com.au/images/partners/ipoh-town/items/Roti_784x560.jpg","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13482,"createdAt":"2025-02-28T04:08:23.829Z","dietTagId":5,"updatedAt":"2025-02-28T04:08:23.829Z","programItemId":2368}}],"serveTags":[],"description":"<p>Beef rendang presented in individual bowl with 2 roti crispy &amp; flaky Malaysian flat bread on the side.</p><p><em>Disposable cutlery &amp; napkin is included.</em></p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"26caf18e-62b2-40c8-88e3-2485b1603b05"},{"configs":[{"config":[{"selectedChoices":[{"id":22179,"name":"Beef (Sliced Pieces)","uuid":"5ea96509-ff5b-4a7f-b2d4-c5ef64c2d2b6","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"description":"","quantityLabel":null,"selectedQuantity":1,"servingSizeLabel":null,"supplyCost":"18.02","costWithTax":"18.02","costWithoutTax":"16.38"}],"uuid":"cb8df5e3-d6fa-42d9-ba94-513307b5530b","ruleId":5415,"ruleName":"Options","hideOnSign":false,"description":"","multiSelect":false,"splitOptions":false,"optionsAreItems":false},{"selectedChoices":[{"id":"comments","name":"Name: Winnie W","uuid":"afc93613-4855-4cd7-af3b-7eab724b44c4","isHot":false,"isCold":false,"dietTags":[],"serveTags":[],"selectedQuantity":1,"supplyCost":0,"costWithTax":0,"costWithoutTax":0}],"uuid":"206554ba-f857-4bec-9b47-950dbefe2ca3","ruleId":"comments","ruleName":"Special instructions","hideOnSign":true,"multiSelect":false,"splitOptions":false,"optionsAreItems":false}],"collectionCostWithTax":18.02,"collectionCostWithoutTax":16.38,"collectionCommWithTax":3.42,"collectionCommWithoutTax":3.11,"uuid":"5bcc0ffe-7a98-4049-9f08-1dc8e630534b","quantity":1}],"item":{"supplyCost":0,"commissionRate":0.19,"id":6311,"name":"Wat Tan Hor (Kway Teow Siram)","image":"https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Wat Tan Hor_af0e87f0001f787fb49e2cd7520dffb7f37581ce8899904f56885cb54bdcc6ec.jfif","isHot":false,"extRef":null,"hasTax":true,"isCold":false,"serves":null,"measure":null,"dietTags":[{"id":5,"name":"Halal Friendly","ProgramItemDietTag":{"id":13477,"createdAt":"2025-02-28T04:07:28.075Z","dietTagId":5,"updatedAt":"2025-02-28T04:07:28.075Z","programItemId":6311}}],"serveTags":[],"description":"<p>Wok-fried noodles served in a silky egg gravy with your choice of protein. Presented in individual box with disposable cutlery &amp; napkin.</p>","measureCount":null,"innerQuantity":null,"itemPriceMode":"COMMISSION","quantityLabel":null,"priceIncludesTax":true,"servingSizeLabel":null,"innerQuantityLabel":null,"supplierDescription":""},"uuid":"9539b7e9-34b3-4ac8-b4af-79c9605309f2"}],"costOfTaxableItemsWithTax":632.82,"costOfTaxableItemsWithoutTax":575.28,"costOfTaxFreeItems":0,"deliveryFeeWithTax":0,"deliveryFeeWithoutTax":0,"smallOrderFeeWithTax":0,"smallOrderFeeWithoutTax":0,"costOfAllItemsWithTax":632.82,"costOfAllItemsWithoutTax":575.28,"costTotalWithTax":632.82,"costTotalWithoutTax":575.28,"costTaxTotal":57.54,"commTaxTotal":10.88,"commTotalWithTax":120.18,"commTotalWithoutTax":109.3,"deliveryFeeCommWithTax":0,"deliveryFeeCommWithoutTax":0,"smallOrderFeeCommWithTax":0,"smallOrderFeeCommWithoutTax":0,"uuid":"1401b728-672a-4409-b800-ca2446912ef1","taxRate":0.1,"countryId":1,"isRejected":false,"isConfirmed":true,"orderContactPhone":"0404420077","partnerSegmentStatus":"CONFIRMED"},"version":2,"orderFeedbackResults":[],"shareMealId":null,"programMealId":18864,"pantryMealId":null,"createdAt":"2026-08-19T01:01:41.086Z","versionAt":"2026-08-19T06:04:11.047Z","metaInfoListForDeliveryReceipt":[],"isNewCustomer":false}
+{
+  "id": 111148,
+  "customerStatus": "PLACED",
+  "eventDate": "2026-08-21",
+  "eventTime": "12:00:00",
+  "numberOfAttendees": 38,
+  "dietPreferences": null,
+  "eventComments": "",
+  "cutlery": false,
+  "plates": false,
+  "serviettes": false,
+  "deliveryCompany": "Riot Games Pty Ltd",
+  "deliveryFloor": "Suite 8.01, Level 8 ",
+  "deliveryPlaceId": "ChIJrVcCmSOuEmsRKHHQKb_wt-g",
+  "deliveryLabel": "477 Pitt St, Haymarket NSW 2000, Australia",
+  "deliveryStreetNum": "477",
+  "deliveryStreet": "Pitt St",
+  "deliverySuburb": "Haymarket",
+  "deliveryPostcode": "2000",
+  "deliveryCity": "Sydney",
+  "deliveryState": "NSW",
+  "deliveryCountry": "AU",
+  "deliveryLat": "-33.8807122",
+  "deliveryLng": "151.206088",
+  "deliveryComments": "Access via Loading dock 1 on Parker Street",
+  "deliveryIsEstablishment": null,
+  "deliveryEstablishmentName": null,
+  "deliveryUtcOffsetMins": 600,
+  "deliveryHasDock": true,
+  "deliveryDockInstructions": "Access via Loading dock 1 on Parker Street",
+  "contactName": " Tina Chanthapanya",
+  "contactPhone": "0426 644 089",
+  "deliveryAddressVaries": false,
+  "purchaseContentDetails": {
+    "partner": {
+      "commissionRate": 0.19,
+      "id": 161,
+      "logo": "https://static.hampr.com.au/images/partners/ipoh-town/IPOH_TOWN_Primary_Logo18_Orange_RGB.jpg",
+      "name": "Ipoh Town",
+      "slug": "ipoh-town",
+      "thumbnail": "https://static.hampr.com.au/images/partners/ipoh-town/yaurkmspi403kyzkx3ub_720x540.png",
+      "publicPhonePrimary": "0404420077",
+      "publicPhoneSecondary": ""
+    },
+    "items": [
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 47738,
+                    "name": "Chicken Curry",
+                    "uuid": "56a3e338-06bb-4eeb-81d6-4fe855655c87",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 17,
+                        "name": "Contains Soy",
+                        "ProgramChoiceDietTag": {
+                          "id": 53539,
+                          "createdAt": "2026-06-24T00:04:23.150Z",
+                          "dietTagId": 17,
+                          "updatedAt": "2026-06-24T00:04:23.150Z",
+                          "programChoiceId": 47738
+                        }
+                      },
+                      {
+                        "id": 18,
+                        "name": "Contains Sesame",
+                        "ProgramChoiceDietTag": {
+                          "id": 53538,
+                          "createdAt": "2026-06-24T00:04:23.149Z",
+                          "dietTagId": 18,
+                          "updatedAt": "2026-06-24T00:04:23.149Z",
+                          "programChoiceId": 47738
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "0",
+                    "costWithTax": "0",
+                    "costWithoutTax": "0"
+                  }
+                ],
+                "uuid": "d0e4bd35-327f-4154-aead-e615a25227b2",
+                "ruleId": 12419,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Morgan Wall",
+                    "uuid": "ba425e3d-dd0d-43b6-8e6b-b9f679140514",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "29de4148-d35a-4f44-9a76-d96a4e339be7",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 16.96,
+            "collectionCostWithoutTax": 15.42,
+            "collectionCommWithTax": 3.22,
+            "collectionCommWithoutTax": 2.93,
+            "uuid": "1c4cfb27-15f9-4097-be64-b24731e398de",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 16.96,
+          "commissionRate": 0.19,
+          "id": 10794,
+          "name": "Nasi Lemak",
+          "image": "https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Nasi Lemak_68c90ff96ae234b0816930575916fe81316321782cdf97d774ea224be687b3f4.jfif",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 24786,
+                "createdAt": "2026-06-24T00:04:23.154Z",
+                "dietTagId": 5,
+                "updatedAt": "2026-06-24T00:04:23.154Z",
+                "programItemId": 10794
+              }
+            },
+            {
+              "id": 15,
+              "name": "Contains Nuts",
+              "ProgramItemDietTag": {
+                "id": 24785,
+                "createdAt": "2026-06-24T00:04:23.152Z",
+                "dietTagId": 15,
+                "updatedAt": "2026-06-24T00:04:23.152Z",
+                "programItemId": 10794
+              }
+            },
+            {
+              "id": 19,
+              "name": "Contains Seafood",
+              "ProgramItemDietTag": {
+                "id": 24787,
+                "createdAt": "2026-06-24T00:04:23.154Z",
+                "dietTagId": 19,
+                "updatedAt": "2026-06-24T00:04:23.154Z",
+                "programItemId": 10794
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Popular in Malaysia, Nasi Lemak is a fragrant coconut rice dish served with traditional accompaniments such as crispy anchovies, cucumbers, peanuts, pickled vegetables &amp; with your choice of curry on the side.</p><p>Presented in individual box with disposable cutlery &amp; napkin.</p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "e299a554-bf0b-4f01-bdbd-ccad87f7ca2e"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Patrick Nolan",
+                    "uuid": "1501726f-1ee4-40c1-9a28-ea2112a9bb77",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "e204b31c-1500-42a3-bb8e-c6721a003cf7",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 16.96,
+            "collectionCostWithoutTax": 15.42,
+            "collectionCommWithTax": 3.22,
+            "collectionCommWithoutTax": 2.93,
+            "uuid": "85c3ccb0-819e-4926-a6d6-69f6ca10f21a",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 16.96,
+          "commissionRate": 0.19,
+          "id": 10795,
+          "name": "Vegan Ipoh Char Kway Teow",
+          "image": "https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Vegan Ipoh Char Kway Teow_6a697a44a9deb3e6dac187b00a0861999e6866a1536f04fc5720b1166d25d606.jfif",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 1,
+              "name": "Vegetarian",
+              "ProgramItemDietTag": {
+                "id": 24791,
+                "createdAt": "2026-06-24T00:12:13.427Z",
+                "dietTagId": 1,
+                "updatedAt": "2026-06-24T00:12:13.427Z",
+                "programItemId": 10795
+              }
+            },
+            {
+              "id": 2,
+              "name": "Vegan",
+              "ProgramItemDietTag": {
+                "id": 24790,
+                "createdAt": "2026-06-24T00:12:13.425Z",
+                "dietTagId": 2,
+                "updatedAt": "2026-06-24T00:12:13.425Z",
+                "programItemId": 10795
+              }
+            },
+            {
+              "id": 3,
+              "name": "Dairy Free",
+              "ProgramItemDietTag": {
+                "id": 24788,
+                "createdAt": "2026-06-24T00:12:13.421Z",
+                "dietTagId": 3,
+                "updatedAt": "2026-06-24T00:12:13.421Z",
+                "programItemId": 10795
+              }
+            },
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 24789,
+                "createdAt": "2026-06-24T00:12:13.423Z",
+                "dietTagId": 5,
+                "updatedAt": "2026-06-24T00:12:13.423Z",
+                "programItemId": 10795
+              }
+            },
+            {
+              "id": 17,
+              "name": "Contains Soy",
+              "ProgramItemDietTag": {
+                "id": 24792,
+                "createdAt": "2026-06-24T00:12:13.429Z",
+                "dietTagId": 17,
+                "updatedAt": "2026-06-24T00:12:13.429Z",
+                "programItemId": 10795
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Stir fried thin flat rice noodles with special soy sauce with plant-based protein.</p><p><em>Presented in individual box with disposable cutlery &amp; napkin.</em></p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "2b4edb5c-e44f-4d18-a194-6edccdf28771"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 47926,
+                    "name": "Standard",
+                    "uuid": "02385b61-876a-46d2-a3b2-6e12d50a52e7",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "0",
+                    "costWithTax": "0",
+                    "costWithoutTax": "0"
+                  }
+                ],
+                "uuid": "bdd4db0f-03be-4eb9-9edf-b0e457df4b9b",
+                "ruleId": 12489,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": 47928,
+                    "name": "Chicken Breast",
+                    "uuid": "7be9a449-6759-453e-abd8-9b7be7f909e1",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "0",
+                    "costWithTax": "0",
+                    "costWithoutTax": "0"
+                  }
+                ],
+                "uuid": "3e42c82d-e23a-48b1-8df9-b0bdfc128ec3",
+                "ruleId": 12490,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Yue Song",
+                    "uuid": "58df1b42-5495-493a-a317-734178779f3c",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "bdf88851-be9f-4fd6-aa22-5e6ff93e263e",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 16.96,
+            "collectionCostWithoutTax": 15.42,
+            "collectionCommWithTax": 3.22,
+            "collectionCommWithoutTax": 2.93,
+            "uuid": "edbdf732-bd90-4237-873e-d777f1a5acfa",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 47926,
+                    "name": "Standard",
+                    "uuid": "da5e5db1-f9ed-4d7a-a926-c547408b02bc",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "0",
+                    "costWithTax": "0",
+                    "costWithoutTax": "0"
+                  }
+                ],
+                "uuid": "b03ba260-3b94-43d1-ba55-9f93f7a23fdf",
+                "ruleId": 12489,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": 47928,
+                    "name": "Chicken Breast",
+                    "uuid": "c3b06c03-26b7-4b86-a012-270832e7d267",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "0",
+                    "costWithTax": "0",
+                    "costWithoutTax": "0"
+                  }
+                ],
+                "uuid": "654ee969-6c3c-4aee-a404-037b04531176",
+                "ruleId": 12490,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Valentino Ciccarone",
+                    "uuid": "c79e1f8a-d175-4af4-b435-28e8423fdcf2",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "b336e01f-fa69-463a-87b6-9cd08100a92f",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 16.96,
+            "collectionCostWithoutTax": 15.42,
+            "collectionCommWithTax": 3.22,
+            "collectionCommWithoutTax": 2.93,
+            "uuid": "3ce7bd14-8c58-46ef-9018-d5b4c22b3837",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 47926,
+                    "name": "Standard",
+                    "uuid": "f9fae175-e266-4cf4-9f96-690a628bc193",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "0",
+                    "costWithTax": "0",
+                    "costWithoutTax": "0"
+                  }
+                ],
+                "uuid": "54274d7d-b971-4de3-bcc4-e94bc8ff423b",
+                "ruleId": 12489,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": 47928,
+                    "name": "Chicken Breast",
+                    "uuid": "f13cb63b-fb6e-4fcc-935a-c037e052ad3a",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "0",
+                    "costWithTax": "0",
+                    "costWithoutTax": "0"
+                  }
+                ],
+                "uuid": "1fd9efc0-dce7-4cc2-9dea-422fd6ba3788",
+                "ruleId": 12490,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Nina Estrella",
+                    "uuid": "5cb95d86-9fe3-47e1-8156-fe398f361557",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "51a62520-232e-4e05-abfe-2e39dab2af12",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 16.96,
+            "collectionCostWithoutTax": 15.42,
+            "collectionCommWithTax": 3.22,
+            "collectionCommWithoutTax": 2.93,
+            "uuid": "ff4913b7-65f6-4966-8fe4-eab58b9b4653",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 47926,
+                    "name": "Standard",
+                    "uuid": "306baf90-c2f8-439e-9de8-09034dd30ac6",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "0",
+                    "costWithTax": "0",
+                    "costWithoutTax": "0"
+                  }
+                ],
+                "uuid": "940d7c1f-db84-49a5-9805-3c658f761122",
+                "ruleId": 12489,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": 47929,
+                    "name": "Chicken Thigh",
+                    "uuid": "6dfce9c1-1d56-48d9-8422-20c3be1cc8ca",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "0",
+                    "costWithTax": "0",
+                    "costWithoutTax": "0"
+                  }
+                ],
+                "uuid": "3033be72-1301-4529-af20-027d545ef566",
+                "ruleId": 12490,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Gabriella Tindick",
+                    "uuid": "c10e2929-7791-4919-9805-67b59df6ff9b",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "a71cc6ef-1c23-482f-9ace-7d08305a1c55",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 16.96,
+            "collectionCostWithoutTax": 15.42,
+            "collectionCommWithTax": 3.22,
+            "collectionCommWithoutTax": 2.93,
+            "uuid": "30793dd3-3b55-4a1f-80cc-7dc765ac338d",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 16.96,
+          "commissionRate": 0.19,
+          "id": 10838,
+          "name": "Hainanese Chicken with Steamed Rice",
+          "image": "https://static.hampr.com.au/images/partners/ipoh-town/items/HaineseChickenRice_1008x560.jpg",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 24885,
+                "createdAt": "2026-06-28T23:33:51.608Z",
+                "dietTagId": 5,
+                "updatedAt": "2026-06-28T23:33:51.608Z",
+                "programItemId": 10838
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Boneless poached chicken with  rice cooked in our special home made chicken stock &amp; ginger paste served with broth &amp; condiments on the side. Presented in individual box with disposable cutlery &amp; napkin. Soup &amp; condiments are served in a separate container.</p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "5f938653-b6ac-4015-bf0e-6b3fb80186de"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Mia Park",
+                    "uuid": "20165cf5-f6f1-4358-8c88-861998d3c802",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "2e309af1-c118-4411-9c71-cd35edc2eb28",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 16.96,
+            "collectionCostWithoutTax": 15.42,
+            "collectionCommWithTax": 3.22,
+            "collectionCommWithoutTax": 2.93,
+            "uuid": "b0d72f42-cd3c-466a-a028-57805f13b437",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Tina Chanthapanya",
+                    "uuid": "5ef99674-7ea3-4763-9bb3-b890669158c6",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "6b30c2af-fe1d-4c4f-bf95-e3af53ca9c6f",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 16.96,
+            "collectionCostWithoutTax": 15.42,
+            "collectionCommWithTax": 3.22,
+            "collectionCommWithoutTax": 2.93,
+            "uuid": "160d721e-1807-46e4-b72a-241ffd58dd85",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 16.96,
+          "commissionRate": 0.19,
+          "id": 2154,
+          "name": "Ipoh Hor Fun",
+          "image": "https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Ipoh Hor Fun_fadbb180ea5bde5cef802c845f2e7ccc2dee5771815d516e4639c8cefb39e39e.jfif",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13493,
+                "createdAt": "2025-02-28T04:09:32.121Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:09:32.121Z",
+                "programItemId": 2154
+              }
+            },
+            {
+              "id": 19,
+              "name": "Contains Seafood",
+              "ProgramItemDietTag": {
+                "id": 24692,
+                "createdAt": "2026-06-21T23:33:34.865Z",
+                "dietTagId": 19,
+                "updatedAt": "2026-06-21T23:33:34.865Z",
+                "programItemId": 2154
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Made famous in Ipoh, Ipoh hor fun or sar hor fun, is a silky smooth rice noodles served in a rich chicken &amp; prawn broth.</p><p>Dry ingredients &amp; soup are presented in separate individual bowls with disposable cutlery &amp; napkin.</p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "474cdb97-0e07-4822-8c15-0edd5c2eddf6"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Timothy Pilien",
+                    "uuid": "6cb5d0f5-32bc-4dd8-aa76-9892b0e9004d",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "807383d1-7982-4bb4-8cd7-5a02e706a55e",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "b3c216d9-e9a7-49ec-ae39-590809c11724",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Helen Liu",
+                    "uuid": "456f331e-5394-4849-bb24-baf148b4177c",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "48c520f7-8fef-44b4-93bc-0d9f377375e2",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "e2f48692-9092-4f50-9751-8f2595988585",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 18.02,
+          "commissionRate": 0.19,
+          "id": 2155,
+          "name": "Wonton Noodle Soup",
+          "image": "https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Wonton Noodle Soup_edbefb6d95ee6361f6b828a19cf62b81d26b2edc125cb1930cab3542c53bde68.jfif",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13492,
+                "createdAt": "2025-02-28T04:09:26.482Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:09:26.482Z",
+                "programItemId": 2155
+              }
+            },
+            {
+              "id": 16,
+              "name": "Contains Egg",
+              "ProgramItemDietTag": {
+                "id": 24690,
+                "createdAt": "2026-06-21T23:18:54.721Z",
+                "dietTagId": 16,
+                "updatedAt": "2026-06-21T23:18:54.721Z",
+                "programItemId": 2155
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Egg noodle served in a rich chicken broth with home made wonton dumplings &amp; mixed seasonal vegetables. Dry ingredients &amp; soup are presented in separate individual bowls with disposable cutlery &amp; napkin.</p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "3bd2a78c-5139-438d-badf-1188a83412cb"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6682,
+                    "name": "Chicken",
+                    "uuid": "ac0d31e2-e375-4b9b-82bf-1a8d07128504",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "16.96",
+                    "costWithTax": "16.96",
+                    "costWithoutTax": "15.42"
+                  }
+                ],
+                "uuid": "db4c148a-8e2e-4b16-b901-7660166e73a8",
+                "ruleId": 1384,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Anne He",
+                    "uuid": "de107400-c483-468f-b4a0-a6b2cef64dda",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "29e80df7-45fe-4b00-bfa4-f7db4daca212",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 16.96,
+            "collectionCostWithoutTax": 15.42,
+            "collectionCommWithTax": 3.22,
+            "collectionCommWithoutTax": 2.93,
+            "uuid": "e6d21581-7dc3-4ee9-a14c-cbcf2e259cd0",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6684,
+                    "name": "Steamed Wonton ",
+                    "uuid": "8b8dad17-6691-4314-acd1-659344e827ba",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "9b7ac5ae-fa54-467b-9d03-fba1bbd180e6",
+                "ruleId": 1384,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Renee Mott",
+                    "uuid": "945af40c-43f4-49b3-8392-9838efe1452a",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "af313b23-42a8-4e84-82e2-ac8c2f7a5160",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "3d08d023-6d96-490d-8f65-a6d7b6a2c082",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6685,
+                    "name": "Prawn",
+                    "uuid": "2597c4bb-6b0e-4ad9-ac56-3733d1139d36",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "1cef3a9f-44e6-465c-9578-308fdb3170be",
+                "ruleId": 1384,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Hebe Ye",
+                    "uuid": "93d3bc56-d2b6-4716-bbbf-1dbae271291c",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "6a6b3bdb-13d9-4032-873d-64fae9626370",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "0593d8ba-9c1a-4256-8697-f234a6a75e3e",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6685,
+                    "name": "Prawn",
+                    "uuid": "69091b5f-226f-418a-a0d8-39ed028139dd",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "b4010f79-7ea2-40a4-965b-32b859733a69",
+                "ruleId": 1384,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Antonio Covelo",
+                    "uuid": "53d306dd-ee34-4f05-81c3-9d1821d9bddc",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "313b1359-56f7-462d-b9dd-2eae19a55a5d",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "574d4d2d-6f8a-4108-879a-5ece27f71941",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6686,
+                    "name": "Combination",
+                    "uuid": "7755f179-f52d-4ea9-b375-9732d6448b27",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "19.08",
+                    "costWithTax": "19.08",
+                    "costWithoutTax": "17.35"
+                  }
+                ],
+                "uuid": "5421ecbe-069e-4921-9ecf-08bab4f55e40",
+                "ruleId": 1384,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Luke L",
+                    "uuid": "be36f3cb-325b-49a1-8fe6-d7b0ef9c990c",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "0b5c4042-39f2-4415-ab71-f6718699c897",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 19.08,
+            "collectionCostWithoutTax": 17.35,
+            "collectionCommWithTax": 3.63,
+            "collectionCommWithoutTax": 3.3,
+            "uuid": "c038ea6d-05b1-4d51-81e9-21a213950555",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 0,
+          "commissionRate": 0.19,
+          "id": 2156,
+          "name": "Laksa",
+          "image": "https://static.hampr.com.au/images/partners/ipoh-town/items/Laksa_784x560.jpg",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13491,
+                "createdAt": "2025-02-28T04:09:23.508Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:09:23.508Z",
+                "programItemId": 2156
+              }
+            },
+            {
+              "id": 15,
+              "name": "Contains Nuts",
+              "ProgramItemDietTag": {
+                "id": 10744,
+                "createdAt": "2024-05-10T02:32:50.019Z",
+                "dietTagId": 15,
+                "updatedAt": "2024-05-10T02:32:50.019Z",
+                "programItemId": 2156
+              }
+            },
+            {
+              "id": 19,
+              "name": "Contains Seafood",
+              "ProgramItemDietTag": {
+                "id": 10743,
+                "createdAt": "2024-05-10T02:29:50.606Z",
+                "dietTagId": 19,
+                "updatedAt": "2024-05-10T02:29:50.606Z",
+                "programItemId": 2156
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>A popular rich &amp; creamy spicy coconut-based curry shrimp noodle soup served with mixed noodles &amp; cooked with chilli, lemongrass, galangal &amp; candlenut. Dry ingredients &amp; soup are presented in separate individual bowls with disposable cutlery &amp; napkin.</p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "1044ea5e-2c47-4a6e-8116-c59d82838e92"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Samantha Turner",
+                    "uuid": "c66a1606-f1f8-4223-bb17-79266d36cc00",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "b8877491-7de5-4f42-9c82-14a95fa3e4f1",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 15.9,
+            "collectionCostWithoutTax": 14.45,
+            "collectionCommWithTax": 3.02,
+            "collectionCommWithoutTax": 2.75,
+            "uuid": "d73c31ab-fbbe-4950-a7ca-3e7ccf55f544",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: SIMON HAWKLIGHT",
+                    "uuid": "e2a3c23d-f883-4356-b632-0cb78b9204fb",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "7933d186-5d7a-4844-8697-13f434448464",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 15.9,
+            "collectionCostWithoutTax": 14.45,
+            "collectionCommWithTax": 3.02,
+            "collectionCommWithoutTax": 2.75,
+            "uuid": "7cf98eff-7b93-4dbe-a09d-32e545074a36",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 15.9,
+          "commissionRate": 0.19,
+          "id": 2160,
+          "name": "Beef Rendang with Jasmine Rice",
+          "image": "https://static.hampr.com.au/images/partners/ipoh-town/programItems/Beef Rendang Rice_744x560.jpg",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 4,
+              "name": "Gluten Free",
+              "ProgramItemDietTag": {
+                "id": 6976,
+                "createdAt": "2023-08-29T06:00:30.193Z",
+                "dietTagId": 4,
+                "updatedAt": "2023-08-29T06:00:30.193Z",
+                "programItemId": 2160
+              }
+            },
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13488,
+                "createdAt": "2025-02-28T04:09:04.145Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:09:04.145Z",
+                "programItemId": 2160
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Spicy tender beef stewed in a caramelised curry on a bed of steamed jasmine rice.</p><p><em>Served in individual box with disposable cutlery &amp; napkin.</em></p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "b41da377-3aa5-4749-a48b-e07651fbae7c"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6309,
+                    "name": "Chicken",
+                    "uuid": "428453cf-9534-40df-903f-d6c83948f76a",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53496,
+                          "createdAt": "2026-06-21T23:24:23.847Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:24:23.847Z",
+                          "programChoiceId": 6309
+                        }
+                      },
+                      {
+                        "id": 19,
+                        "name": "Contains Seafood",
+                        "ProgramChoiceDietTag": {
+                          "id": 53497,
+                          "createdAt": "2026-06-21T23:24:23.847Z",
+                          "dietTagId": 19,
+                          "updatedAt": "2026-06-21T23:24:23.847Z",
+                          "programChoiceId": 6309
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "7a50db98-39ef-4984-a7c6-27286a229063",
+                "ruleId": 1318,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Ryan Hurst",
+                    "uuid": "41755a40-f2b4-46c6-9b8b-3df172235904",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "d132bcd7-6613-4b90-a2f7-535e89c0b304",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "0e0fe90f-8edd-4e00-a5c4-a623fad7bf70",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6309,
+                    "name": "Chicken",
+                    "uuid": "8d9175ef-cdc4-4218-a9d7-993d4b717da3",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53496,
+                          "createdAt": "2026-06-21T23:24:23.847Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:24:23.847Z",
+                          "programChoiceId": 6309
+                        }
+                      },
+                      {
+                        "id": 19,
+                        "name": "Contains Seafood",
+                        "ProgramChoiceDietTag": {
+                          "id": 53497,
+                          "createdAt": "2026-06-21T23:24:23.847Z",
+                          "dietTagId": 19,
+                          "updatedAt": "2026-06-21T23:24:23.847Z",
+                          "programChoiceId": 6309
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "839b062e-8d21-4e6d-869e-e4b62ff441c3",
+                "ruleId": 1318,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Brad Gordon",
+                    "uuid": "62df9d06-37fa-4571-bbca-bc19f32f5146",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "c7ea6b85-b7c7-4630-9fba-1bb822cac48a",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "21d1546a-9cc5-49b4-81ef-5abe75c8e416",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6310,
+                    "name": "Beef",
+                    "uuid": "e2c19134-be0d-4159-bb76-76a76f773bc2",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53498,
+                          "createdAt": "2026-06-21T23:24:23.849Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:24:23.849Z",
+                          "programChoiceId": 6310
+                        }
+                      },
+                      {
+                        "id": 19,
+                        "name": "Contains Seafood",
+                        "ProgramChoiceDietTag": {
+                          "id": 53499,
+                          "createdAt": "2026-06-21T23:24:23.850Z",
+                          "dietTagId": 19,
+                          "updatedAt": "2026-06-21T23:24:23.850Z",
+                          "programChoiceId": 6310
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "51655969-9b12-4429-91c7-cc7c27665d12",
+                "ruleId": 1318,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Reani Champion",
+                    "uuid": "964ed7b3-e579-415e-bd7d-ab67d4893a3f",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "6b064a72-16b6-447a-815d-a9130ad059be",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "5975ef7b-50fd-4ae5-867c-277dbd452031",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6311,
+                    "name": "Prawn",
+                    "uuid": "1f5ad947-d315-42e1-a2a9-a04f0c9c2123",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53502,
+                          "createdAt": "2026-06-21T23:24:23.855Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:24:23.855Z",
+                          "programChoiceId": 6311
+                        }
+                      },
+                      {
+                        "id": 19,
+                        "name": "Contains Seafood",
+                        "ProgramChoiceDietTag": {
+                          "id": 53503,
+                          "createdAt": "2026-06-21T23:24:23.856Z",
+                          "dietTagId": 19,
+                          "updatedAt": "2026-06-21T23:24:23.856Z",
+                          "programChoiceId": 6311
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "19.08",
+                    "costWithTax": "19.08",
+                    "costWithoutTax": "17.35"
+                  }
+                ],
+                "uuid": "a7b1bc25-7380-4981-85e0-f2106b443992",
+                "ruleId": 1318,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Yan Liu",
+                    "uuid": "a7b8a6b9-ef31-4e8e-a972-4df5caabdc80",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "92c29a1b-a78f-4bd2-8a8e-120a9311a44c",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 19.08,
+            "collectionCostWithoutTax": 17.35,
+            "collectionCommWithTax": 3.63,
+            "collectionCommWithoutTax": 3.3,
+            "uuid": "a736467c-5058-4260-b1e1-e6ec6ea5d74b",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6312,
+                    "name": "Seafood",
+                    "uuid": "08cd268b-704d-44e7-8be3-203f64ee37f0",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53500,
+                          "createdAt": "2026-06-21T23:24:23.852Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:24:23.852Z",
+                          "programChoiceId": 6312
+                        }
+                      },
+                      {
+                        "id": 19,
+                        "name": "Contains Seafood",
+                        "ProgramChoiceDietTag": {
+                          "id": 53501,
+                          "createdAt": "2026-06-21T23:24:23.853Z",
+                          "dietTagId": 19,
+                          "updatedAt": "2026-06-21T23:24:23.853Z",
+                          "programChoiceId": 6312
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "19.08",
+                    "costWithTax": "19.08",
+                    "costWithoutTax": "17.35"
+                  }
+                ],
+                "uuid": "023fb395-a627-47aa-b4f8-e3404b2f68cf",
+                "ruleId": 1318,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Chris Tonkin",
+                    "uuid": "82ced767-1c25-46f4-a441-20970bd16538",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "7d7b8c35-c041-45cc-9d2f-3bb928205295",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 19.08,
+            "collectionCostWithoutTax": 17.35,
+            "collectionCommWithTax": 3.63,
+            "collectionCommWithoutTax": 3.3,
+            "uuid": "8f61747e-c451-4f91-b53f-02ccb009804a",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6313,
+                    "name": "Combination",
+                    "uuid": "f155871e-501e-4323-8381-9b2110ff5835",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53504,
+                          "createdAt": "2026-06-21T23:24:23.858Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:24:23.858Z",
+                          "programChoiceId": 6313
+                        }
+                      },
+                      {
+                        "id": 19,
+                        "name": "Contains Seafood",
+                        "ProgramChoiceDietTag": {
+                          "id": 53505,
+                          "createdAt": "2026-06-21T23:24:23.858Z",
+                          "dietTagId": 19,
+                          "updatedAt": "2026-06-21T23:24:23.858Z",
+                          "programChoiceId": 6313
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "20.14",
+                    "costWithTax": "20.14",
+                    "costWithoutTax": "18.31"
+                  }
+                ],
+                "uuid": "08e4be81-07f1-46f5-9400-485574c6f203",
+                "ruleId": 1318,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Patrick Gilfillan",
+                    "uuid": "f432068b-7747-457c-b207-defd491c6703",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "3c5278fe-0170-48f9-8052-48e0c0cdd94a",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 20.14,
+            "collectionCostWithoutTax": 18.31,
+            "collectionCommWithTax": 3.83,
+            "collectionCommWithoutTax": 3.48,
+            "uuid": "f6860317-cdec-4c60-9fb7-385cc59162cc",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 0,
+          "commissionRate": 0.19,
+          "id": 2161,
+          "name": "Nasi Goreng",
+          "image": "https://static.hampr.com.au/images/partners/ipoh-town/items/NasiGoreng_784x560.jpg",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 3,
+              "name": "Dairy Free",
+              "ProgramItemDietTag": {
+                "id": 6977,
+                "createdAt": "2023-08-29T06:07:58.760Z",
+                "dietTagId": 3,
+                "updatedAt": "2023-08-29T06:07:58.760Z",
+                "programItemId": 2161
+              }
+            },
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13487,
+                "createdAt": "2025-02-28T04:09:00.240Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:09:00.240Z",
+                "programItemId": 2161
+              }
+            },
+            {
+              "id": 17,
+              "name": "Contains Soy",
+              "ProgramItemDietTag": {
+                "id": 24728,
+                "createdAt": "2026-06-23T06:49:34.147Z",
+                "dietTagId": 17,
+                "updatedAt": "2026-06-23T06:49:34.147Z",
+                "programItemId": 2161
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Malaysian styled fried rice with sambal consisting of mixed vegetables, eggs, shrimps &amp; with your choice of protein.</p><p>Presented in individual box with disposable cutlery &amp; napkin.</p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "75d6e5d7-353b-40c0-b539-3b651ac67b48"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Angus Fan",
+                    "uuid": "7aa49f69-a8c0-4ffd-b6f1-b86306947b81",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "97986a90-8987-4996-a689-f3ddf52438a6",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 15.9,
+            "collectionCostWithoutTax": 14.45,
+            "collectionCommWithTax": 3.02,
+            "collectionCommWithoutTax": 2.75,
+            "uuid": "d1f39e57-3bc1-4aab-ba8c-8267aae9e4fe",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Alex Carlyle",
+                    "uuid": "f62f7dcd-ef2c-4bce-8627-033021940935",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "240b72bc-39e5-4bcd-b7ee-5e1298dae7e0",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 15.9,
+            "collectionCostWithoutTax": 14.45,
+            "collectionCommWithTax": 3.02,
+            "collectionCommWithoutTax": 2.75,
+            "uuid": "846f041f-161e-490b-a60d-bc6cb9bc2f8b",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 15.9,
+          "commissionRate": 0.19,
+          "id": 2162,
+          "name": "Chicken Curry with Jasmine Rice",
+          "image": "https://static.hampr.com.au/images/partners/ipoh-town/items/CurryChickenRice_784x560.jpg",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 4,
+              "name": "Gluten Free",
+              "ProgramItemDietTag": {
+                "id": 6569,
+                "createdAt": "2023-08-18T02:24:51.094Z",
+                "dietTagId": 4,
+                "updatedAt": "2023-08-18T02:24:51.094Z",
+                "programItemId": 2162
+              }
+            },
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13486,
+                "createdAt": "2025-02-28T04:08:54.070Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:08:54.070Z",
+                "programItemId": 2162
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Malaysian chicken curry with traditional herbs &amp; spices on a bed of steamed jasmine rice.</p><p><em>Served in individual box with disposable cutlery &amp; napkin.</em></p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "b8eaeea5-4e64-4d63-b19f-02d0303e2e8a"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6318,
+                    "name": "Beef (Sliced Pieces)",
+                    "uuid": "6988594b-75b4-49a3-8931-d4ae1327d93b",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53508,
+                          "createdAt": "2026-06-21T23:26:36.045Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:26:36.045Z",
+                          "programChoiceId": 6318
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "8c90eee5-8e80-47d6-99db-dd3c93fe06ff",
+                "ruleId": 1319,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Thomas Dizon",
+                    "uuid": "2c502c63-2aeb-4f0e-9561-f9e9deb205d5",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "bda6f4db-a65b-4355-ac9c-70986071a961",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "f5216a57-cbf2-48ef-8492-4e9d719b7c7e",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6318,
+                    "name": "Beef (Sliced Pieces)",
+                    "uuid": "408de194-d883-4211-97ba-882e3961a931",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53508,
+                          "createdAt": "2026-06-21T23:26:36.045Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:26:36.045Z",
+                          "programChoiceId": 6318
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "a44a18d7-80f7-4353-bb87-74c93ddc7931",
+                "ruleId": 1319,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Ridley Rein",
+                    "uuid": "b8722323-45ce-4416-8571-4585c8d706b9",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "69d68164-b933-43dc-91ba-e1c842bed52d",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "3974b4f6-9e9c-4a46-aec3-7f6bb45731a3",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6319,
+                    "name": "Prawn",
+                    "uuid": "ab6d5f5c-4cf4-4f00-a21f-e1f560ab2219",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53511,
+                          "createdAt": "2026-06-21T23:26:36.065Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:26:36.065Z",
+                          "programChoiceId": 6319
+                        }
+                      },
+                      {
+                        "id": 19,
+                        "name": "Contains Seafood",
+                        "ProgramChoiceDietTag": {
+                          "id": 53512,
+                          "createdAt": "2026-06-21T23:26:36.069Z",
+                          "dietTagId": 19,
+                          "updatedAt": "2026-06-21T23:26:36.069Z",
+                          "programChoiceId": 6319
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "19.08",
+                    "costWithTax": "19.08",
+                    "costWithoutTax": "17.35"
+                  }
+                ],
+                "uuid": "61e9388f-ec39-43c8-9a40-29b77bdf418a",
+                "ruleId": 1319,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Aidan Boneham",
+                    "uuid": "1744d9a4-7fe7-475f-a253-4581b736172a",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "bd6ac1a7-3f2c-4fa8-8b64-e04f23a1795a",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 19.08,
+            "collectionCostWithoutTax": 17.35,
+            "collectionCommWithTax": 3.63,
+            "collectionCommWithoutTax": 3.3,
+            "uuid": "6f338035-517f-485d-9c64-a22828a53363",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 0,
+          "commissionRate": 0.19,
+          "id": 2163,
+          "name": "Mee Goreng",
+          "image": "https://static.hampr.com.au/images/partners/ipoh-town/items/MeeGoreng_784x560.jpg",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13485,
+                "createdAt": "2025-02-28T04:08:48.356Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:08:48.356Z",
+                "programItemId": 2163
+              }
+            },
+            {
+              "id": 17,
+              "name": "Contains Soy",
+              "ProgramItemDietTag": {
+                "id": 24691,
+                "createdAt": "2026-06-21T23:26:36.085Z",
+                "dietTagId": 17,
+                "updatedAt": "2026-06-21T23:26:36.085Z",
+                "programItemId": 2163
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>A signature Indian Malaysian stir-fried Hokkien noodles with tomato &amp; chilli sauce served with fish cake, prawn cake, bean curd &amp; potato.</p><p><em>Presented in individual box with disposable cutlery &amp; napkin.</em></p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "3008f741-cf30-45b0-87d7-3326d689de62"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6698,
+                    "name": "Chicken (Sliced Pieces)",
+                    "uuid": "d5ceab9e-6355-4936-adcc-44762411b6d5",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53516,
+                          "createdAt": "2026-06-21T23:36:18.760Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:36:18.760Z",
+                          "programChoiceId": 6698
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "fcf569fc-423e-40a1-ac16-d334ae42e28d",
+                "ruleId": 1387,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Nikki Slade",
+                    "uuid": "41e5505f-ddab-405e-8d22-49b7f713d12b",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "3c00c759-1da3-4a8e-bf7e-c3db5e9b57f0",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "707e3850-0b98-4c6e-95d4-e1823a1742f0",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6699,
+                    "name": "Beef (Sliced Pieces)",
+                    "uuid": "1cc0ddb8-abc8-49a0-a989-2cebe1f88a1a",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53517,
+                          "createdAt": "2026-06-21T23:36:18.763Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:36:18.763Z",
+                          "programChoiceId": 6699
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "203309f3-f7a3-4857-abbb-df162c2354e8",
+                "ruleId": 1387,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Tom K",
+                    "uuid": "aecf1965-9b37-4a3e-a4cb-a5f4124409cb",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "65a03e4d-0c7c-4b88-97e3-e2aa6b216e2a",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "2e8fbaa1-4259-41aa-8954-718131558e9a",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6699,
+                    "name": "Beef (Sliced Pieces)",
+                    "uuid": "534e7768-aeb3-4a4d-9fd3-c0724b86ba26",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53517,
+                          "createdAt": "2026-06-21T23:36:18.763Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:36:18.763Z",
+                          "programChoiceId": 6699
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "d9f6cd15-b150-4d9a-a274-df94cfc61a48",
+                "ruleId": 1387,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Robert Bruessel",
+                    "uuid": "94ecaef8-0566-4b76-b0f7-17f05df89cd0",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "765b5275-5d85-429f-baf5-71995f40f5e3",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "6c76addf-59b1-44d1-b423-4340086eafd1",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6699,
+                    "name": "Beef (Sliced Pieces)",
+                    "uuid": "a4144325-6a1a-4bd7-90b3-e0f06d925f00",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53517,
+                          "createdAt": "2026-06-21T23:36:18.763Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:36:18.763Z",
+                          "programChoiceId": 6699
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "cef2e79d-2e22-4db4-8b54-9380c32b60d8",
+                "ruleId": 1387,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Derrick Lin",
+                    "uuid": "51298a2d-5398-4ff5-9940-54188287808e",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "6a667c7e-f834-4b3c-8eb1-c0dc0b29e58f",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "b10c9354-f352-4c06-8ec4-2a345b8a24f0",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 6702,
+                    "name": "Combination",
+                    "uuid": "2b3698e0-65ee-467d-b450-7747c9374de1",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [
+                      {
+                        "id": 16,
+                        "name": "Contains Egg",
+                        "ProgramChoiceDietTag": {
+                          "id": 53523,
+                          "createdAt": "2026-06-21T23:36:18.780Z",
+                          "dietTagId": 16,
+                          "updatedAt": "2026-06-21T23:36:18.780Z",
+                          "programChoiceId": 6702
+                        }
+                      },
+                      {
+                        "id": 19,
+                        "name": "Contains Seafood",
+                        "ProgramChoiceDietTag": {
+                          "id": 53522,
+                          "createdAt": "2026-06-21T23:36:18.778Z",
+                          "dietTagId": 19,
+                          "updatedAt": "2026-06-21T23:36:18.778Z",
+                          "programChoiceId": 6702
+                        }
+                      }
+                    ],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "20.14",
+                    "costWithTax": "20.14",
+                    "costWithoutTax": "18.31"
+                  }
+                ],
+                "uuid": "5ae35b82-000f-4f5e-8e07-111b8f776605",
+                "ruleId": 1387,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Emily Ngo",
+                    "uuid": "93b4471e-30ed-4268-8381-392e6a7fc3a9",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "cd2ba97d-7145-44cc-a196-cc41b4d243e7",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 20.14,
+            "collectionCostWithoutTax": 18.31,
+            "collectionCommWithTax": 3.83,
+            "collectionCommWithoutTax": 3.48,
+            "uuid": "ddec36f2-caa7-4db7-aa6a-f75a10754625",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 0,
+          "commissionRate": 0.19,
+          "id": 2165,
+          "name": "Ipoh Char Kway Teow",
+          "image": "https://static.hampr.com.au/images/partners/ipoh-town/items/CharKwayTeow_784x560.jpg",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13483,
+                "createdAt": "2025-02-28T04:08:35.606Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:08:35.606Z",
+                "programItemId": 2165
+              }
+            },
+            {
+              "id": 17,
+              "name": "Contains Soy",
+              "ProgramItemDietTag": {
+                "id": 24693,
+                "createdAt": "2026-06-21T23:36:18.785Z",
+                "dietTagId": 17,
+                "updatedAt": "2026-06-21T23:36:18.785Z",
+                "programItemId": 2165
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Stir fried thin flat rice noodles with special soy sauce &amp; your choice of protein.</p><p>Presented in an individual box with disposable cutlery &amp; napkin.</p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "ba8a9139-cb16-4289-bc47-2b4c3989cba6"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Zak ebgin =,( Hamilton",
+                    "uuid": "e5bfddd6-71ba-4a4f-bcc5-ae2c5dc304ae",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "9186f487-a8b0-4211-9e39-5948c3d3e6dd",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 14.84,
+            "collectionCostWithoutTax": 13.49,
+            "collectionCommWithTax": 2.82,
+            "collectionCommWithoutTax": 2.56,
+            "uuid": "e3b45617-88ee-4c08-9abe-f265ce8a8bb4",
+            "quantity": 1
+          },
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Bilal Akil",
+                    "uuid": "55e6dffa-e1c1-4846-b915-8d9099b610b1",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "8fddd39f-f7fc-4856-8be0-8fee00fb9f5e",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 14.84,
+            "collectionCostWithoutTax": 13.49,
+            "collectionCommWithTax": 2.82,
+            "collectionCommWithoutTax": 2.56,
+            "uuid": "95754301-d1e6-463a-8cb4-158e2896ad71",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 14.84,
+          "commissionRate": 0.19,
+          "id": 2368,
+          "name": "Beef Rendang Roti Canai",
+          "image": "https://static.hampr.com.au/images/partners/ipoh-town/items/Roti_784x560.jpg",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13482,
+                "createdAt": "2025-02-28T04:08:23.829Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:08:23.829Z",
+                "programItemId": 2368
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Beef rendang presented in individual bowl with 2 roti crispy &amp; flaky Malaysian flat bread on the side.</p><p><em>Disposable cutlery &amp; napkin is included.</em></p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "26caf18e-62b2-40c8-88e3-2485b1603b05"
+      },
+      {
+        "configs": [
+          {
+            "config": [
+              {
+                "selectedChoices": [
+                  {
+                    "id": 22179,
+                    "name": "Beef (Sliced Pieces)",
+                    "uuid": "5ea96509-ff5b-4a7f-b2d4-c5ef64c2d2b6",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "description": "",
+                    "quantityLabel": null,
+                    "selectedQuantity": 1,
+                    "servingSizeLabel": null,
+                    "supplyCost": "18.02",
+                    "costWithTax": "18.02",
+                    "costWithoutTax": "16.38"
+                  }
+                ],
+                "uuid": "cb8df5e3-d6fa-42d9-ba94-513307b5530b",
+                "ruleId": 5415,
+                "ruleName": "Options",
+                "hideOnSign": false,
+                "description": "",
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              },
+              {
+                "selectedChoices": [
+                  {
+                    "id": "comments",
+                    "name": "Name: Winnie W",
+                    "uuid": "afc93613-4855-4cd7-af3b-7eab724b44c4",
+                    "isHot": false,
+                    "isCold": false,
+                    "dietTags": [],
+                    "serveTags": [],
+                    "selectedQuantity": 1,
+                    "supplyCost": 0,
+                    "costWithTax": 0,
+                    "costWithoutTax": 0
+                  }
+                ],
+                "uuid": "206554ba-f857-4bec-9b47-950dbefe2ca3",
+                "ruleId": "comments",
+                "ruleName": "Special instructions",
+                "hideOnSign": true,
+                "multiSelect": false,
+                "splitOptions": false,
+                "optionsAreItems": false
+              }
+            ],
+            "collectionCostWithTax": 18.02,
+            "collectionCostWithoutTax": 16.38,
+            "collectionCommWithTax": 3.42,
+            "collectionCommWithoutTax": 3.11,
+            "uuid": "5bcc0ffe-7a98-4049-9f08-1dc8e630534b",
+            "quantity": 1
+          }
+        ],
+        "item": {
+          "supplyCost": 0,
+          "commissionRate": 0.19,
+          "id": 6311,
+          "name": "Wat Tan Hor (Kway Teow Siram)",
+          "image": "https://static.hampr.com.au/prod/images/partners/ipoh-town/programItems/Wat Tan Hor_af0e87f0001f787fb49e2cd7520dffb7f37581ce8899904f56885cb54bdcc6ec.jfif",
+          "isHot": false,
+          "extRef": null,
+          "hasTax": true,
+          "isCold": false,
+          "serves": null,
+          "measure": null,
+          "dietTags": [
+            {
+              "id": 5,
+              "name": "Halal Friendly",
+              "ProgramItemDietTag": {
+                "id": 13477,
+                "createdAt": "2025-02-28T04:07:28.075Z",
+                "dietTagId": 5,
+                "updatedAt": "2025-02-28T04:07:28.075Z",
+                "programItemId": 6311
+              }
+            }
+          ],
+          "serveTags": [],
+          "description": "<p>Wok-fried noodles served in a silky egg gravy with your choice of protein. Presented in individual box with disposable cutlery &amp; napkin.</p>",
+          "measureCount": null,
+          "innerQuantity": null,
+          "itemPriceMode": "COMMISSION",
+          "quantityLabel": null,
+          "priceIncludesTax": true,
+          "servingSizeLabel": null,
+          "innerQuantityLabel": null,
+          "supplierDescription": ""
+        },
+        "uuid": "9539b7e9-34b3-4ac8-b4af-79c9605309f2"
+      }
+    ],
+    "costOfTaxableItemsWithTax": 632.82,
+    "costOfTaxableItemsWithoutTax": 575.28,
+    "costOfTaxFreeItems": 0,
+    "deliveryFeeWithTax": 0,
+    "deliveryFeeWithoutTax": 0,
+    "smallOrderFeeWithTax": 0,
+    "smallOrderFeeWithoutTax": 0,
+    "costOfAllItemsWithTax": 632.82,
+    "costOfAllItemsWithoutTax": 575.28,
+    "costTotalWithTax": 632.82,
+    "costTotalWithoutTax": 575.28,
+    "costTaxTotal": 57.54,
+    "commTaxTotal": 10.88,
+    "commTotalWithTax": 120.18,
+    "commTotalWithoutTax": 109.3,
+    "deliveryFeeCommWithTax": 0,
+    "deliveryFeeCommWithoutTax": 0,
+    "smallOrderFeeCommWithTax": 0,
+    "smallOrderFeeCommWithoutTax": 0,
+    "uuid": "1401b728-672a-4409-b800-ca2446912ef1",
+    "taxRate": 0.1,
+    "countryId": 1,
+    "isRejected": false,
+    "isConfirmed": true,
+    "orderContactPhone": "0404420077",
+    "partnerSegmentStatus": "CONFIRMED"
+  },
+  "version": 2,
+  "orderFeedbackResults": [],
+  "shareMealId": null,
+  "programMealId": 18864,
+  "pantryMealId": null,
+  "createdAt": "2026-08-19T01:01:41.086Z",
+  "versionAt": "2026-08-19T06:04:11.047Z",
+  "metaInfoListForDeliveryReceipt": [],
+  "isNewCustomer": false
+}

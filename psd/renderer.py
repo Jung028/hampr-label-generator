@@ -40,7 +40,14 @@ def render_psd(
             "replacement"
         ]
 
-        if replacement == original:
+        # A layer with a font_override must always be redrawn, even if
+        # its text happens to already match — otherwise a template whose
+        # default dish-name text is coincidentally already correct would
+        # keep its own (possibly inconsistent) original PSD font/size.
+        if (
+            replacement == original
+            and not data.get("font_override")
+        ):
             continue
 
         draw_replacement(
@@ -84,14 +91,26 @@ def draw_replacement(
         layer
     )
 
-    font_size = get_font_size(
-        layer,
-        height,
+    font_override = data.get(
+        "font_override"
     )
 
-    font_name = get_font_name(
-        layer
-    )
+    if font_override:
+
+        font_name, font_size = (
+            font_override
+        )
+
+    else:
+
+        font_size = get_font_size(
+            layer,
+            height,
+        )
+
+        font_name = get_font_name(
+            layer
+        )
 
     font_path = find_font(
         font_name

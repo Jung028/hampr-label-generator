@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hampr Label Generator</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #1a1a1a;
+    }
+    h1 { font-size: 1.4rem; margin-bottom: 4px; }
+    p.subtitle { color: #666; margin-top: 0; }
+    textarea {
+      width: 100%;
+      height: 220px;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .row { margin: 14px 0; }
+    button {
+      background: #e65100;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    button:hover { background: #c74600; }
+    .error {
+      background: #fdecea;
+      border: 1px solid #f5c2c0;
+      color: #8a1f11;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    .summary {
+      display: flex;
+      gap: 24px;
+      margin: 20px 0;
+    }
+    .summary .stat { font-size: 1.4rem; font-weight: 600; }
+    .summary .stat.review { color: #b45309; }
+    .summary .stat.skip { color: #888; }
+    .summary .label { color: #666; font-size: 0.8rem; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; }
+    th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+    th { color: #666; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
+    .review-flag { color: #b45309; font-size: 0.85rem; }
+    .skip-list, .review-list { font-size: 0.9rem; line-height: 1.6; }
+    a.download-all {
+      display: inline-block;
+      margin: 8px 0 20px;
+      color: #e65100;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    hr { border: none; border-top: 1px solid #eee; margin: 32px 0; }
+  </style>
+</head>
+<body>
+  <h1>Hampr Label Generator</h1>
+  <p class="subtitle">Paste a captured order-detail API response and generate print-ready labels.</p>
+
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+
+  {% if result %}
+    <div class="summary">
+      <div><div class="stat">{{ result.generated|length }}</div><div class="label">generated</div></div>
+      <div><div class="stat skip">{{ result.skipped|length }}</div><div class="label">skipped</div></div>
+      <div><div class="stat review">{{ result.review_needed|length }}</div><div class="label">need review</div></div>
+    </div>
+
+    {% if result.generated %}
+      <a class="download-all" href="{{ url_for('download_zip', run_id=run_id) }}">Download all ({{ result.generated|length }}) as .zip</a>
+
+      {% if result.review_needed %}
+        <div class="error">
+          <strong>{{ result.review_needed|length }} name(s) need a glance before printing:</strong>
+          <ul class="review-list">
+            {% for r in result.review_needed %}
+              <li>{{ r.customer_name }} ({{ r.dish_label }}) &mdash; {{ r.flags|join(', ') }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <table>
+        <tr><th>Customer</th><th>Dish</th><th></th></tr>
+        {% for gen in result.generated %}
+          <tr>
+            <td>
+              {{ gen.customer_name }}
+              {% for r in result.review_needed %}
+                {% if r.customer_name == gen.customer_name and r.dish_label == gen.dish_label %}
+                  <div class="review-flag">&#9888; {{ r.flags|join(', ') }}</div>
+                {% endif %}
+              {% endfor %}
+            </td>
+            <td>{{ gen.dish_label }}</td>
+            <td><a href="{{ url_for('download', run_id=run_id, filename=gen.filename) }}">Download</a></td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+
+    {% if result.skipped %}
+      <p><strong>Skipped &mdash; no template handler yet:</strong></p>
+      <ul class="skip-list">
+        {% for s in result.skipped %}
+          <li>{{ s.customer_name }} &mdash; {{ s.dish_name }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <hr>
+    <p class="subtitle">Paste another order below.</p>
+  {% endif %}
+
+  <form action="{{ url_for('generate') }}" method="post" enctype="multipart/form-data">
+    <div class="row">
+      <textarea name="response_json" placeholder="Paste the order-detail response JSON here...">{{ raw or "" }}</textarea>
+    </div>
+    <div class="row">
+      <label>or upload a file: <input type="file" name="response_file" accept="application/json"></label>
+    </div>
+    <div class="row">
+      <button type="submit">Generate Labels</button>
+    </div>
+  </form>
+</body>
+</html>
