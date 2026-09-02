@@ -124,3 +124,8 @@ python3 generate_labels.py
 2. ctr + r (refresh page)
 3. ctr + f, search for any related item on page, go to response, copy 
 4. paste in platform space and generate 
+
+## Run Steps 
+'''python
+.venv-1/bin/python web/app.py
+'''

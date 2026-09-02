@@ -34,22 +34,25 @@ def _layer_style(layer):
     return (get_font_name(layer), get_font_size(layer, bottom - top))
 
 
-def _canonical_styles():
-    # Hainan Chicken Rice is the reference template: the customer-name and
-    # dish-name layers' font/size here are what every other template's
-    # equivalent layers get forced to, so labels read consistently
-    # regardless of what size the original per-template PSD text happened
-    # to be set at (e.g. Beef Rendang Rice's dish-name layer is 100pt in
-    # its source PSD, vs. 87pt here).
+def _canonical_name_style():
+    # Hainan Chicken Rice is the reference template for the *customer-name*
+    # layer only: every template's name layer is 75pt Arial Rounded MT
+    # Bold, so forcing them all to this one value is a harmless
+    # consistency guard.
+    #
+    # The dish-name layer is deliberately NOT normalised — each template's
+    # band was authored at its own size (Beef Rendang Rice 100pt, Hainan
+    # 87pt, Beef Rendang Roti 83pt) and we now render each at its native
+    # size so it matches that template's original artwork.
     psd = load_psd(HAINAN_CHICKEN_PSD)
 
     dish_layer = find_dish_name_layer(psd)
     name_layer = find_customer_name_layer(psd, dish_layer)
 
-    return _layer_style(name_layer), _layer_style(dish_layer)
+    return _layer_style(name_layer)
 
 
-NAME_STYLE, DISH_NAME_STYLE = _canonical_styles()
+NAME_STYLE = _canonical_name_style()
 
 # Typed in by hand from the Hampr Orders page screenshot.
 ORDERS = [
@@ -204,11 +207,15 @@ def generate_label(order, psd_filename, dish_label, variant_suffix, output_dir=N
     dish_layer = find_dish_name_layer(psd)
     replacement = f"{dish_label} - {variant_suffix}" if variant_suffix else dish_label
 
+    # No font_override for the dish name: the renderer reads the font and
+    # size straight off each template's own band layer, so every dish
+    # prints at its native size (see _canonical_name_style). If the
+    # template's placeholder band text already equals `replacement`, the
+    # renderer keeps the original Photoshop raster untouched.
     text_layers = [{
         "layer": dish_layer,
         "original_text": dish_layer.text,
         "replacement": replacement,
-        "font_override": DISH_NAME_STYLE,
     }]
 
     _apply_customer_name(psd, dish_layer, text_layers, order["customer_name"])

@@ -157,11 +157,15 @@ def get_font_size(
 
 def get_font_name(layer):
     """
-    The StyleSheetData "Font" value is an index into the
-    layer's own FontSet resource table, not a usable name
-    (get_text_style() surfaces that raw index, which is
-    why we don't use it here). layer.font_names already
-    resolves the index to the real PostScript font name.
+    Resolve the layer's real PostScript font name (e.g. "BritannicBold").
+
+    The StyleSheetData "Font" value is only an *index* into the document's
+    FontSet resource table (a list of {"Name": ...} entries). Newer
+    psd-tools exposes ``layer.font_names`` which does that lookup for you,
+    but the version pinned here (1.11.0) does not have that attribute — the
+    call raised AttributeError, the bare except swallowed it, and every
+    label fell back to Helvetica. So read the FontSet directly, and only
+    use ``font_names`` as a bonus path when it happens to exist.
     """
 
     try:
@@ -170,6 +174,27 @@ def get_font_name(layer):
 
         if names:
             return names[0]
+
+    except Exception:
+        pass
+
+    try:
+
+        run = layer.engine_dict["StyleRun"]["RunArray"][0]
+        index = int(run["StyleSheet"]["StyleSheetData"]["Font"])
+
+        font_set = (
+            (layer.resource_dict or {}).get("FontSet")
+            or (layer.document_resources or {}).get("FontSet")
+        )
+
+        if font_set and 0 <= index < len(font_set):
+
+            name = font_set[index].get("Name")
+
+            if name:
+                # psd-tools returns a "String" wrapper, not a plain str.
+                return str(name)
 
     except Exception:
         pass
@@ -195,9 +220,60 @@ def get_text_alignment(layer):
     return style["alignment"]
 
 
+# Foundry / style tokens that appear in a PostScript font name but not in
+# the on-disk filename (or vice versa), so they must not block a match.
+# "ArialRoundedMTBold" (PS name) vs "Arial Rounded Bold.ttf" (file) only
+# line up once "mt" is ignored.
+_FONT_NOISE_TOKENS = ("mt", "std", "pro", "regular", "roman", "book")
+
+
+def _simplify_font_token(value):
+
+    token = "".join(
+        ch for ch in str(value).lower() if ch.isalnum()
+    )
+
+    for noise in _FONT_NOISE_TOKENS:
+        token = token.replace(noise, "")
+
+    return token
+
+
+def _font_name_matches(target, candidate_filename):
+
+    target = _simplify_font_token(target)
+
+    candidate = _simplify_font_token(
+        os.path.splitext(candidate_filename)[0]
+    )
+
+    if not target or not candidate:
+        return False
+
+    if target == candidate:
+        return True
+
+    # Primary direction: the (noise-stripped) font name appears in the
+    # filename — "arialroundedbold" is inside "Arial Rounded Bold.ttf".
+    if len(target) >= 4 and target in candidate:
+        return True
+
+    # Reverse direction only for a specific-enough filename, so a bare
+    # "Arial.ttf" isn't claimed by every "Arial*" request.
+    if len(candidate) >= 8 and candidate in target:
+        return True
+
+    return False
+
+
 def find_font(font_name):
     """
-    Search common OS font directories.
+    Search common OS font directories for a file matching font_name.
+
+    Matching is deliberately fuzzy: the PostScript name Photoshop stores
+    ("ArialRoundedMTBold") rarely equals the filename ("Arial Rounded
+    Bold.ttf"), so compare on alphanumerics only with foundry/style noise
+    tokens stripped, and accept a match in either direction.
     """
 
     if not font_name:
@@ -226,14 +302,6 @@ def find_font(font_name):
         "C:/Windows/Fonts",
     ]
 
-    target = (
-        str(font_name)
-        .lower()
-        .replace(" ", "")
-        .replace("-", "")
-        .replace("_", "")
-    )
-
     for directory in directories:
 
         if not os.path.exists(
@@ -256,15 +324,7 @@ def find_font(font_name):
                 ):
                     continue
 
-                simplified = (
-                    filename
-                    .lower()
-                    .replace(" ", "")
-                    .replace("-", "")
-                    .replace("_", "")
-                )
-
-                if target in simplified:
+                if _font_name_matches(font_name, filename):
 
                     return os.path.join(
                         root,

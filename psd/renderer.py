@@ -177,99 +177,63 @@ def draw_replacement(
     )
 
     # =================================================
-    # CALCULATE TOTAL HEIGHT
+    # VERTICAL PLACEMENT
     # =================================================
     #
-    # Use the font's fixed ascent/descent metrics, not
-    # each line's tight ink bbox. Ink bbox height depends
-    # on which glyphs happen to be present (e.g. a "g"
-    # descender makes the box taller than "Breast" has),
-    # so centering off it shifts position per string. The
-    # font metrics are constant regardless of content, so
-    # vertical position stays put as the text is edited.
+    # layer.bbox is the tight ink box of the template's
+    # placeholder text, and every placeholder here starts
+    # with a capital, so bbox `top` is the cap line. Put
+    # the replacement's cap line there too and it lands
+    # where Photoshop drew the original.
+    #
+    # All measurements are font metrics (constant for a
+    # given font+size), never the replacement string's own
+    # ink bounds — so the position doesn't drift as the
+    # text is edited or when a line has/​lacks descenders.
 
     ascent, descent = font.getmetrics()
 
     line_height = ascent + descent
 
-    total_height = (
-        line_height * len(lines)
-        +
-        line_spacing * (
-            len(lines) - 1
-        )
-    )
+    # Distance from the drawn baseline up to the cap line,
+    # from the ink box of a capital H.
+    cap_box = font.getbbox("H")
+    cap_height = cap_box[3] - cap_box[1]
 
-    # =================================================
-    # CENTER VERTICALLY
-    # =================================================
+    first_baseline_y = top + cap_height
 
-    current_y = (
-        top +
-        (height - total_height) / 2
-    )
+    # PIL anchor: first char horizontal (l/m/r), second
+    # vertical — "s" = baseline.
+    if alignment == "center":
+        anchor = "ms"
+        anchor_x = left + width / 2
+    elif alignment == "right":
+        anchor = "rs"
+        anchor_x = right
+    else:
+        anchor = "ls"
+        anchor_x = left
 
     # =================================================
     # DRAW EACH LINE
     # =================================================
 
-    for line in lines:
+    for index, line in enumerate(lines):
 
-        bbox = draw.textbbox(
-            (0, 0),
-            line,
-            font=font,
+        baseline_y = (
+            first_baseline_y
+            + index * (line_height + line_spacing)
         )
-
-        text_width = (
-            bbox[2] -
-            bbox[0]
-        )
-
-        # ---------------------------------------------
-        # ALIGNMENT
-        # ---------------------------------------------
-
-        if alignment == "center":
-
-            x = (
-                left +
-                (width - text_width) / 2
-            )
-
-        elif alignment == "right":
-
-            x = (
-                right -
-                text_width
-            )
-
-        else:
-
-            x = left
-
-        # ---------------------------------------------
-        # DRAW
-        # ---------------------------------------------
-        #
-        # draw.text() anchors (x, y) on the ascender line
-        # by default, which is exactly what current_y
-        # already represents — only the horizontal ink
-        # offset needs compensating.
 
         draw.text(
             (
-                int(x - bbox[0]),
-                int(current_y),
+                int(anchor_x),
+                int(baseline_y),
             ),
             line,
             font=font,
             fill=text_color,
-        )
-
-        current_y += (
-            line_height +
-            line_spacing
+            anchor=anchor,
         )
 
 
