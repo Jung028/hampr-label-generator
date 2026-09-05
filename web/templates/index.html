@@ -124,10 +124,26 @@
     .viewer-controls button.print-btn:hover { background: #333; }
 
     #print-all-area { display: none; }
-    #print-all-area img { width: 100%; page-break-after: always; }
-    #print-all-area img:last-child { page-break-after: auto; }
+
+    /* Matches the EPSON TM-C3500 driver's configured die-cut label media
+       (Media Width 101.0mm / Media Length 73.0mm, Portrait) — this is a
+       hint some print destinations (e.g. an actual selected printer)
+       follow exactly. Others (notably Chrome's "Save as PDF") ignore it
+       and fall back to a Letter/A4 page, so every sizing rule below uses
+       percentages chained through an explicit-height ancestor (html/body
+       at 100%, i.e. exactly one page) rather than a fixed mm size or vh —
+       vh tracks the on-screen viewport, which some print/PDF pipelines
+       keep separate from the page format actually used, leaving the same
+       blank-space bug. Percentages resolved through the box's own
+       containing-block chain stay correct regardless of which page size
+       wins. */
+    @page {
+      size: 101mm 73mm;
+      margin: 0;
+    }
 
     @media print {
+      html, body { margin: 0; padding: 0; height: 100%; }
       body * { visibility: hidden; }
 
       #print-area, #print-area * { visibility: visible; }
@@ -136,6 +152,14 @@
         top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
+        padding: 0;
+        background: none;
+      }
+      #print-area img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
       /* When printing all labels, show the full-batch area instead of
@@ -154,6 +178,18 @@
         top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
+      }
+      #print-all-area img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+      #print-all-area img:last-child {
+        page-break-after: auto;
       }
     }
   </style>
@@ -210,9 +246,13 @@
         </div>
 
         <table>
-          <tr><th>Customer</th><th>Dish</th><th></th></tr>
+          <tr>
+            <th><input type="checkbox" id="select-all-checkbox" checked title="Select all"></th>
+            <th>Customer</th><th>Dish</th><th></th>
+          </tr>
           {% for gen in result.generated %}
             <tr>
+              <td><input type="checkbox" class="label-select" data-index="{{ loop.index0 }}" checked></td>
               <td>
                 {{ gen.customer_name }}
                 {% if gen.flags %}
@@ -235,12 +275,12 @@
         {% endif %}
 
         <div class="row">
-          <button type="button" class="print-btn" id="viewer-print-bottom">Print All ({{ result.generated|length }}) Labels</button>
+          <button type="button" class="print-btn" id="viewer-print-bottom">Print Selected ({{ result.generated|length }}) Labels</button>
         </div>
 
         <div id="print-all-area">
           {% for gen in result.generated %}
-            <img src="{{ gen.view_url }}" alt="{{ gen.customer_name }} - {{ gen.dish_label }}">
+            <img src="{{ gen.view_url }}" alt="{{ gen.customer_name }} - {{ gen.dish_label }}" data-index="{{ loop.index0 }}">
           {% endfor %}
         </div>
       </div>
@@ -318,12 +358,51 @@
       });
       printBtn.addEventListener("click", () => window.print());
 
+      const selectAllCheckbox = document.getElementById("select-all-checkbox");
+      const labelCheckboxes = Array.from(document.querySelectorAll(".label-select"));
+      const printAllImages = Array.from(document.querySelectorAll("#print-all-area img"));
+
+      function selectedIndexes() {
+        return labelCheckboxes.filter((cb) => cb.checked).map((cb) => Number(cb.dataset.index));
+      }
+
+      function updatePrintButtonLabel() {
+        printBtnBottom.textContent = `Print Selected (${selectedIndexes().length}) Labels`;
+      }
+
+      function syncSelectAllCheckbox() {
+        const total = labelCheckboxes.length;
+        const checkedCount = selectedIndexes().length;
+        selectAllCheckbox.checked = checkedCount === total;
+        selectAllCheckbox.indeterminate = checkedCount > 0 && checkedCount < total;
+      }
+
+      selectAllCheckbox.addEventListener("change", () => {
+        labelCheckboxes.forEach((cb) => { cb.checked = selectAllCheckbox.checked; });
+        selectAllCheckbox.indeterminate = false;
+        updatePrintButtonLabel();
+      });
+
+      labelCheckboxes.forEach((cb) => {
+        cb.addEventListener("change", () => {
+          syncSelectAllCheckbox();
+          updatePrintButtonLabel();
+        });
+      });
+
+      updatePrintButtonLabel();
+
       printBtnBottom.addEventListener("click", () => {
+        const selected = new Set(selectedIndexes());
+        printAllImages.forEach((img) => {
+          img.hidden = !selected.has(Number(img.dataset.index));
+        });
         document.body.classList.add("printing-all");
         window.print();
       });
       window.addEventListener("afterprint", () => {
         document.body.classList.remove("printing-all");
+        printAllImages.forEach((img) => { img.hidden = false; });
       });
 
       document.addEventListener("keydown", (e) => {

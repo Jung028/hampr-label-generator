@@ -30,6 +30,13 @@ RUNS_DIR = os.path.join(generate_labels.OUTPUT_DIR, "runs")
 
 app = Flask(__name__)
 
+# Order-detail responses (pasted whole into the response_json textarea, a
+# multipart form field) can run well past Werkzeug's 500KB default form
+# memory cap, which otherwise fails the request with a 413 before our own
+# JSON-size handling ever runs.
+app.config["MAX_FORM_MEMORY_SIZE"] = 50 * 1024 * 1024
+app.config["MAX_CONTENT_LENGTH"] = 50 * 1024 * 1024
+
 
 def _safe_run_id(order_id):
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")

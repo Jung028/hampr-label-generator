@@ -141,6 +141,26 @@ def _protein_choice(options):
     return choice
 
 
+def _parse_name_choice(choice_name):
+    """
+    Parse a "Special instructions" choice repurposed to carry the
+    attendee's name, optionally followed by a free-text comment on its
+    own line (e.g. "Name: John Hollister\nComment: no rice"), into
+    (name, comment). comment is "" when the choice carries no comment
+    line.
+    """
+
+    text = choice_name[len("Name:"):].strip()
+    name_part, _, rest = text.partition("\n")
+
+    comment = ""
+    rest = rest.strip()
+    if rest.startswith("Comment:"):
+        comment = rest[len("Comment:"):].strip()
+
+    return name_part.strip(), comment
+
+
 def _find_special_instructions_layer(layer_by_name):
     # Each template's special-instructions layer ships with its own
     # example placeholder text baked into its PSD name (e.g. "Special
@@ -164,7 +184,7 @@ def _apply_special_instructions(layer_by_name, text_layers, special_instructions
         text_layers.append({
             "layer": layer,
             "original_text": layer.text,
-            "replacement": special_instructions,
+            "replacement": f"Special Instructions: {special_instructions}",
         })
 
 
@@ -267,6 +287,10 @@ def _resolve_wonton_noodle_soup(order):
     return "10a.WontonNoodleSoup.psd", "Wonton Noodle Soup", None
 
 
+def _resolve_har_mee(order):
+    return "26a.HarMee.psd", "Har Mee", None
+
+
 def _resolve_vegan_char_kway_teow(order):
     return "7b.CharKwayTeow_Vegan.psd", "Char Kway Teow", "Vegan"
 
@@ -309,6 +333,45 @@ def _resolve_laksa(order):
     return "8a.Laksa.psd", "Laksa", protein
 
 
+def _resolve_vegan_mee_goreng(order):
+    return "6bMeeGoreng_Vegan.psd", "Mee Goreng", "Vegan"
+
+
+def _resolve_tofu_salad(order):
+    return "3d.TofuSalad.psd", "Tofu Salad", None
+
+
+def _resolve_spring_roll(order):
+    return "23a.Spring Roll.psd", "Spring Roll", None
+
+
+def _resolve_stir_fried_mixed_vegetables(order):
+    return "24d. VegetablesStir-fry.psd", "Stir-fried Mixed Vegetables", None
+
+
+def _resolve_tofu_broccoli_garlic_sauce(order):
+    return "24e. TofuBroccoliwithGarlicSauce.psd", "Tofu & Broccoli with Garlic Sauce", None
+
+
+def _resolve_curry_vegetable(order):
+    return "19a.Curry Vege.psd", "Curry Vegetable", None
+
+
+def _resolve_curry_fish(order):
+    return "19b.Curry Fish.psd", "Curry Fish", None
+
+
+def _resolve_satay_chicken_salad(order):
+    return "3b.ChickenSataySalad.psd", "Satay Chicken Salad", None
+
+
+def _resolve_laksa_prawn(order):
+    # Same base template as the plain "Laksa" item — here the protein is
+    # baked into the item name itself rather than chosen via an Options
+    # rule, so it's a fixed "Prawn" variant rather than _protein_choice().
+    return "8a.Laksa.psd", "Laksa", "Prawn"
+
+
 DISH_RESOLVERS = {
     "Hainanese Chicken with Steamed Rice": _resolve_hainan_chicken,
     "Beef Rendang with Jasmine Rice": _resolve_beef_rendang_rice,
@@ -316,6 +379,7 @@ DISH_RESOLVERS = {
     "Chicken Curry with Jasmine Rice": _resolve_curry_chicken_rice,
     "Ipoh Hor Fun": _resolve_ipoh_hor_fun,
     "Wonton Noodle Soup": _resolve_wonton_noodle_soup,
+    "Har Mee": _resolve_har_mee,
     "Vegan Ipoh Char Kway Teow": _resolve_vegan_char_kway_teow,
     "Ipoh Char Kway Teow": _resolve_ipoh_char_kway_teow,
     "Mee Goreng": _resolve_mee_goreng,
@@ -323,6 +387,15 @@ DISH_RESOLVERS = {
     "Wat Tan Hor (Kway Teow Siram)": _resolve_wat_tan_hor,
     "Nasi Lemak": _resolve_nasi_lemak,
     "Laksa": _resolve_laksa,
+    "Vegan Mee Goreng": _resolve_vegan_mee_goreng,
+    "Tofu Salad": _resolve_tofu_salad,
+    "Spring Roll": _resolve_spring_roll,
+    "Stir-fried Mixed Vegetables": _resolve_stir_fried_mixed_vegetables,
+    "Tofu & Broccoli with Garlic Sauce": _resolve_tofu_broccoli_garlic_sauce,
+    "Curry Vegetable": _resolve_curry_vegetable,
+    "Curry Fish": _resolve_curry_fish,
+    "Satay Chicken Salad": _resolve_satay_chicken_salad,
+    "Laksa Prawn": _resolve_laksa_prawn,
 }
 
 
@@ -352,17 +425,24 @@ def parse_orders(data):
     `configs` entry. Within a config, choices are grouped by rule:
     "Options" holds protein/variant selections, and — in this response
     shape — "Special instructions" is repurposed to carry the
-    attendee's name as a "Name: <name>" choice rather than free text.
+    attendee's name as a "Name: <name>" choice, optionally followed by a
+    "Comment: <text>" line carrying an actual free-text instruction
+    (e.g. "Name: John Hollister\nComment: no rice") rather than the
+    hand-typed ORDERS shape's plain special_instructions string.
     """
 
     orders = []
 
     for item in data["purchaseContentDetails"]["items"]:
-        dish_name = item["item"]["name"]
+        # Source data occasionally carries a stray trailing space on the
+        # item name (e.g. "Vegan Mee Goreng "), which would otherwise look
+        # like a distinct, unhandled dish to DISH_RESOLVERS.
+        dish_name = item["item"]["name"].strip()
 
         for config in item["configs"]:
             options = []
             customer_name = ""
+            special_instructions = ""
 
             for rule in config["config"]:
                 choice_names = [c["name"] for c in rule["selectedChoices"]]
@@ -372,13 +452,17 @@ def parse_orders(data):
                 elif rule["ruleName"] == "Special instructions":
                     for choice_name in choice_names:
                         if choice_name.startswith("Name:"):
-                            customer_name = choice_name[len("Name:"):].strip()
+                            customer_name, special_instructions = _parse_name_choice(choice_name)
+                        elif choice_name.startswith("Comment:"):
+                            # A shared/bulk config (e.g. an 80-portion tray)
+                            # carries a comment with no attendee name at all.
+                            special_instructions = choice_name[len("Comment:"):].strip()
 
             orders.append({
                 "customer_name": customer_name,
                 "dish_name": dish_name,
                 "options": options,
-                "special_instructions": "",
+                "special_instructions": special_instructions,
             })
 
     return orders
@@ -431,6 +515,8 @@ def process_orders(orders, output_dir=None):
         })
 
         flags = name_review_flags(order["customer_name"])
+        if order["special_instructions"]:
+            flags = flags + [f"special instructions: {order['special_instructions']}"]
         if flags:
             result["review_needed"].append({
                 "customer_name": order["customer_name"],
