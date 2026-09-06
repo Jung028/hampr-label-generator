@@ -138,7 +138,59 @@ def _protein_choice(options):
     if choice.lower() == "combination":
         choice = "Combo"
 
+    # Longer vegetarian/vegan descriptive phrases (e.g. "Gluten Free &
+    # Vegetarian", "Vegetable, Egg & Tofu") also overflow the band, and
+    # the dish-resolver template routing (see _resolve_protein_line_psd)
+    # keys off these same two category words — normalize to one of them
+    # so the printed label and the template choice always agree.
+    lowered = choice.lower()
+    if "vegan" in lowered:
+        choice = "Vegan"
+    elif "vegetarian" in lowered or "vegetable" in lowered:
+        choice = "Vegetable"
+    elif "," in choice:
+        # Any other multi-ingredient combo choice — the first ingredient
+        # alone is enough to identify the variant.
+        choice = choice.split(",")[0].strip()
+
     return choice
+
+
+# Crustaceans (shellfish) icon rules — see docs/ALLERGEN_RULES.md for the
+# full writeup of why each dish is grouped the way it is.
+#
+# Mee Goreng's sauce is sambal-based (sambal is made with shrimp paste),
+# so every protein variant contains shellfish regardless of what protein
+# was actually chosen — unless the order explicitly leaves the
+# prawn/shrimp out, which means the sambal itself was left out too.
+_SAMBAL_BASED_DISHES = {"Mee Goreng"}
+
+# Char Kway Teow, Nasi Goreng and Wat Tan Hor ("Kway Teow Siram") use a
+# soy-sauce base with no sambal — Crustaceans here reflects only whether
+# the chosen protein is itself a shellfish (prawn/seafood/combo).
+_SOY_SAUCE_BASED_DISHES = {"Char Kway Teow", "Nasi Goreng", "Kway Teow Siram"}
+
+# The rules above only apply to the "meat line" protein choices; a
+# vegetable/vegan/tofu variant already has its own dedicated template
+# with the correct facts baked in and must be left untouched.
+_MEAT_LINE_PROTEIN_KEYWORDS = ("chicken", "beef", "prawn", "seafood", "combo")
+
+_SHELLFISH_PROTEIN_KEYWORDS = ("prawn", "seafood", "combo")
+
+
+def _is_meat_line_protein(protein):
+    protein = protein.lower()
+    return any(k in protein for k in _MEAT_LINE_PROTEIN_KEYWORDS)
+
+
+def _protein_is_shellfish(protein):
+    protein = protein.lower()
+    return any(k in protein for k in _SHELLFISH_PROTEIN_KEYWORDS)
+
+
+def _mentions(text, *phrases):
+    text = text.lower()
+    return any(phrase in text for phrase in phrases)
 
 
 def _parse_name_choice(choice_name):
@@ -161,6 +213,27 @@ def _parse_name_choice(choice_name):
     return name_part.strip(), comment
 
 
+_CAPS_RUN_RE = re.compile(r"[A-Z]{2,}")
+
+
+def _clean_name_word(word):
+    # Fix obvious case artifacts from however the customer typed their
+    # name into the order form: ALL CAPS, all lowercase, or a caps-lock
+    # run stuck onto part of a word (e.g. "siVARAJAH"). Leave a word
+    # alone if it's already a plausible mixed-case name (e.g. "McDonald",
+    # "O'Brien") — those only ever have a single embedded capital, never
+    # a run of two or more, so they never match here.
+    if not word.isalpha():
+        return word
+    if word.isupper() or word.islower() or _CAPS_RUN_RE.search(word):
+        return word.capitalize()
+    return word
+
+
+def normalize_customer_name(name):
+    return " ".join(_clean_name_word(w) for w in name.split(" "))
+
+
 def _find_special_instructions_layer(layer_by_name):
     # Each template's special-instructions layer ships with its own
     # example placeholder text baked into its PSD name (e.g. "Special
@@ -172,7 +245,18 @@ def _find_special_instructions_layer(layer_by_name):
     return None
 
 
-def _apply_special_instructions(layer_by_name, text_layers, special_instructions):
+def _find_layer_below(all_layers, reference_layer):
+    _, _, _, ref_bottom = reference_layer.bbox
+    candidates = [
+        layer for layer in all_layers
+        if layer is not reference_layer and layer.bbox[1] >= ref_bottom
+    ]
+    if not candidates:
+        return None
+    return min(candidates, key=lambda layer: layer.bbox[1])
+
+
+def _apply_special_instructions(psd, layer_by_name, text_layers, special_instructions):
     layer = _find_special_instructions_layer(layer_by_name)
     if layer is None:
         return
@@ -181,10 +265,18 @@ def _apply_special_instructions(layer_by_name, text_layers, special_instructions
     layer.visible = bool(special_instructions)
 
     if special_instructions:
+        # A long comment (e.g. an allergy note) would otherwise run off
+        # both edges of the layer's own placeholder-sized text box — cap
+        # it at whatever sits directly below (e.g. the allergen icon
+        # row) so the renderer knows how far it's allowed to wrap.
+        next_layer = _find_layer_below(psd.descendants(), layer)
+        max_bottom = int(next_layer.bbox[1]) - 6 if next_layer is not None else None
+
         text_layers.append({
             "layer": layer,
             "original_text": layer.text,
             "replacement": f"Special Instructions: {special_instructions}",
+            "max_bottom": max_bottom,
         })
 
 
@@ -239,18 +331,44 @@ def generate_label(order, psd_filename, dish_label, variant_suffix, output_dir=N
     }]
 
     _apply_customer_name(psd, dish_layer, text_layers, order["customer_name"])
-    _apply_special_instructions(layer_by_name, text_layers, order["special_instructions"])
+    _apply_special_instructions(psd, layer_by_name, text_layers, order["special_instructions"])
 
     # GlutenFreeLogo defaults vary per template — some dishes (e.g. Beef
     # Rendang Rice) are gluten-free as a fixed fact and ship with the
     # layer already visible; others ship it hidden because it's a
     # genuine per-order customer choice. Either way, an explicit
-    # "Gluten Free" selection should always turn it on; nothing should
-    # ever force it off, since that could hide a fact the template
-    # author baked in on purpose.
+    # "Gluten Free" selection — via the Options rule or typed into the
+    # special-instructions comment (e.g. "gluten free please") — should
+    # always turn it on; nothing should ever force it off, since that
+    # could hide a fact the template author baked in on purpose.
     gluten_free_layer = layer_by_name.get("GlutenFreeLogo")
-    if gluten_free_layer is not None and _has_option(order["options"], "gluten free"):
+    wants_gluten_free = (
+        _has_option(order["options"], "gluten free")
+        or "gluten free" in order["special_instructions"].lower()
+    )
+    if gluten_free_layer is not None and wants_gluten_free:
         gluten_free_layer.visible = True
+
+    # Crustaceans (shellfish) icon — only touched for the meat-line
+    # protein choices of the four dishes below; a vegetable/vegan/tofu
+    # variant keeps whatever its own dedicated template already has
+    # baked in. See docs/ALLERGEN_RULES.md for the reasoning.
+    crustaceans_layer = layer_by_name.get("Crustaceans Icon")
+    protein = variant_suffix or ""
+    if crustaceans_layer is not None and _is_meat_line_protein(protein):
+        if dish_label in _SAMBAL_BASED_DISHES:
+            crustaceans_layer.visible = not _mentions(
+                order["special_instructions"], "no prawn", "no shrimp"
+            )
+        elif dish_label in _SOY_SAUCE_BASED_DISHES:
+            crustaceans_layer.visible = _protein_is_shellfish(protein)
+
+    # Eggs icon: an explicit "no egg" instruction always removes it,
+    # regardless of dish. Only ever turns it off, never on — the
+    # template's own default stands otherwise.
+    egg_layer = layer_by_name.get("Egg Icon")
+    if egg_layer is not None and _mentions(order["special_instructions"], "no egg"):
+        egg_layer.visible = False
 
     image = render_psd(psd, text_layers)
 
@@ -259,6 +377,21 @@ def generate_label(order, psd_filename, dish_label, variant_suffix, output_dir=N
     out_path = os.path.join(output_dir, out_name)
     export_png(image, out_path)
     return out_path
+
+
+def _resolve_protein_line_psd(protein, vege_psd, vegan_psd, meat_psd):
+    # Ipoh Char Kway Teow, Mee Goreng, and Nasi Goreng are each one menu
+    # item whose protein option can be a meat/prawn choice, a vegetarian
+    # choice, or a vegan choice — each of the three has its own
+    # dedicated template with the correct allergen facts baked in, so
+    # the resolver must route by protein rather than always using one
+    # template for every choice.
+    protein_lower = protein.lower()
+    if "vegan" in protein_lower:
+        return vegan_psd
+    if "vegetable" in protein_lower or "vegetarian" in protein_lower:
+        return vege_psd
+    return meat_psd
 
 
 def _resolve_hainan_chicken(order):
@@ -296,18 +429,44 @@ def _resolve_vegan_char_kway_teow(order):
 
 
 def _resolve_ipoh_char_kway_teow(order):
-    # This order's dish data only ever carries meat proteins (Chicken,
-    # Beef, Combination) for the non-vegan "Ipoh Char Kway Teow" item —
-    # the Vege template variant exists but has no observed trigger yet.
-    return "7c.CharKwayTeow_Meat.psd", "Char Kway Teow", _protein_choice(order["options"])
+    protein = _protein_choice(order["options"])
+    # A vegetarian or vegan protein choice carries its own allergen facts
+    # (no shellfish, and vegetarian/vegan/gluten-free facts) baked into a
+    # dedicated template — using the meat template for it would wrongly
+    # claim "Contains Crustaceans" and drop those other icons. This
+    # matters even when the order also asks (in a comment) to add a meat
+    # protein on top — e.g. a shellfish-allergy customer ordering the
+    # vegetarian option and asking the kitchen to add chicken still needs
+    # the vegetarian template's "no shellfish" fact on the printed label.
+    psd_filename = _resolve_protein_line_psd(
+        protein,
+        vege_psd="7a.CharKwayTeow_Vege.psd",
+        vegan_psd="7b.CharKwayTeow_Vegan.psd",
+        meat_psd="7c.CharKwayTeow_Meat.psd",
+    )
+    return psd_filename, "Char Kway Teow", protein
 
 
 def _resolve_mee_goreng(order):
-    return "6c.MeeGoreng_Meat.psd", "Mee Goreng", _protein_choice(order["options"])
+    protein = _protein_choice(order["options"])
+    psd_filename = _resolve_protein_line_psd(
+        protein,
+        vege_psd="6a.MeeGoreng_Vege.psd",
+        vegan_psd="6bMeeGoreng_Vegan.psd",
+        meat_psd="6c.MeeGoreng_Meat.psd",
+    )
+    return psd_filename, "Mee Goreng", protein
 
 
 def _resolve_nasi_goreng(order):
-    return "5c.NasiGoreng_Meat.psd", "Nasi Goreng", _protein_choice(order["options"])
+    protein = _protein_choice(order["options"])
+    psd_filename = _resolve_protein_line_psd(
+        protein,
+        vege_psd="5a.NasiGoreng_Vege.psd",
+        vegan_psd="5b.NasiGoreng_Vegan.psd",
+        meat_psd="5c.NasiGoreng_Meat.psd",
+    )
+    return psd_filename, "Nasi Goreng", protein
 
 
 def _resolve_wat_tan_hor(order):
@@ -440,6 +599,15 @@ def parse_orders(data):
         dish_name = item["item"]["name"].strip()
 
         for config in item["configs"]:
+            if "config" not in config:
+                # A bulk/tray line ordered by quantity alone (e.g. "3x
+                # Beef Rendang Platter" for the whole order) — just a
+                # cost/quantity record, no per-attendee choices to parse.
+                # Skip it rather than crash the whole order over one
+                # line neither this parser nor any dish resolver yet
+                # knows how to handle.
+                continue
+
             options = []
             customer_name = ""
             special_instructions = ""
@@ -448,7 +616,16 @@ def parse_orders(data):
                 choice_names = [c["name"] for c in rule["selectedChoices"]]
 
                 if rule["ruleName"] == "Options":
-                    options.extend(choice_names)
+                    for choice_name in choice_names:
+                        # Some menus carry a redundant copy of the
+                        # item's own name at the front of the option
+                        # text (e.g. "Ipoh Char Kway Teow Beef", "Mee
+                        # Goreng Chicken") instead of just "Beef" —
+                        # strip it so protein parsing sees the same
+                        # short form as every other order.
+                        if choice_name.lower().startswith(dish_name.lower()):
+                            choice_name = choice_name[len(dish_name):].strip()
+                        options.append(choice_name)
                 elif rule["ruleName"] == "Special instructions":
                     for choice_name in choice_names:
                         if choice_name.startswith("Name:"):
@@ -459,7 +636,7 @@ def parse_orders(data):
                             special_instructions = choice_name[len("Comment:"):].strip()
 
             orders.append({
-                "customer_name": customer_name,
+                "customer_name": normalize_customer_name(customer_name),
                 "dish_name": dish_name,
                 "options": options,
                 "special_instructions": special_instructions,

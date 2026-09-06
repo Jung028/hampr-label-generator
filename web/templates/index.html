@@ -12,6 +12,7 @@
       padding: 0 20px;
       color: #1a1a1a;
     }
+    body.has-results { max-width: 1180px; }
     h1 { font-size: 1.4rem; margin-bottom: 4px; }
     p.subtitle { color: #666; margin-top: 0; }
     textarea {
@@ -89,6 +90,73 @@
     .tab-panel { padding-top: 16px; }
     .total-dishes { font-size: 0.95rem; margin-top: 12px; }
 
+    .viewer-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .viewer-layout .viewer { flex: 1 1 auto; min-width: 0; }
+
+    .label-nav {
+      flex: 0 0 300px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      margin: 16px 0 28px;
+      max-height: 640px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .label-nav-header {
+      padding: 10px 12px;
+      border-bottom: 1px solid #eee;
+      font-size: 0.85rem;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .label-nav-list { overflow-y: auto; flex: 1 1 auto; }
+    .label-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-bottom: 1px solid #f2f2f2;
+      cursor: pointer;
+    }
+    .label-nav-item:hover { background: #f7f7f7; }
+    .label-nav-item.active { background: #fdecdc; }
+    .label-nav-num {
+      color: #999;
+      font-size: 0.75rem;
+      width: 1.8em;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .label-nav-info { flex: 1 1 auto; min-width: 0; }
+    .label-nav-name {
+      display: block;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .label-nav-dish {
+      display: block;
+      font-size: 0.78rem;
+      color: #888;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .label-nav-flag { color: #b45309; }
+
+    @media (max-width: 860px) {
+      .viewer-layout { flex-direction: column; }
+      .label-nav { flex: 1 1 auto; width: 100%; max-height: 360px; }
+    }
+
     .viewer {
       border: 1px solid #eee;
       border-radius: 8px;
@@ -98,6 +166,16 @@
     }
     .viewer-caption { margin-bottom: 10px; }
     .viewer-caption .position { color: #888; font-size: 0.8rem; }
+    .viewer-caption .position input[type="number"] {
+      width: 3.5em;
+      font-size: 0.8rem;
+      color: #888;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 1px 4px;
+      text-align: center;
+      -moz-appearance: textfield;
+    }
     .viewer-caption .who { font-size: 1.05rem; font-weight: 600; }
     .viewer-caption .review-flag { color: #b45309; font-size: 0.85rem; margin-top: 2px; }
     .viewer-image-wrap {
@@ -105,7 +183,14 @@
       border-radius: 6px;
       padding: 12px;
     }
-    #viewer-image { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+    #viewer-image {
+      max-width: 100%;
+      max-height: 60vh;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
     .viewer-controls {
       display: flex;
       justify-content: center;
@@ -194,7 +279,7 @@
     }
   </style>
 </head>
-<body>
+<body{% if result %} class="has-results"{% endif %}>
   <h1>Hampr Label Generator</h1>
   <p class="subtitle">Paste a captured order-detail API response and generate print-ready labels.</p>
 
@@ -229,41 +314,47 @@
       </div>
 
       <div id="tab-panel-labels" class="tab-panel">
-        <div class="viewer">
-          <div class="viewer-caption">
-            <div class="position">Label <span id="viewer-index">1</span> of {{ result.generated|length }}</div>
-            <div class="who" id="viewer-who"></div>
-            <div class="review-flag" id="viewer-flags"></div>
+        <div class="viewer-layout">
+          <div class="viewer">
+            <div class="viewer-caption">
+              <div class="position">Label <input type="number" id="viewer-index" min="1" max="{{ result.generated|length }}" value="1"> of {{ result.generated|length }}</div>
+              <div class="who" id="viewer-who"></div>
+              <div class="review-flag" id="viewer-flags"></div>
+            </div>
+            <div class="viewer-image-wrap" id="print-area">
+              <img id="viewer-image" alt="Label preview">
+            </div>
+            <div class="viewer-controls">
+              <button type="button" class="nav" id="viewer-prev">&larr; Previous</button>
+              <button type="button" class="print-btn" id="viewer-print">Print This Label</button>
+              <button type="button" class="nav" id="viewer-next">Next &rarr;</button>
+            </div>
           </div>
-          <div class="viewer-image-wrap" id="print-area">
-            <img id="viewer-image" alt="Label preview">
-          </div>
-          <div class="viewer-controls">
-            <button type="button" class="nav" id="viewer-prev">&larr; Previous</button>
-            <button type="button" class="print-btn" id="viewer-print">Print This Label</button>
-            <button type="button" class="nav" id="viewer-next">Next &rarr;</button>
+
+          <div class="label-nav" id="label-nav">
+            <div class="label-nav-header">
+              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" id="select-all-checkbox" checked title="Select all">
+                Select all
+              </label>
+            </div>
+            <div class="label-nav-list" id="label-nav-list">
+              {% for gen in result.generated %}
+                <div class="label-nav-item" data-index="{{ loop.index0 }}">
+                  <input type="checkbox" class="label-select" data-index="{{ loop.index0 }}" checked>
+                  <span class="label-nav-num">{{ loop.index }}</span>
+                  <span class="label-nav-info">
+                    <span class="label-nav-name">
+                      {{ gen.customer_name }}
+                      {% if gen.flags %}<span class="label-nav-flag">&#9888;</span>{% endif %}
+                    </span>
+                    <span class="label-nav-dish">{{ gen.dish_label }}</span>
+                  </span>
+                </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
-
-        <table>
-          <tr>
-            <th><input type="checkbox" id="select-all-checkbox" checked title="Select all"></th>
-            <th>Customer</th><th>Dish</th><th></th>
-          </tr>
-          {% for gen in result.generated %}
-            <tr>
-              <td><input type="checkbox" class="label-select" data-index="{{ loop.index0 }}" checked></td>
-              <td>
-                {{ gen.customer_name }}
-                {% if gen.flags %}
-                  <div class="review-flag">&#9888; {{ gen.flags|join(', ') }}</div>
-                {% endif %}
-              </td>
-              <td>{{ gen.dish_label }}</td>
-              <td><a href="{{ url_for('download', run_id=run_id, filename=gen.filename) }}">Download</a></td>
-            </tr>
-          {% endfor %}
-        </table>
 
         {% if result.skipped %}
           <p><strong>Skipped &mdash; no template handler yet:</strong></p>
@@ -343,11 +434,29 @@
         const label = labels[current];
         img.src = label.view_url;
         img.alt = label.customer_name + " - " + label.dish_label;
-        indexEl.textContent = current + 1;
+        indexEl.value = current + 1;
         whoEl.textContent = label.customer_name + " — " + label.dish_label;
         flagsEl.textContent = label.flags.length ? "⚠ " + label.flags.join(", ") : "";
         prevBtn.disabled = current === 0;
         nextBtn.disabled = current === labels.length - 1;
+        highlightActiveNavItem();
+      }
+
+      const labelNavItems = Array.from(document.querySelectorAll(".label-nav-item"));
+      labelNavItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          if (e.target.closest(".label-select")) return;
+          current = Number(item.dataset.index);
+          render();
+        });
+      });
+
+      function highlightActiveNavItem() {
+        labelNavItems.forEach((item) => {
+          item.classList.toggle("active", Number(item.dataset.index) === current);
+        });
+        const activeItem = labelNavItems[current];
+        if (activeItem) activeItem.scrollIntoView({ block: "nearest" });
       }
 
       prevBtn.addEventListener("click", () => {
@@ -357,6 +466,22 @@
         if (current < labels.length - 1) { current += 1; render(); }
       });
       printBtn.addEventListener("click", () => window.print());
+
+      function jumpToTypedIndex() {
+        const wanted = parseInt(indexEl.value, 10);
+        if (Number.isInteger(wanted) && wanted >= 1 && wanted <= labels.length) {
+          current = wanted - 1;
+        }
+        render();
+      }
+      indexEl.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          jumpToTypedIndex();
+          indexEl.blur();
+        }
+      });
+      indexEl.addEventListener("blur", jumpToTypedIndex);
 
       const selectAllCheckbox = document.getElementById("select-all-checkbox");
       const labelCheckboxes = Array.from(document.querySelectorAll(".label-select"));
@@ -406,6 +531,7 @@
       });
 
       document.addEventListener("keydown", (e) => {
+        if (e.target === indexEl) return;
         if (e.key === "ArrowLeft") prevBtn.click();
         if (e.key === "ArrowRight") nextBtn.click();
       });

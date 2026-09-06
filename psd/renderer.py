@@ -11,6 +11,95 @@ from psd.text import (
 )
 
 
+def _wrap_to_width(line, font, max_width):
+    words = line.split(" ")
+
+    if not words:
+        return [line]
+
+    wrapped = [words[0]]
+
+    for word in words[1:]:
+
+        candidate = f"{wrapped[-1]} {word}"
+
+        if font.getlength(candidate) <= max_width:
+            wrapped[-1] = candidate
+        else:
+            wrapped.append(word)
+
+    return wrapped
+
+
+def _wrap_text(text, font, max_width):
+    # Word-wrap each existing line independently, so an explicit line
+    # break the caller already chose is preserved rather than merged
+    # into the paragraph.
+    lines = []
+
+    for line in text.split("\n"):
+        lines.extend(_wrap_to_width(line, font, max_width))
+
+    return lines
+
+
+def _block_fits(num_lines, font, top, max_bottom):
+    if max_bottom is None:
+        return True
+
+    cap_box = font.getbbox("H")
+    cap_height = cap_box[3] - cap_box[1]
+
+    ascent, descent = font.getmetrics()
+    line_height = ascent + descent
+    line_spacing = int(font.size * 1.2)
+
+    first_baseline_y = top + cap_height
+    last_baseline_y = first_baseline_y + (num_lines - 1) * (line_height + line_spacing)
+
+    return last_baseline_y + descent <= max_bottom
+
+
+def fit_text_to_box(text, font_path, base_font_size, width, top, max_bottom):
+    """
+    Word-wrap `text` to `width`, shrinking the font size step by step if
+    the wrapped block would otherwise run past `max_bottom` (the top of
+    whatever sits below this layer in the template, e.g. the allergen
+    icon row) — rather than the single long line this layer draws by
+    default, which just runs off both edges once the text is longer than
+    a short placeholder comment. Falls back to truncating the last line
+    with an ellipsis if even the smallest readable size doesn't fit.
+    Returns (font, lines).
+    """
+
+    min_font_size = max(14, int(base_font_size * 0.5))
+
+    for font_size in range(base_font_size, min_font_size - 1, -1):
+
+        font = load_font(font_path, font_size)
+        lines = _wrap_text(text, font, width)
+
+        if _block_fits(len(lines), font, top, max_bottom):
+            return font, lines
+
+    font = load_font(font_path, min_font_size)
+    lines = _wrap_text(text, font, width)
+
+    max_lines = 1
+    while max_lines < len(lines) and _block_fits(max_lines + 1, font, top, max_bottom):
+        max_lines += 1
+
+    kept = lines[:max_lines]
+
+    if len(kept) < len(lines):
+        last = kept[-1]
+        while font.getlength(last + "…") > width and " " in last:
+            last = last.rsplit(" ", 1)[0]
+        kept[-1] = last + "…"
+
+    return font, kept
+
+
 def render_psd(
     psd,
     text_layers,
@@ -164,16 +253,37 @@ def draw_replacement(
     # SPLIT INTO LINES
     # =================================================
     #
-    # Font stays at the original PSD size regardless of
-    # how the replacement text compares to the original.
+    # Font stays at the original PSD size regardless of how the
+    # replacement text compares to the original — UNLESS the caller
+    # opted in with "max_bottom" (currently just the special-instructions
+    # layer), in which case a long comment is word-wrapped, shrinking the
+    # font if needed, rather than running off the sides or down into
+    # whatever sits below it in the template (e.g. the allergen icons).
     #
 
-    lines = replacement.split(
-        "\n"
+    max_bottom = data.get(
+        "max_bottom"
     )
 
+    if max_bottom is not None:
+
+        font, lines = fit_text_to_box(
+            replacement,
+            font_path,
+            font_size,
+            width,
+            top,
+            max_bottom,
+        )
+
+    else:
+
+        lines = replacement.split(
+            "\n"
+        )
+
     line_spacing = int(
-        font_size * 1.2
+        font.size * 1.2
     )
 
     # =================================================

@@ -121,8 +121,12 @@ def generate():
 
 @app.route("/download/<run_id>/<filename>")
 def download(run_id, filename):
+    # Not run through secure_filename: that strips accented letters (e.g.
+    # "ñ" -> "n"), which no longer matches a saved file for a customer
+    # name like "Bañuelos" and 404s. send_from_directory already blocks
+    # path traversal on its own, so this is safe without it.
     run_dir = _run_dir(run_id)
-    return send_from_directory(run_dir, secure_filename(filename), as_attachment=True)
+    return send_from_directory(run_dir, filename, as_attachment=True)
 
 
 @app.route("/view/<run_id>/<filename>")
@@ -131,7 +135,7 @@ def view(run_id, filename):
     # attachment) so it can be used as an <img src> in the one-by-one
     # review viewer instead of triggering a browser download prompt.
     run_dir = _run_dir(run_id)
-    return send_from_directory(run_dir, secure_filename(filename), as_attachment=False)
+    return send_from_directory(run_dir, filename, as_attachment=False)
 
 
 @app.route("/download-zip/<run_id>")
