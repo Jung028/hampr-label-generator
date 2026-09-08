@@ -129,3 +129,8 @@ python3 generate_labels.py
 '''python
 .venv-1/bin/python web/app.py
 '''
+
+Windows 
+'''python
+.\.venv\Scripts\python.exe web\app.py
+'''
