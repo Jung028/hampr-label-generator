@@ -60,30 +60,30 @@ def _block_fits(num_lines, font, top, max_bottom):
     return last_baseline_y + descent <= max_bottom
 
 
-def fit_text_to_box(text, font_path, base_font_size, width, top, max_bottom):
+def fit_text_to_box(text, font_path, base_font_size, width, top, max_bottom, short_text=None):
     """
-    Word-wrap `text` to `width`, shrinking the font size step by step if
-    the wrapped block would otherwise run past `max_bottom` (the top of
-    whatever sits below this layer in the template, e.g. the allergen
-    icon row) — rather than the single long line this layer draws by
-    default, which just runs off both edges once the text is longer than
-    a short placeholder comment. Falls back to truncating the last line
-    with an ellipsis if even the smallest readable size doesn't fit.
+    Word-wrap `text` to `width` at a fixed `base_font_size` — the font
+    never shrinks, so the label stays as legible as any short comment.
+    If the full text doesn't fit above `max_bottom` (the top of whatever
+    sits below this layer in the template, e.g. the allergen icon row)
+    and the caller supplied a `short_text` fallback (a shortened,
+    business-logic-chosen version of the same content), that is tried
+    next, still at the same size. If nothing fits, the last line is
+    truncated with an ellipsis, still at the same size.
     Returns (font, lines).
     """
 
-    min_font_size = max(14, int(base_font_size * 0.5))
+    font = load_font(font_path, base_font_size)
 
-    for font_size in range(base_font_size, min_font_size - 1, -1):
-
-        font = load_font(font_path, font_size)
-        lines = _wrap_text(text, font, width)
-
-        if _block_fits(len(lines), font, top, max_bottom):
-            return font, lines
-
-    font = load_font(font_path, min_font_size)
     lines = _wrap_text(text, font, width)
+    if _block_fits(len(lines), font, top, max_bottom):
+        return font, lines
+
+    if short_text is not None:
+        short_lines = _wrap_text(short_text, font, width)
+        if _block_fits(len(short_lines), font, top, max_bottom):
+            return font, short_lines
+        lines = short_lines
 
     max_lines = 1
     while max_lines < len(lines) and _block_fits(max_lines + 1, font, top, max_bottom):
@@ -256,9 +256,10 @@ def draw_replacement(
     # Font stays at the original PSD size regardless of how the
     # replacement text compares to the original — UNLESS the caller
     # opted in with "max_bottom" (currently just the special-instructions
-    # layer), in which case a long comment is word-wrapped, shrinking the
-    # font if needed, rather than running off the sides or down into
-    # whatever sits below it in the template (e.g. the allergen icons).
+    # layer), in which case a long comment is word-wrapped at that same
+    # fixed size, and shortened to its key phrase if it still doesn't
+    # fit, rather than running off the sides or down into whatever sits
+    # below it in the template (e.g. the allergen icons).
     #
 
     max_bottom = data.get(
@@ -274,6 +275,7 @@ def draw_replacement(
             width,
             top,
             max_bottom,
+            short_text=data.get("replacement_short"),
         )
 
     else:

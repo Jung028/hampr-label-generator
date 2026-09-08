@@ -60,6 +60,23 @@ some source PSDs had drifted (e.g. Beef Rendang Rice's dish-name layer
 was authored at 100pt vs. Hainan's 87pt). Color and alignment still come
 from each layer's own PSD styling; only font and size are overridden.
 
+### Cross-platform fonts (macOS vs Windows)
+
+The four typefaces the templates use — Arial Rounded MT Bold, Arial
+Bold, Arial Italic, Britannic Bold — are **bundled in `fonts/`** and
+resolved from there first (`psd/text.py`), so a label renders identically
+on every OS.
+
+Previously these were resolved from each OS's own font folders. macOS has
+all four; a stock Windows box usually has none of them under a name the
+matcher recognised, so labels silently fell back to plain Arial Regular —
+wrong weight, wrong width, wrong apparent size, different wrapping. That
+is why Windows output looked wrong even though nothing was "missing" in
+the pip sense. No font install is needed now; it's not a package.
+
+`test_font_resolution.py` guards this — it fails if any template font
+stops resolving to `fonts/`.
+
 ## Structure
 
 ```
@@ -92,12 +109,35 @@ Known per-template quirks (from the source repo's exploration):
 
 ## Setup
 
+**macOS / Linux**
+
 ```
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python3 generate_labels.py
 ```
+
+**Windows** (PowerShell)
+
+```
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python generate_labels.py
+```
+
+That's the whole install — `psd-tools`, `Pillow`, `Flask`. The fonts are
+committed in `fonts/`, so there is nothing else to install for text to
+render at the correct size and weight. Verify with:
+
+```
+python test_font_resolution.py
+```
+
+To start the web UI, double-click **`Start Label Generator.bat`**
+(Windows) or **`Start Label Generator.command`** (macOS), or run
+`python web/app.py` directly.
 
 ## Next steps (not built yet)
 

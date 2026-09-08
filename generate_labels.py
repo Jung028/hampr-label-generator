@@ -256,6 +256,74 @@ def _find_layer_below(all_layers, reference_layer):
     return min(candidates, key=lambda layer: layer.bbox[1])
 
 
+_SAFETY_LABELS = (
+    ("coeliac", "Coeliac"),
+    ("celiac", "Coeliac"),
+    ("gluten", "Gluten Free"),
+    ("shellfish", "Shellfish Allergy"),
+    ("nut", "Nut Allergy"),
+    ("dairy", "Dairy Free"),
+    ("halal", "Halal"),
+    ("vegan", "Vegan"),
+    ("vegetarian", "Vegetarian"),
+    ("egg", "Egg Allergy"),
+)
+
+_ACTIONABLE_PREFIXES = (
+    "no ", "no/less", "less ", "more ", "extra ", "add ", "please",
+    "spicy", "mild", "hot",
+)
+
+
+def _extract_key_phrase(text):
+    # When a comment is too long to fit the label at full size, pull out
+    # just the key words instead of shrinking the font to cram in the
+    # whole thing. Two kinds of key words, in priority order:
+    #
+    # 1. Allergy/dietary-safety facts (coeliac, shellfish, gluten, ...)
+    #    anywhere in the text, reduced to a short canonical tag ("Coeliac"
+    #    rather than quoting the whole "Chris is a coeliac (GF)" clause)
+    #    — this box is often only wide enough for a couple of words, and
+    #    a safety fact is what the kitchen can least afford to lose if
+    #    the result still has to be truncated to fit.
+    # 2. Actionable requests ("No Onions", "Please add chicken"), taken
+    #    from splitting on sentence/line breaks plus " - " and " and " so
+    #    a single long run-on sentence still breaks into short clauses.
+    #    Question segments ("...can it be flagged?") are dropped since
+    #    they're not an instruction for the kitchen.
+    #
+    # Falls back to the original text unchanged if nothing matches, so
+    # the caller's normal truncation still applies.
+    lowered_text = text.lower()
+    safety = []
+
+    for keyword, label in _SAFETY_LABELS:
+        if keyword in lowered_text and label not in safety:
+            safety.append(label)
+
+    if not safety and "allerg" in lowered_text:
+        safety.append("Allergy")
+
+    segments = re.split(r"[\n.!]+|\s+-\s+|\band\b", text)
+    actionable = []
+
+    for segment in segments:
+        segment = segment.strip(" ,")
+
+        if not segment or segment.endswith("?"):
+            continue
+
+        if segment.lower().startswith(_ACTIONABLE_PREFIXES):
+            actionable.append(segment)
+
+    kept = safety + actionable
+
+    if kept:
+        return ", ".join(kept)
+
+    return text
+
+
 def _apply_special_instructions(psd, layer_by_name, text_layers, special_instructions):
     layer = _find_special_instructions_layer(layer_by_name)
     if layer is None:
@@ -272,10 +340,18 @@ def _apply_special_instructions(psd, layer_by_name, text_layers, special_instruc
         next_layer = _find_layer_below(psd.descendants(), layer)
         max_bottom = int(next_layer.bbox[1]) - 6 if next_layer is not None else None
 
+        key_phrase = _extract_key_phrase(special_instructions)
+        replacement_short = (
+            f"Special Instructions: {key_phrase}"
+            if key_phrase != special_instructions
+            else None
+        )
+
         text_layers.append({
             "layer": layer,
             "original_text": layer.text,
             "replacement": f"Special Instructions: {special_instructions}",
+            "replacement_short": replacement_short,
             "max_bottom": max_bottom,
         })
 

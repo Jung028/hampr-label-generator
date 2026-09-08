@@ -1,6 +1,24 @@
 import os
+import sys
+import warnings
 
 from PIL import ImageFont
+
+
+# Fonts the templates actually use (Arial Rounded MT Bold, Arial Bold,
+# Arial Italic, Britannic Bold) are shipped in this repo so a label
+# renders byte-for-byte identically on macOS, Windows and Linux — the
+# alternative, resolving them from each OS's own font folders, gave a
+# different file (or none, then a silent Helvetica/Arial fallback) on
+# every machine, which is why Windows output came out the wrong weight
+# and size. This directory is searched before any system font folder.
+_BUNDLED_FONTS_DIR = os.environ.get(
+    "HAMPR_FONTS_DIR",
+    os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "fonts",
+    ),
+)
 
 
 def get_text_style(layer):
@@ -279,10 +297,28 @@ def find_font(font_name):
     if not font_name:
         return None
 
+    # Fast path: the bundled files are named for the exact PostScript
+    # name the PSD stores (e.g. "BritannicBold.ttf"), so try that first
+    # before falling back to fuzzy directory scanning.
+    for extension in (".ttf", ".otf", ".ttc"):
+
+        exact = os.path.join(
+            _BUNDLED_FONTS_DIR,
+            f"{font_name}{extension}",
+        )
+
+        if os.path.isfile(exact):
+            return exact
+
     directories = [
+
+        # Fonts shipped with this repo — searched first so output is
+        # identical on every OS regardless of what's installed locally.
+        _BUNDLED_FONTS_DIR,
 
         # macOS
         "/System/Library/Fonts",
+        "/System/Library/Fonts/Supplemental",
         "/Library/Fonts",
         os.path.expanduser(
             "~/Library/Fonts"
@@ -298,8 +334,14 @@ def find_font(font_name):
         "/usr/share/fonts",
         "/usr/local/share/fonts",
 
-        # Windows
-        "C:/Windows/Fonts",
+        # Windows — machine-wide and per-user (fonts installed without
+        # admin rights land in the per-user folder, which the bare
+        # "C:/Windows/Fonts" path misses).
+        os.path.join(os.environ.get("WINDIR", r"C:\Windows"), "Fonts"),
+        os.path.join(
+            os.environ.get("LOCALAPPDATA", os.path.expanduser("~/AppData/Local")),
+            "Microsoft", "Windows", "Fonts",
+        ),
     ]
 
     for directory in directories:
@@ -351,13 +393,40 @@ def load_font(
         except Exception:
             pass
 
+    # Ordered fallbacks. The bundled Arial faces come first so that even
+    # when a specific font can't be resolved the text is still drawn in a
+    # real scalable font at the requested `size` — never the fixed-size
+    # bitmap of ImageFont.load_default(), which is what made Windows
+    # output come out tiny. After that, best-guess system paths per OS.
     fallback_fonts = [
 
-        "/System/Library/Fonts/Helvetica.ttc",
-        "/System/Library/Fonts/SFNS.ttf",
-        "/Library/Fonts/Arial.ttf",
-        "Arial.ttf",
+        os.path.join(_BUNDLED_FONTS_DIR, "Arial-BoldMT.ttf"),
+        os.path.join(_BUNDLED_FONTS_DIR, "Arial-ItalicMT.ttf"),
+        os.path.join(_BUNDLED_FONTS_DIR, "ArialRoundedMTBold.ttf"),
     ]
+
+    if sys.platform == "darwin":
+        fallback_fonts += [
+            "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "/System/Library/Fonts/Helvetica.ttc",
+            "/Library/Fonts/Arial.ttf",
+        ]
+    elif sys.platform.startswith("win"):
+        windir = os.environ.get("WINDIR", r"C:\Windows")
+        fallback_fonts += [
+            os.path.join(windir, "Fonts", "arialbd.ttf"),
+            os.path.join(windir, "Fonts", "arial.ttf"),
+            os.path.join(windir, "Fonts", "segoeui.ttf"),
+        ]
+    else:
+        fallback_fonts += [
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+            "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        ]
+
+    # Bare name — Pillow resolves this against the OS font path on
+    # Windows and against common dirs elsewhere.
+    fallback_fonts.append("Arial.ttf")
 
     for path in fallback_fonts:
 
@@ -371,4 +440,14 @@ def load_font(
         except Exception:
             continue
 
-    return ImageFont.load_default()
+    warnings.warn(
+        f"load_font: no scalable font found for size {size}; "
+        f"falling back to the fixed-size bitmap default. Text will not "
+        f"be the right size. Checked bundled dir {_BUNDLED_FONTS_DIR!r}.",
+        stacklevel=2,
+    )
+
+    try:
+        return ImageFont.load_default(size=size)
+    except TypeError:
+        return ImageFont.load_default()

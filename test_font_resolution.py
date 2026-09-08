@@ -6,6 +6,11 @@ Standalone regression test for label font fidelity (no pytest needed):
 Guards the root-cause fix for labels rendering in Helvetica instead of the
 template's real fonts (Arial Rounded MT Bold for the customer name,
 Britannic Bold for the dish-name band).
+
+Also guards the cross-platform fix: every font the templates use must
+resolve to the repo-bundled ``fonts/`` directory, not a system font
+folder — otherwise a machine without those exact fonts (e.g. a stock
+Windows box) silently renders plain Arial at the wrong weight and size.
 """
 
 import os
@@ -13,9 +18,17 @@ import sys
 
 from psd.loader import load_psd
 from psd.layers import find_customer_name_layer, find_dish_name_layer
-from psd.text import get_font_name, find_font
+from psd.text import get_font_name, find_font, load_font, _BUNDLED_FONTS_DIR
 
 TEMPLATES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
+
+# Every PostScript font name the 53 templates reference.
+ALL_TEMPLATE_FONTS = (
+    "ArialRoundedMTBold",
+    "Arial-BoldMT",
+    "Arial-ItalicMT",
+    "BritannicBold",
+)
 
 FAILURES = []
 
@@ -48,6 +61,36 @@ for tpl in ("1a.BeefRendangRice.psd", "4a.HainanChicken.psd", "9a.NasiLemak.psd"
           f"{tpl}: customer-name font file found (got {name_path!r})")
     check(dish_path is not None and "britan" in os.path.basename(dish_path).lower(),
           f"{tpl}: dish-name font file found (got {dish_path!r})")
+
+
+# ---------------------------------------------------------------------------
+# Cross-platform: every template font resolves to the bundled fonts/ dir,
+# so macOS and Windows produce identical output.
+# ---------------------------------------------------------------------------
+
+for font_name in ALL_TEMPLATE_FONTS:
+    path = find_font(font_name)
+
+    check(
+        path is not None,
+        f"{font_name}: resolves to a file (got {path!r})",
+    )
+    check(
+        path is not None
+        and os.path.realpath(os.path.dirname(path))
+        == os.path.realpath(_BUNDLED_FONTS_DIR),
+        f"{font_name}: resolves inside bundled fonts/ dir (got {path!r})",
+    )
+
+    # A real scalable font honours the requested size; the bitmap
+    # fallback (the old Windows failure mode) does not.
+    font = load_font(path, 75)
+    ascent, descent = font.getmetrics()
+    check(
+        ascent + descent > 40,
+        f"{font_name}: loaded at size 75 is scalable, not the bitmap "
+        f"default (line height {ascent + descent}px)",
+    )
 
 print()
 if FAILURES:
