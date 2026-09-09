@@ -15,10 +15,13 @@ recipe fact has changed.
 
 ## Crustaceans (shellfish) icon
 
-Only touched for the **meat-line** protein choices — Chicken, Beef, Prawn,
-Seafood, Combo — of four dishes. A vegetable, vegan, or tofu variant
-already renders from its own dedicated template with the correct facts
-baked in, and is never touched by this logic.
+The per-dish bucket logic below (sambal vs soy-sauce) is only applied to
+the **meat-line** protein choices — Chicken, Beef, Prawn, Seafood, Combo
+— of four dishes. A vegetable, vegan, or tofu variant already renders
+from its own dedicated template with the correct facts baked in, and is
+never touched by that logic. On top of that, one order-level override
+applies to **every** dish: a "no prawn" / "no shrimp" instruction always
+clears the icon.
 
 ### Sambal-based dishes: on by default
 
@@ -50,6 +53,15 @@ to leave out.
 Vegetable, Vegan, and Tofu variants of any of the above dishes keep
 whatever their own dedicated template already has baked in. This logic
 never overrides them.
+
+### "No prawn" / "no shrimp": always removes the icon
+
+Independent of the dish buckets above, if the order's special
+instructions say "no prawn" or "no shrimp", the Crustaceans icon is
+forced **off** for **any** dish (Ipoh Town and Nanyang alike) — the
+customer has asked for the shellfish to be left out. Same treatment as
+the "no egg" rule for Eggs: it only ever removes the icon, never adds
+one.
 
 ## Eggs icon
 

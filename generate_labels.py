@@ -445,13 +445,21 @@ def generate_label(order, psd_filename, dish_label, variant_suffix, output_dir=N
     # baked in. See docs/ALLERGEN_RULES.md for the reasoning.
     crustaceans_layer = layer_by_name.get("Crustaceans Icon")
     protein = variant_suffix or ""
-    if crustaceans_layer is not None and _is_meat_line_protein(protein):
-        if dish_label in _SAMBAL_BASED_DISHES:
-            crustaceans_layer.visible = not _mentions(
-                order["special_instructions"], "no prawn", "no shrimp"
-            )
-        elif dish_label in _SOY_SAUCE_BASED_DISHES:
-            crustaceans_layer.visible = _protein_is_shellfish(protein)
+    if crustaceans_layer is not None:
+        if _is_meat_line_protein(protein):
+            if dish_label in _SAMBAL_BASED_DISHES:
+                crustaceans_layer.visible = not _mentions(
+                    order["special_instructions"], "no prawn", "no shrimp"
+                )
+            elif dish_label in _SOY_SAUCE_BASED_DISHES:
+                crustaceans_layer.visible = _protein_is_shellfish(protein)
+
+        # A "no prawn"/"no shrimp" instruction removes the Crustaceans
+        # icon for ANY dish — same treatment as the "no egg" rule below.
+        # Only ever turns it off; the template's own default stands
+        # otherwise.
+        if _mentions(order["special_instructions"], "no prawn", "no shrimp"):
+            crustaceans_layer.visible = False
 
     # Eggs icon: an explicit "no egg" instruction always removes it,
     # regardless of dish. Only ever turns it off, never on — the
@@ -957,6 +965,9 @@ def generate_nanyang_label(order, psd_filename, label_text, output_dir=None):
     crustaceans = layer_by_name.get("Crustaceans") or layer_by_name.get("Crustaceans Icon")
     if crustaceans is not None:
         crustaceans.visible = _nanyang_wants_crustaceans(order.get("option", ""))
+        # A "no prawn"/"no shrimp" note removes the icon for any dish.
+        if _mentions(order.get("special_instructions", ""), "no prawn", "no shrimp"):
+            crustaceans.visible = False
 
     image = render_psd(psd, text_layers)
 
