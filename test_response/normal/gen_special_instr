@@ -1,0 +1,1744 @@
+{
+ "id": "gen-normal-special",
+ "eventDate": "2026-09-15",
+ "numberOfAttendees": 75,
+ "purchaseContentDetails": {
+  "partner": {
+   "id": 161,
+   "name": "Ipoh Town",
+   "slug": "ipoh-town",
+   "commissionRate": 0.19
+  },
+  "items": [
+   {
+    "item": {
+     "name": "Hainanese Chicken with Steamed Rice"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Thigh"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Priya Nair",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Thigh"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Sam Wong\nComment: No onion",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Thigh"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Jordan Lee\nComment: Peanut allergy - please keep separate",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Thigh"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Mia Chen\nComment: No egg please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Thigh"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ben Foster\nComment: No prawn / no shrimp",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Thigh"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Chloe Ng\nComment: Please make this one extra spicy with plenty of fresh chilli, and leave off the spring onion and coriander garnish on top, and put the sauce on the side if you can - thank you so much!",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Thigh"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ravi Patel\nComment: gluten free please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Thigh"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ella Brooks\nComment: no rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Ipoh Char Kway Teow"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Tom Zhao",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Grace Lim\nComment: No onion",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Noah Reid\nComment: Peanut allergy - please keep separate",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ivy Koh\nComment: No egg please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Leo Marsh\nComment: No prawn / no shrimp",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Zara Ali\nComment: Please make this one extra spicy with plenty of fresh chilli, and leave off the spring onion and coriander garnish on top, and put the sauce on the side if you can - thank you so much!",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Owen Park\nComment: gluten free please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ruby Shah\nComment: no rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Nasi Goreng"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Finn Doyle",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Anya Rao\nComment: No onion",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Cody Hale\nComment: Peanut allergy - please keep separate",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Nina Fox\nComment: No egg please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Eli Bass\nComment: No prawn / no shrimp",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Lara Vann\nComment: Please make this one extra spicy with plenty of fresh chilli, and leave off the spring onion and coriander garnish on top, and put the sauce on the side if you can - thank you so much!",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Kai Ross\nComment: gluten free please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ada Cole\nComment: no rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Mee Goreng"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Alex Tan",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Priya Nair\nComment: No onion",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Sam Wong\nComment: Peanut allergy - please keep separate",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Jordan Lee\nComment: No egg please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Mia Chen\nComment: No prawn / no shrimp",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ben Foster\nComment: Please make this one extra spicy with plenty of fresh chilli, and leave off the spring onion and coriander garnish on top, and put the sauce on the side if you can - thank you so much!",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Chloe Ng\nComment: gluten free please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ravi Patel\nComment: no rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Laksa"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Steamed Wonton"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ella Brooks",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Steamed Wonton"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Tom Zhao\nComment: No onion",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Steamed Wonton"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Grace Lim\nComment: Peanut allergy - please keep separate",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Steamed Wonton"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Noah Reid\nComment: No egg please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Steamed Wonton"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ivy Koh\nComment: No prawn / no shrimp",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Steamed Wonton"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Leo Marsh\nComment: Please make this one extra spicy with plenty of fresh chilli, and leave off the spring onion and coriander garnish on top, and put the sauce on the side if you can - thank you so much!",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Steamed Wonton"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Zara Ali\nComment: gluten free please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Steamed Wonton"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Owen Park\nComment: no rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Nasi Lemak"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Rendang"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ruby Shah",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Rendang"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Finn Doyle\nComment: No onion",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Rendang"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Anya Rao\nComment: Peanut allergy - please keep separate",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Rendang"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Cody Hale\nComment: No egg please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Rendang"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Nina Fox\nComment: No prawn / no shrimp",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Rendang"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Eli Bass\nComment: Please make this one extra spicy with plenty of fresh chilli, and leave off the spring onion and coriander garnish on top, and put the sauce on the side if you can - thank you so much!",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Rendang"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Lara Vann\nComment: gluten free please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Rendang"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Kai Ross\nComment: no rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Wat Tan Hor (Kway Teow Siram)"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ada Cole",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Alex Tan\nComment: No onion",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Priya Nair\nComment: Peanut allergy - please keep separate",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Sam Wong\nComment: No egg please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Jordan Lee\nComment: No prawn / no shrimp",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Mia Chen\nComment: Please make this one extra spicy with plenty of fresh chilli, and leave off the spring onion and coriander garnish on top, and put the sauce on the side if you can - thank you so much!",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ben Foster\nComment: gluten free please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Chloe Ng\nComment: no rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Beef Rendang with Jasmine Rice"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ravi Patel",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ella Brooks\nComment: No onion",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Tom Zhao\nComment: Peanut allergy - please keep separate",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Grace Lim\nComment: No egg please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Noah Reid\nComment: No prawn / no shrimp",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ivy Koh\nComment: Please make this one extra spicy with plenty of fresh chilli, and leave off the spring onion and coriander garnish on top, and put the sauce on the side if you can - thank you so much!",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Leo Marsh\nComment: gluten free please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Zara Ali\nComment: no rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Curry Fish"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Owen Park",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ruby Shah\nComment: No onion",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Finn Doyle\nComment: Peanut allergy - please keep separate",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Anya Rao\nComment: No egg please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Cody Hale\nComment: No prawn / no shrimp",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Nina Fox\nComment: Please make this one extra spicy with plenty of fresh chilli, and leave off the spring onion and coriander garnish on top, and put the sauce on the side if you can - thank you so much!",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Eli Bass\nComment: gluten free please",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Lara Vann\nComment: no rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Beef Rendang with Jasmine Rice"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: SIVA RAJAH",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: mary o'brien",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Spare meal",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   }
+  ]
+ },
+ "version": 1
+}
