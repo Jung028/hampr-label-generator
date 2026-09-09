@@ -25,6 +25,7 @@ from werkzeug.utils import secure_filename
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import generate_labels  # noqa: E402
+from export.pdf import export_pdf  # noqa: E402
 
 RUNS_DIR = os.path.join(generate_labels.OUTPUT_DIR, "runs")
 
@@ -136,6 +137,49 @@ def view(run_id, filename):
     # review viewer instead of triggering a browser download prompt.
     run_dir = _run_dir(run_id)
     return send_from_directory(run_dir, filename, as_attachment=False)
+
+
+@app.route("/download-pdf/<run_id>/<filename>")
+def download_pdf(run_id, filename):
+    run_dir = _run_dir(run_id)
+    src_path = os.path.join(run_dir, os.path.basename(filename))
+    if not os.path.isfile(src_path):
+        abort(404)
+
+    buffer = io.BytesIO()
+    export_pdf([src_path], buffer)
+    buffer.seek(0)
+
+    pdf_name = os.path.splitext(os.path.basename(filename))[0] + ".pdf"
+    return send_file(
+        buffer,
+        mimetype="application/pdf",
+        as_attachment=True,
+        download_name=pdf_name,
+    )
+
+
+@app.route("/download-pdf-batch/<run_id>")
+def download_pdf_batch(run_id):
+    run_dir = _run_dir(run_id)
+
+    # Basenamed to strip any directory components before checking the file
+    # actually exists in this run's own output directory.
+    filenames = [os.path.basename(f) for f in request.args.getlist("files")]
+    src_paths = [os.path.join(run_dir, f) for f in filenames if os.path.isfile(os.path.join(run_dir, f))]
+    if not src_paths:
+        abort(400)
+
+    buffer = io.BytesIO()
+    export_pdf(src_paths, buffer)
+    buffer.seek(0)
+
+    return send_file(
+        buffer,
+        mimetype="application/pdf",
+        as_attachment=True,
+        download_name=f"{run_id}-labels.pdf",
+    )
 
 
 @app.route("/download-zip/<run_id>")

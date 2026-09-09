@@ -207,76 +207,6 @@
     .viewer-controls button:disabled { opacity: 0.4; cursor: default; }
     .viewer-controls button.print-btn { background: #1a1a1a; }
     .viewer-controls button.print-btn:hover { background: #333; }
-
-    #print-all-area { display: none; }
-
-    /* Matches the EPSON TM-C3500 driver's configured die-cut label media
-       (Media Width 101.0mm / Media Length 73.0mm, Portrait) — this is a
-       hint some print destinations (e.g. an actual selected printer)
-       follow exactly. Others (notably Chrome's "Save as PDF") ignore it
-       and fall back to a Letter/A4 page, so every sizing rule below uses
-       percentages chained through an explicit-height ancestor (html/body
-       at 100%, i.e. exactly one page) rather than a fixed mm size or vh —
-       vh tracks the on-screen viewport, which some print/PDF pipelines
-       keep separate from the page format actually used, leaving the same
-       blank-space bug. Percentages resolved through the box's own
-       containing-block chain stay correct regardless of which page size
-       wins. */
-    @page {
-      size: 101mm 73mm;
-      margin: 0;
-    }
-
-    @media print {
-      html, body { margin: 0; padding: 0; height: 100%; }
-      body * { visibility: hidden; }
-
-      #print-area, #print-area * { visibility: visible; }
-      #print-area {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        background: none;
-      }
-      #print-area img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      /* When printing all labels, show the full-batch area instead of
-         the single-image viewer area. */
-      body.printing-all #print-area,
-      body.printing-all #print-area * {
-        visibility: hidden;
-      }
-      body.printing-all #print-all-area,
-      body.printing-all #print-all-area * {
-        visibility: visible;
-      }
-      body.printing-all #print-all-area {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      #print-all-area img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        page-break-after: always;
-        page-break-inside: avoid;
-      }
-      #print-all-area img:last-child {
-        page-break-after: auto;
-      }
-    }
   </style>
 </head>
 <body{% if result %} class="has-results"{% endif %}>
@@ -321,12 +251,12 @@
               <div class="who" id="viewer-who"></div>
               <div class="review-flag" id="viewer-flags"></div>
             </div>
-            <div class="viewer-image-wrap" id="print-area">
+            <div class="viewer-image-wrap">
               <img id="viewer-image" alt="Label preview">
             </div>
             <div class="viewer-controls">
               <button type="button" class="nav" id="viewer-prev">&larr; Previous</button>
-              <button type="button" class="print-btn" id="viewer-print">Print This Label</button>
+              <button type="button" class="print-btn" id="viewer-download-pdf">Download PDF</button>
               <button type="button" class="nav" id="viewer-next">Next &rarr;</button>
             </div>
           </div>
@@ -366,13 +296,7 @@
         {% endif %}
 
         <div class="row">
-          <button type="button" class="print-btn" id="viewer-print-bottom">Print Selected ({{ result.generated|length }}) Labels</button>
-        </div>
-
-        <div id="print-all-area">
-          {% for gen in result.generated %}
-            <img src="{{ gen.view_url }}" alt="{{ gen.customer_name }} - {{ gen.dish_label }}" data-index="{{ loop.index0 }}">
-          {% endfor %}
+          <button type="button" class="print-btn" id="viewer-download-pdf-bottom">Download Selected ({{ result.generated|length }}) as PDF</button>
         </div>
       </div>
 
@@ -419,6 +343,7 @@
   {% if result and result.generated %}
     <script>
       const labels = {{ result.generated|tojson }};
+      const runId = {{ run_id|tojson }};
       let current = 0;
 
       const img = document.getElementById("viewer-image");
@@ -427,8 +352,8 @@
       const flagsEl = document.getElementById("viewer-flags");
       const prevBtn = document.getElementById("viewer-prev");
       const nextBtn = document.getElementById("viewer-next");
-      const printBtn = document.getElementById("viewer-print");
-      const printBtnBottom = document.getElementById("viewer-print-bottom");
+      const downloadPdfBtn = document.getElementById("viewer-download-pdf");
+      const downloadPdfBtnBottom = document.getElementById("viewer-download-pdf-bottom");
 
       function render() {
         const label = labels[current];
@@ -465,7 +390,10 @@
       nextBtn.addEventListener("click", () => {
         if (current < labels.length - 1) { current += 1; render(); }
       });
-      printBtn.addEventListener("click", () => window.print());
+      downloadPdfBtn.addEventListener("click", () => {
+        const label = labels[current];
+        window.location.href = `/download-pdf/${encodeURIComponent(runId)}/${encodeURIComponent(label.filename)}`;
+      });
 
       function jumpToTypedIndex() {
         const wanted = parseInt(indexEl.value, 10);
@@ -485,14 +413,13 @@
 
       const selectAllCheckbox = document.getElementById("select-all-checkbox");
       const labelCheckboxes = Array.from(document.querySelectorAll(".label-select"));
-      const printAllImages = Array.from(document.querySelectorAll("#print-all-area img"));
 
       function selectedIndexes() {
         return labelCheckboxes.filter((cb) => cb.checked).map((cb) => Number(cb.dataset.index));
       }
 
-      function updatePrintButtonLabel() {
-        printBtnBottom.textContent = `Print Selected (${selectedIndexes().length}) Labels`;
+      function updateDownloadButtonLabel() {
+        downloadPdfBtnBottom.textContent = `Download Selected (${selectedIndexes().length}) as PDF`;
       }
 
       function syncSelectAllCheckbox() {
@@ -505,29 +432,23 @@
       selectAllCheckbox.addEventListener("change", () => {
         labelCheckboxes.forEach((cb) => { cb.checked = selectAllCheckbox.checked; });
         selectAllCheckbox.indeterminate = false;
-        updatePrintButtonLabel();
+        updateDownloadButtonLabel();
       });
 
       labelCheckboxes.forEach((cb) => {
         cb.addEventListener("change", () => {
           syncSelectAllCheckbox();
-          updatePrintButtonLabel();
+          updateDownloadButtonLabel();
         });
       });
 
-      updatePrintButtonLabel();
+      updateDownloadButtonLabel();
 
-      printBtnBottom.addEventListener("click", () => {
-        const selected = new Set(selectedIndexes());
-        printAllImages.forEach((img) => {
-          img.hidden = !selected.has(Number(img.dataset.index));
-        });
-        document.body.classList.add("printing-all");
-        window.print();
-      });
-      window.addEventListener("afterprint", () => {
-        document.body.classList.remove("printing-all");
-        printAllImages.forEach((img) => { img.hidden = false; });
+      downloadPdfBtnBottom.addEventListener("click", () => {
+        const selected = selectedIndexes();
+        if (!selected.length) return;
+        const params = selected.map((i) => `files=${encodeURIComponent(labels[i].filename)}`).join("&");
+        window.location.href = `/download-pdf-batch/${encodeURIComponent(runId)}?${params}`;
       });
 
       document.addEventListener("keydown", (e) => {
