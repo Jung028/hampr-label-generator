@@ -22,10 +22,10 @@ baked in, and is never touched by this logic.
 
 ### Sambal-based dishes: on by default
 
-**Mee Goreng** — the sauce is sambal, and sambal is made with shrimp
-paste. Every protein variant (Chicken, Prawn, Beef, Seafood, Combo)
-contains shellfish because of the sauce itself, regardless of which
-protein was chosen.
+**Mee Goreng** and **Nasi Goreng** — the sauce is sambal, and sambal is
+made with shrimp paste. Every protein variant (Chicken, Prawn, Beef,
+Seafood, Combo) contains shellfish because of the sauce itself,
+regardless of which protein was chosen.
 
 - Default: Crustaceans **ON** for every protein.
 - Exception: if the order's special instructions say "no prawn" or "no
@@ -34,9 +34,9 @@ protein was chosen.
 
 ### Soy-sauce-based dishes: depends on the protein
 
-**Char Kway Teow**, **Nasi Goreng**, and **Wat Tan Hor** ("Kway Teow
-Siram") all use a soy-sauce base with no sambal. The icon here reflects
-only whether the chosen protein is itself a shellfish:
+**Char Kway Teow** and **Wat Tan Hor** ("Kway Teow Siram") use a
+soy-sauce base with no sambal. The icon here reflects only whether the
+chosen protein is itself a shellfish:
 
 - Chicken, Beef → Crustaceans **OFF**
 - Prawn, Seafood, Combo → Crustaceans **ON**

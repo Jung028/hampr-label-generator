@@ -178,6 +178,41 @@
     }
     .viewer-caption .who { font-size: 1.05rem; font-weight: 600; }
     .viewer-caption .review-flag { color: #b45309; font-size: 0.85rem; margin-top: 2px; }
+
+    .special-instructions-edit {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 12px 0;
+      text-align: left;
+    }
+    .special-instructions-edit label {
+      font-size: 0.8rem;
+      color: #666;
+      white-space: nowrap;
+      padding-top: 6px;
+    }
+    .special-instructions-edit textarea {
+      flex: 1 1 auto;
+      height: auto;
+      min-height: 2.2em;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 6px 8px;
+      resize: vertical;
+    }
+    .special-instructions-edit button {
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      align-self: flex-start;
+    }
+    .special-instructions-edit button:disabled { opacity: 0.5; cursor: default; }
+    #viewer-save-status {
+      font-size: 0.8rem;
+      color: #2e7d32;
+      align-self: center;
+      white-space: nowrap;
+    }
     .viewer-image-wrap {
       background: #fafafa;
       border-radius: 6px;
@@ -251,6 +286,12 @@
               <div class="who" id="viewer-who"></div>
               <div class="review-flag" id="viewer-flags"></div>
             </div>
+            <div class="special-instructions-edit">
+              <label for="viewer-special-instructions">Special instructions</label>
+              <textarea id="viewer-special-instructions" rows="1" placeholder="e.g. extra hot, no onions"></textarea>
+              <button type="button" id="viewer-save-instructions">Save</button>
+              <span id="viewer-save-status"></span>
+            </div>
             <div class="viewer-image-wrap">
               <img id="viewer-image" alt="Label preview">
             </div>
@@ -276,7 +317,7 @@
                   <span class="label-nav-info">
                     <span class="label-nav-name">
                       {{ gen.customer_name }}
-                      {% if gen.flags %}<span class="label-nav-flag">&#9888;</span>{% endif %}
+                      <span class="label-nav-flag" style="{{ '' if gen.flags else 'display: none;' }}">&#9888;</span>
                     </span>
                     <span class="label-nav-dish">{{ gen.dish_label }}</span>
                   </span>
@@ -354,18 +395,66 @@
       const nextBtn = document.getElementById("viewer-next");
       const downloadPdfBtn = document.getElementById("viewer-download-pdf");
       const downloadPdfBtnBottom = document.getElementById("viewer-download-pdf-bottom");
+      const instructionsEl = document.getElementById("viewer-special-instructions");
+      const saveInstructionsBtn = document.getElementById("viewer-save-instructions");
+      const saveStatusEl = document.getElementById("viewer-save-status");
 
       function render() {
         const label = labels[current];
-        img.src = label.view_url;
+        img.src = label.view_url + "?t=" + Date.now();
         img.alt = label.customer_name + " - " + label.dish_label;
         indexEl.value = current + 1;
         whoEl.textContent = label.customer_name + " — " + label.dish_label;
         flagsEl.textContent = label.flags.length ? "⚠ " + label.flags.join(", ") : "";
+        instructionsEl.value = label.special_instructions || "";
+        saveStatusEl.textContent = "";
         prevBtn.disabled = current === 0;
         nextBtn.disabled = current === labels.length - 1;
         highlightActiveNavItem();
       }
+
+      function updateNavFlag(index, hasFlags) {
+        const item = labelNavItems[index];
+        if (!item) return;
+        const flagEl = item.querySelector(".label-nav-flag");
+        if (flagEl) flagEl.style.display = hasFlags ? "" : "none";
+      }
+
+      saveInstructionsBtn.addEventListener("click", async () => {
+        const savedIndex = current;
+        const label = labels[savedIndex];
+        const text = instructionsEl.value.trim();
+
+        saveInstructionsBtn.disabled = true;
+        saveStatusEl.textContent = "Saving…";
+
+        try {
+          const res = await fetch(
+            `/update-special-instructions/${encodeURIComponent(runId)}/${encodeURIComponent(label.filename)}`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ special_instructions: text }),
+            }
+          );
+          if (!res.ok) throw new Error("request failed");
+          const data = await res.json();
+
+          label.special_instructions = text;
+          label.flags = data.flags;
+          updateNavFlag(savedIndex, label.flags.length > 0);
+
+          if (current === savedIndex) {
+            flagsEl.textContent = label.flags.length ? "⚠ " + label.flags.join(", ") : "";
+            img.src = label.view_url + "?t=" + Date.now();
+            saveStatusEl.textContent = "Saved";
+          }
+        } catch (err) {
+          if (current === savedIndex) saveStatusEl.textContent = "Failed to save — try again";
+        } finally {
+          saveInstructionsBtn.disabled = false;
+        }
+      });
 
       const labelNavItems = Array.from(document.querySelectorAll(".label-nav-item"));
       labelNavItems.forEach((item) => {

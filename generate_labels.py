@@ -159,16 +159,17 @@ def _protein_choice(options):
 # Crustaceans (shellfish) icon rules — see docs/ALLERGEN_RULES.md for the
 # full writeup of why each dish is grouped the way it is.
 #
-# Mee Goreng's sauce is sambal-based (sambal is made with shrimp paste),
-# so every protein variant contains shellfish regardless of what protein
-# was actually chosen — unless the order explicitly leaves the
-# prawn/shrimp out, which means the sambal itself was left out too.
-_SAMBAL_BASED_DISHES = {"Mee Goreng"}
+# Mee Goreng and Nasi Goreng's sauces are sambal-based (sambal is made
+# with shrimp paste), so every protein variant contains shellfish
+# regardless of what protein was actually chosen — unless the order
+# explicitly leaves the prawn/shrimp out, which means the sambal itself
+# was left out too.
+_SAMBAL_BASED_DISHES = {"Mee Goreng", "Nasi Goreng"}
 
-# Char Kway Teow, Nasi Goreng and Wat Tan Hor ("Kway Teow Siram") use a
-# soy-sauce base with no sambal — Crustaceans here reflects only whether
-# the chosen protein is itself a shellfish (prawn/seafood/combo).
-_SOY_SAUCE_BASED_DISHES = {"Char Kway Teow", "Nasi Goreng", "Kway Teow Siram"}
+# Char Kway Teow and Wat Tan Hor ("Kway Teow Siram") use a soy-sauce base
+# with no sambal — Crustaceans here reflects only whether the chosen
+# protein is itself a shellfish (prawn/seafood/combo).
+_SOY_SAUCE_BASED_DISHES = {"Char Kway Teow", "Kway Teow Siram"}
 
 # The rules above only apply to the "meat line" protein choices; a
 # vegetable/vegan/tofu variant already has its own dedicated template
@@ -728,7 +729,8 @@ def process_orders(orders, output_dir=None):
     the web app, so they share one code path. Returns:
 
         {
-            "generated": [{"customer_name", "dish_label", "variant", "full_dish_name", "out_path"}, ...],
+            "generated": [{"customer_name", "dish_label", "variant", "full_dish_name",
+                           "out_path", "psd_filename", "options", "special_instructions"}, ...],
             "skipped": [{"customer_name", "dish_name"}, ...],
             "review_needed": [{"customer_name", "dish_label", "flags"}, ...],
         }
@@ -736,6 +738,12 @@ def process_orders(orders, output_dir=None):
     full_dish_name is dish_label with its variant suffix appended (e.g.
     "Nasi Goreng - Beef"), matching the text actually printed on the
     label — the unit a kitchen-prep dish summary should count by.
+
+    psd_filename, options and special_instructions are carried through
+    per generated label so a caller (e.g. the web app) can later
+    reconstruct the same order dict and re-render just this one label
+    after editing its special instructions, without re-resolving the
+    dish or re-running the whole order set.
     """
 
     if output_dir is None:
@@ -765,6 +773,9 @@ def process_orders(orders, output_dir=None):
             "variant": variant_suffix,
             "full_dish_name": full_dish_name,
             "out_path": out_path,
+            "psd_filename": psd_filename,
+            "options": order["options"],
+            "special_instructions": order["special_instructions"],
         })
 
         flags = name_review_flags(order["customer_name"])

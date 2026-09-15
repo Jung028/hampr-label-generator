@@ -174,3 +174,7 @@ Windows
 '''python
 .\.venv\Scripts\python.exe web\app.py
 '''
+
+Laksa 
+- contains fish powder, coconut milk, milk , sambal 
+all nasi goreng have crustacean 

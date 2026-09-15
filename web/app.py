@@ -19,7 +19,7 @@ import zipfile
 from collections import Counter
 from datetime import datetime
 
-from flask import Flask, render_template, request, send_file, send_from_directory, abort, url_for
+from flask import Flask, jsonify, render_template, request, send_file, send_from_directory, abort, url_for
 from werkzeug.utils import secure_filename
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -30,6 +30,13 @@ from export.pdf import export_pdf  # noqa: E402
 RUNS_DIR = os.path.join(generate_labels.OUTPUT_DIR, "runs")
 
 app = Flask(__name__)
+
+# run_id -> {filename: gen_dict}, keeping each run's per-label render
+# state (psd_filename, dish_label, variant, special_instructions) around
+# in memory so a later special-instructions edit can re-render just that
+# one label. Local-only tool, single process, no persistence needed
+# across restarts.
+RUN_LABEL_STATE = {}
 
 # Order-detail responses (pasted whole into the response_json textarea, a
 # multipart form field) can run well past Werkzeug's 500KB default form
@@ -95,10 +102,12 @@ def generate():
         for r in result["review_needed"]
     }
 
+    RUN_LABEL_STATE[run_id] = {}
     for gen in result["generated"]:
         gen["filename"] = os.path.basename(gen["out_path"])
         gen["flags"] = flags_by_name.get((gen["customer_name"], gen["dish_label"]), [])
         gen["view_url"] = url_for("view", run_id=run_id, filename=gen["filename"])
+        RUN_LABEL_STATE[run_id][gen["filename"]] = gen
 
     # Kitchen-prep summary: how many of each exact printed dish (base
     # name + protein/variant, e.g. "Nasi Goreng - Beef") need making,
@@ -137,6 +146,44 @@ def view(run_id, filename):
     # review viewer instead of triggering a browser download prompt.
     run_dir = _run_dir(run_id)
     return send_from_directory(run_dir, filename, as_attachment=False)
+
+
+@app.route("/update-special-instructions/<run_id>/<filename>", methods=["POST"])
+def update_special_instructions(run_id, filename):
+    # Re-renders just this one label with edited special instructions —
+    # everything else about it (customer, dish, template, protein) is
+    # unchanged, so we reuse the psd_filename/dish_label/variant this
+    # run already resolved for it in generate() rather than re-parsing
+    # the original order.
+    run_dir = _run_dir(run_id)
+    state = RUN_LABEL_STATE.get(run_id)
+    if state is None:
+        abort(404)
+
+    filename = os.path.basename(filename)
+    gen = state.get(filename)
+    if gen is None:
+        abort(404)
+
+    payload = request.get_json(silent=True) or {}
+    special_instructions = str(payload.get("special_instructions", "")).strip()
+
+    order = {
+        "customer_name": gen["customer_name"],
+        "options": gen["options"],
+        "special_instructions": special_instructions,
+    }
+    generate_labels.generate_label(
+        order, gen["psd_filename"], gen["dish_label"], gen["variant"], output_dir=run_dir
+    )
+
+    gen["special_instructions"] = special_instructions
+    flags = generate_labels.name_review_flags(gen["customer_name"])
+    if special_instructions:
+        flags = flags + [f"special instructions: {special_instructions}"]
+    gen["flags"] = flags
+
+    return jsonify({"ok": True, "flags": flags})
 
 
 @app.route("/download-pdf/<run_id>/<filename>")
