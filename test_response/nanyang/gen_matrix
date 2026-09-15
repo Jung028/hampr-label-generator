@@ -1,0 +1,1581 @@
+{
+ "id": "gen-nanyang-matrix",
+ "eventDate": "2026-09-15",
+ "numberOfAttendees": 54,
+ "purchaseContentDetails": {
+  "partner": {
+   "id": 727,
+   "name": "Nanyang Tea Club",
+   "slug": "Nanyang Tea House",
+   "commissionRate": 0.19
+  },
+  "items": [
+   {
+    "item": {
+     "name": "Sweet & Sour"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tender Sweet & Sour Fish",
+          "dietTags": [
+           {
+            "name": "Dairy Free"
+           },
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Alex Tan",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tender Sweet & Sour Chicken",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Priya Nair",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Crispy Sweet Glazed Chicken"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Sam Wong",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Fried Rice"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan Fried Rice",
+          "dietTags": [
+           {
+            "name": "Vegan"
+           },
+           {
+            "name": "Dairy Free"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Jordan Lee",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegetarian Fried Rice",
+          "dietTags": [
+           {
+            "name": "Vegetarian"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Mia Chen",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Fried Rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ben Foster",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Fried Rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Chloe Ng",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Seafood Fried Rice",
+          "dietTags": [
+           {
+            "name": "Dairy Free"
+           },
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ravi Patel",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination Fried Rice",
+          "dietTags": [
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ella Brooks",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Singapore Noodles"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan Singapore Noodles",
+          "dietTags": [
+           {
+            "name": "Vegan"
+           },
+           {
+            "name": "Dairy Free"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Tom Zhao",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegetarian Singapore Noodles",
+          "dietTags": [
+           {
+            "name": "Vegetarian"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Grace Lim",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Singapore Noodles",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Noah Reid",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Singapore Noodles",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ivy Koh",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Seafood Singapore Noodles",
+          "dietTags": [
+           {
+            "name": "Dairy Free"
+           },
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Leo Marsh",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination Singapore Noodles",
+          "dietTags": [
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Zara Ali",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Hokkien Mee"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan Hokkien Mee",
+          "dietTags": [
+           {
+            "name": "Vegan"
+           },
+           {
+            "name": "Dairy Free"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Owen Park",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegetarian Hokkien Mee",
+          "dietTags": [
+           {
+            "name": "Vegetarian"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ruby Shah",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Hokkien Mee",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Finn Doyle",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Hokkien Mee",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Anya Rao",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Seafood Hokkien Mee",
+          "dietTags": [
+           {
+            "name": "Dairy Free"
+           },
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Cody Hale",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination Hokkien Mee",
+          "dietTags": [
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Nina Fox",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Tom Yum Fried Rice"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan Tom Yum Fried Rice",
+          "dietTags": [
+           {
+            "name": "Vegan"
+           },
+           {
+            "name": "Dairy Free"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Eli Bass",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegetarian Tom Yum Fried Rice",
+          "dietTags": [
+           {
+            "name": "Vegetarian"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Lara Vann",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Tom Yum Fried Rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Kai Ross",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Tom Yum Fried Rice",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ada Cole",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Seafood Tom Yum Fried Rice",
+          "dietTags": [
+           {
+            "name": "Dairy Free"
+           },
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Alex Tan",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination Tom Yum Fried Rice",
+          "dietTags": [
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Priya Nair",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Wat Tan Hor"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu Wat Tan Hor",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Sam Wong",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Wat Tan Hor",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Jordan Lee",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Wat Tan Hor",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Mia Chen",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination Wat Tan Hor",
+          "dietTags": [
+           {
+            "name": "Contains Seafood"
+           }
+          ],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ben Foster",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Braised Eggplant"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Braised Eggplant in Home-made Soy Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Chloe Ng",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Braised Eggplant & Broccoli with Garlic Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ravi Patel",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Braised Eggplant & Tofu in Garlic Soy Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ella Brooks",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Stir Fried"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Ginger & Chilli Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Tom Zhao",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Peking Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Grace Lim",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Mushroom & Broccoli",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Noah Reid",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Black Pepper Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ivy Koh",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Sweet Honey Sauce & Crispy Rice Noodles",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Leo Marsh",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Hoisin Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Zara Ali",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Tangy Lemon Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Owen Park",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Cashew Nuts",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ruby Shah",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Sweet & Sour Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Finn Doyle",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Chicken with Home-made Soy Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Anya Rao",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Ginger & Chilli Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Cody Hale",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Peking Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Nina Fox",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Mushroom & Broccoli",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Eli Bass",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Black Pepper Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Lara Vann",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Sweet Honey Sauce & Crispy Rice Noodles",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Kai Ross",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Hoisin Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ada Cole",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Tangy Lemon Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Alex Tan",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Cashew Nuts",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Priya Nair",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Sweet & Sour Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Sam Wong",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Stir Fried Beef with Home-made Soy Sauce",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Jordan Lee",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   }
+  ]
+ },
+ "version": 1
+}

@@ -18,11 +18,19 @@ import re
 
 from psd.loader import load_psd
 from psd.layers import find_customer_name_layer, find_dish_name_layer
+from psd.nanyang import (
+    clean_text as _nanyang_clean_text,
+    find_comment_layer as _nanyang_find_comment_layer,
+    find_dish_layer as _nanyang_find_dish_layer,
+    find_name_layer as _nanyang_find_name_layer,
+    notes_max_bottom as _nanyang_notes_max_bottom,
+)
 from psd.renderer import render_psd
 from psd.text import get_font_name, get_font_size
 from export.png import export_png
 
 TEMPLATES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
+NANYANG_TEMPLATES_DIR = os.path.join(TEMPLATES_DIR, "nanyang")
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
 RESPONSE_BODY_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "response-body.json")
 
@@ -216,6 +224,10 @@ def _parse_name_choice(choice_name):
 
 _CAPS_RUN_RE = re.compile(r"[A-Z]{2,}")
 
+# Generational suffixes that are correctly all-caps — "William Byrne III"
+# must not be lower-cased to "Iii".
+_ROMAN_SUFFIXES = {"II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"}
+
 
 def _clean_name_word(word):
     # Fix obvious case artifacts from however the customer typed their
@@ -226,6 +238,8 @@ def _clean_name_word(word):
     # a run of two or more, so they never match here.
     if not word.isalpha():
         return word
+    if word.upper() in _ROMAN_SUFFIXES:
+        return word.upper()
     if word.isupper() or word.islower() or _CAPS_RUN_RE.search(word):
         return word.capitalize()
     return word
@@ -432,13 +446,21 @@ def generate_label(order, psd_filename, dish_label, variant_suffix, output_dir=N
     # baked in. See docs/ALLERGEN_RULES.md for the reasoning.
     crustaceans_layer = layer_by_name.get("Crustaceans Icon")
     protein = variant_suffix or ""
-    if crustaceans_layer is not None and _is_meat_line_protein(protein):
-        if dish_label in _SAMBAL_BASED_DISHES:
-            crustaceans_layer.visible = not _mentions(
-                order["special_instructions"], "no prawn", "no shrimp"
-            )
-        elif dish_label in _SOY_SAUCE_BASED_DISHES:
-            crustaceans_layer.visible = _protein_is_shellfish(protein)
+    if crustaceans_layer is not None:
+        if _is_meat_line_protein(protein):
+            if dish_label in _SAMBAL_BASED_DISHES:
+                crustaceans_layer.visible = not _mentions(
+                    order["special_instructions"], "no prawn", "no shrimp"
+                )
+            elif dish_label in _SOY_SAUCE_BASED_DISHES:
+                crustaceans_layer.visible = _protein_is_shellfish(protein)
+
+        # A "no prawn"/"no shrimp" instruction removes the Crustaceans
+        # icon for ANY dish — same treatment as the "no egg" rule below.
+        # Only ever turns it off; the template's own default stands
+        # otherwise.
+        if _mentions(order["special_instructions"], "no prawn", "no shrimp"):
+            crustaceans_layer.visible = False
 
     # Eggs icon: an explicit "no egg" instruction always removes it,
     # regardless of dish. Only ever turns it off, never on — the
@@ -635,6 +657,335 @@ DISH_RESOLVERS = {
 }
 
 
+# =====================================================================
+# Nanyang Tea Club
+# =====================================================================
+#
+# Each Nanyang PSD already has the right dish name baked in, so a
+# resolver only has to pick the template file. It returns
+# (psd_filename, label_text, review_flags): label_text is what the
+# kitchen-prep summary counts by (the ordered option), and review_flags
+# are any "a human should confirm this routing" notes.
+
+
+def _nanyang_protein_template(option, vegan, vegetarian, meat):
+    # The noodle/rice items each have a _Vegan, _Vegetarian and _Meat
+    # PSD; the chosen option names the protein ("Vegan Fried Rice",
+    # "Chicken Singapore Noodles", ...).
+    lowered = option.lower()
+    if "vegan" in lowered:
+        return vegan
+    if "vegetarian" in lowered or "veg & egg" in lowered or "veg&egg" in lowered:
+        return vegetarian
+    return meat
+
+
+def _nanyang_sweet_and_sour(order):
+    return "9. Sweet & Sour.psd", order["option"] or "Sweet & Sour", []
+
+
+def _nanyang_crispy_sweet_glazed_chicken(order):
+    # Fixed dish, no option — "Crispy Sweet Glazed Chicken" is the
+    # menu's name for the sesame-chicken template.
+    return "10. Sesame.psd", order["option"] or "Crispy Sweet Glazed Chicken", []
+
+
+def _nanyang_fried_rice(order):
+    psd = _nanyang_protein_template(
+        order["option"],
+        "17a. Fried Rice_Vegan.psd",
+        "17b. Fried Rice_Vegetarian.psd",
+        "17c. Fried Rice_Meat.psd",
+    )
+    return psd, order["option"] or "Fried Rice", []
+
+
+def _nanyang_singapore_noodles(order):
+    psd = _nanyang_protein_template(
+        order["option"],
+        "13a. Singapore Noodle_Vegan.psd",
+        "13b. Singapore Noodle_Vegetarian.psd",
+        "13c. Singapore Noodle_Meat.psd",
+    )
+    return psd, order["option"] or "Singapore Noodles", []
+
+
+def _nanyang_hokkien_mee(order):
+    psd = _nanyang_protein_template(
+        order["option"],
+        "14a. Hokkien Noodle_Vegan.psd",
+        "14b. Hokkien Noodle_Vegetarian.psd",
+        "14c. Hokkien Noodle_Meat.psd",
+    )
+    return psd, order["option"] or "Hokkien Mee", []
+
+
+def _nanyang_tom_yum_fried_rice(order):
+    psd = _nanyang_protein_template(
+        order["option"],
+        "15a. Tom Yum_Vegan.psd",
+        "15b. Tom Yum_Vegetarian.psd",
+        "15c. Tom Yum_Meat.psd",
+    )
+    return psd, order["option"] or "Tom Yum Fried Rice", []
+
+
+def _nanyang_wat_tan_hor(order):
+    lowered = order["option"].lower()
+    if any(k in lowered for k in ("vegan", "vegetarian", "tofu", "veg ")):
+        psd = "16a. Siram_TofuVeg.psd"
+    else:
+        psd = "16c. Siram_Meat.psd"
+    return psd, order["option"] or "Wat Tan Hor", []
+
+
+def _nanyang_braised_eggplant(order):
+    # Two templates: "Eggplant Tofu" for the tofu variant, "Eggplant
+    # Only" for everything else — including the eggplant & broccoli
+    # variant, which "Eggplant Only" is the intended template for.
+    if "tofu" in order["option"].lower():
+        psd = "12. Eggplant Tofu.psd"
+    else:
+        psd = "11. Eggplant Only.psd"
+    return psd, order["option"] or "Braised Eggplant", []
+
+
+# "Stir Fried <protein> with <sauce>" → the sauce names the template.
+# Keyword sets are checked in order; every keyword in a set must be
+# present. See templates/nanyang/Ipoh Town - Catering Menu ...xlsx for
+# the dish descriptions these are derived from.
+_NANYANG_STIR_FRIED_SAUCES = (
+    (("ginger", "chilli"), "1. Szechuan.psd"),
+    (("szechuan",), "1. Szechuan.psd"),
+    (("peking",), "2. Peking.psd"),
+    (("mushroom",), "3. Beef Mushroom Broccoli.psd"),
+    (("broccoli",), "3. Beef Mushroom Broccoli.psd"),
+    (("black pepper",), "4. Black Pepper.psd"),
+    (("honey",), "5. Honey.psd"),
+    (("hoisin",), "6. Hoisin.psd"),
+    (("lemon",), "7. Lemon.psd"),
+    (("cashew",), "8. Cashew.psd"),
+    (("sweet", "sour"), "9. Sweet & Sour.psd"),
+    (("sesame",), "10. Sesame.psd"),
+)
+
+
+# The sauces that DO have a dedicated stir-fried template — named here
+# only so the "no match" review flag can tell the reader which options
+# are actually covered.
+_NANYANG_KNOWN_STIR_FRIED_SAUCES = (
+    "Ginger & Chilli / Szechuan", "Peking", "Mushroom & Broccoli",
+    "Black Pepper", "Sweet Honey", "Hoisin", "Tangy Lemon", "Cashew",
+    "Sweet & Sour", "Sesame",
+)
+
+
+def _nanyang_stir_fried(order):
+    option = order["option"]
+    lowered = option.lower()
+
+    for keywords, psd in _NANYANG_STIR_FRIED_SAUCES:
+        if all(keyword in lowered for keyword in keywords):
+            return psd, option, []
+
+    # Everything below is a best-effort guess — there is no template that
+    # matches the ordered sauce. Always attach a reason so the label
+    # lands in "requires review" and a human picks the real template.
+    if "home-made soy" in lowered or "home made soy" in lowered or "homemade soy" in lowered:
+        return "6. Hoisin.psd", option, [
+            "Can't determine template: there is no 'Home-made Soy Sauce' "
+            "stir-fry PSD. Routed to Hoisin because it is the soy-bean-based "
+            "sauce of the set (Cashew was rejected — its template adds a "
+            "Nuts allergen icon). Confirm Hoisin is the right artwork.",
+        ]
+
+    return "1. Szechuan.psd", option or "Stir Fried", [
+        "Can't determine template: stir-fried sauce {!r} matched none of "
+        "the known sauce templates ({}). Rendered with Szechuan as a "
+        "placeholder — choose the correct template.".format(
+            option, ", ".join(_NANYANG_KNOWN_STIR_FRIED_SAUCES)
+        ),
+    ]
+
+
+NANYANG_DISH_RESOLVERS = {
+    "Sweet & Sour": _nanyang_sweet_and_sour,
+    "Crispy Sweet Glazed Chicken": _nanyang_crispy_sweet_glazed_chicken,
+    "Fried Rice": _nanyang_fried_rice,
+    "Singapore Noodles": _nanyang_singapore_noodles,
+    "Hokkien Mee": _nanyang_hokkien_mee,
+    "Tom Yum Fried Rice": _nanyang_tom_yum_fried_rice,
+    "Wat Tan Hor": _nanyang_wat_tan_hor,
+    "Braised Eggplant": _nanyang_braised_eggplant,
+    "Stir Fried": _nanyang_stir_fried,
+}
+
+
+def resolve_nanyang(order):
+    resolver = NANYANG_DISH_RESOLVERS.get(order["dish_name"])
+    if resolver is None:
+        return None
+    return resolver(order)
+
+
+# Protein choices that put shellfish on the plate — the Crustaceans icon
+# is turned on for these and off for everything else, whatever the
+# template happens to ship with. Fish on its own is not a crustacean.
+_NANYANG_SHELLFISH_KEYWORDS = ("seafood", "prawn", "shrimp", "combination")
+
+
+def _nanyang_wants_crustaceans(option):
+    lowered = option.lower()
+    return any(keyword in lowered for keyword in _NANYANG_SHELLFISH_KEYWORDS)
+
+
+_NANYANG_PROTEIN_WORDS = (
+    "vegan", "vegetarian", "combination", "seafood", "prawn",
+    "chicken", "beef", "fish", "tofu",
+)
+
+# Protein words that can appear as the LAST word of a baked dish banner.
+# The stir-fried sauce templates read "<sauce words> <Protein>", e.g.
+# "Szechuan Chicken", "Peking Beef", "Black Pepper Beef".
+_NANYANG_BANNER_PROTEINS = (
+    "Chicken", "Beef", "Fish", "Tofu", "Prawn", "Seafood",
+    "Combination", "Vegan", "Vegetarian",
+)
+
+# Spelling fixes applied whenever one of these banners is redrawn.
+_NANYANG_BANNER_TYPOS = {"Broccolli": "Broccoli"}
+
+
+def _nanyang_fix_banner_typos(text):
+    for wrong, right in _NANYANG_BANNER_TYPOS.items():
+        text = text.replace(wrong, right)
+    return text
+
+
+def _nanyang_dish_text(current_text, option):
+    """
+    Correct the protein printed on the dish banner so it matches the
+    protein the attendee actually ordered.
+
+    Three template shapes carry a protein in the banner:
+
+    - "<dish> - <Protein>" (noodle/rice _Meat templates, e.g.
+      "15c. Tom Yum_Meat" is drawn as "... - Combination") — swap the
+      word after " - ".
+    - "Sweet & Sour <Protein>" — swap the trailing word.
+    - "<sauce> <Protein>" (the stir-fried sauce templates, e.g.
+      "Szechuan Chicken", "Peking Beef") — swap the trailing word, so a
+      Beef order on the Szechuan template prints "Szechuan Beef" and a
+      Chicken order on the Peking template prints "Peking Chicken".
+
+    Banners with no protein word ("Braised Eggplant") are left as drawn.
+
+    Returns the corrected string, or None to leave the banner as drawn.
+    """
+
+    option_lower = option.lower()
+    protein = next((word for word in _NANYANG_PROTEIN_WORDS if word in option_lower), None)
+    if protein is None:
+        return None
+
+    protein = protein.capitalize()
+
+    if " - " in current_text:
+        base = current_text.split(" - ")[0].strip()
+        return f"{base} - {protein}"
+
+    if current_text.lower().startswith("sweet & sour"):
+        return f"Sweet & Sour {protein}"
+
+    words = current_text.split()
+    if len(words) >= 2 and words[-1] in _NANYANG_BANNER_PROTEINS:
+        rebuilt = _nanyang_fix_banner_typos(" ".join(words[:-1] + [protein]))
+        return rebuilt if rebuilt != current_text else None
+
+    return None
+
+
+def generate_nanyang_label(order, psd_filename, label_text, output_dir=None):
+    """
+    Render one Nanyang label: swap the customer-name and (if present)
+    comment text, set the Crustaceans icon to match the chosen protein,
+    and leave every other icon exactly as the template ships it.
+    """
+
+    if output_dir is None:
+        output_dir = OUTPUT_DIR
+
+    psd_path = os.path.join(NANYANG_TEMPLATES_DIR, psd_filename)
+    psd = load_psd(psd_path)
+    layer_by_name = {l.name.strip(): l for l in psd.descendants()}
+
+    text_layers = []
+
+    name_layer = _nanyang_find_name_layer(psd)
+    if name_layer is not None:
+        text_layers.append({
+            "layer": name_layer,
+            "original_text": name_layer.text,
+            "replacement": order["customer_name"] or name_layer.text,
+        })
+
+    comment = (order.get("special_instructions") or "").strip()
+    comment_layer = _nanyang_find_comment_layer(psd)
+    if comment_layer is not None:
+        if comment:
+            comment_layer.visible = True
+            text_layers.append({
+                "layer": comment_layer,
+                "original_text": comment_layer.text,
+                "replacement": comment,
+                "width_override": 760,
+                "max_bottom": _nanyang_notes_max_bottom(psd, comment_layer),
+            })
+        elif comment_layer.visible and _nanyang_clean_text(comment_layer.text).lower() != "notes":
+            # A template saved from a real order still carries that
+            # attendee's note here — blank it rather than print someone
+            # else's instruction on this label.
+            text_layers.append({
+                "layer": comment_layer,
+                "original_text": comment_layer.text,
+                "replacement": " ",
+            })
+
+    dish_layer = _nanyang_find_dish_layer(psd)
+    if dish_layer is not None:
+        corrected = _nanyang_dish_text(
+            _nanyang_clean_text(dish_layer.text), order.get("option", "")
+        )
+        if corrected and corrected != _nanyang_clean_text(dish_layer.text):
+            text_layers.append({
+                "layer": dish_layer,
+                "original_text": dish_layer.text,
+                "replacement": corrected,
+            })
+
+    crustaceans = layer_by_name.get("Crustaceans") or layer_by_name.get("Crustaceans Icon")
+    if crustaceans is not None:
+        crustaceans.visible = _nanyang_wants_crustaceans(order.get("option", ""))
+        # A "no prawn"/"no shrimp" note removes the icon for any dish.
+        if _mentions(order.get("special_instructions", ""), "no prawn", "no shrimp"):
+            crustaceans.visible = False
+
+    image = render_psd(psd, text_layers)
+
+    # Nanyang orders routinely carry several identical "Spare meal" lines
+    # for the same dish; without a suffix they'd all write to one file
+    # and only the last would survive.
+    stem = f"{_safe_filename(order['customer_name'])}_{_safe_filename(label_text)}"
+    out_path = os.path.join(output_dir, f"{stem}.png")
+    counter = 2
+    while os.path.exists(out_path):
+        out_path = os.path.join(output_dir, f"{stem}_{counter}.png")
+        counter += 1
+
+    export_png(image, out_path)
+    return out_path
+
+
 def load_orders_from_response(path):
     """
     Load and parse a captured Hampr order-detail API response file. Thin
@@ -650,7 +1001,110 @@ def load_orders_from_response(path):
     return parse_orders(data)
 
 
+def detect_partner(data):
+    """
+    Which template family this order belongs to: "nanyang" for a Nanyang
+    Tea Club order, "normal" for Ipoh Town (everything else).
+
+    An order is entirely one partner or the other — the two are never
+    mixed — so a single look at purchaseContentDetails.partner is enough.
+    """
+
+    partner = (data.get("purchaseContentDetails") or {}).get("partner") or {}
+    haystack = f"{partner.get('name', '')} {partner.get('slug', '')}".lower()
+
+    if "nanyang" in haystack:
+        return "nanyang"
+
+    return "normal"
+
+
 def parse_orders(data):
+    """
+    Parse an already-decoded Hampr order-detail API response into the
+    per-attendee order shape the renderers consume. Dispatches on the
+    partner: Nanyang Tea Club orders are shaped differently (the dish is
+    the selected Option, not the item name) and are handled by
+    _parse_nanyang_orders; everything else goes through
+    _parse_normal_orders.
+    """
+
+    if detect_partner(data) == "nanyang":
+        return _parse_nanyang_orders(data)
+
+    return _parse_normal_orders(data)
+
+
+def _parse_nanyang_orders(data):
+    """
+    Parse a Nanyang Tea Club order-detail response.
+
+    Shape differences from the Ipoh path:
+
+    - The dish the attendee actually chose is the single "Options" rule
+      choice (e.g. "Chicken Singapore Noodles", "Stir Fried Beef with
+      Ginger & Chilli Sauce"); item["item"]["name"] is only the category
+      ("Singapore Noodles", "Stir Fried").
+    - A config with no "Options" rule is a fixed dish (e.g. "Crispy Sweet
+      Glazed Chicken") — its name is the category.
+    - A "Make it Yours" rule can carry a "Gluten Free" choice.
+    - Each order carries partner="nanyang" so process_orders knows to use
+      the Nanyang resolver/renderer.
+    """
+
+    orders = []
+
+    for item in data["purchaseContentDetails"]["items"]:
+        category = item["item"]["name"].strip()
+
+        for config in item["configs"]:
+            if "config" not in config:
+                # Bulk/quantity-only line — no per-attendee choices.
+                continue
+
+            option = ""
+            diet_tags = []
+            customer_name = ""
+            special_instructions = ""
+            gluten_free = False
+
+            for rule in config["config"]:
+                rule_name = rule.get("ruleName", "")
+                choices = rule.get("selectedChoices", [])
+                choice_names = [c["name"] for c in choices]
+
+                if rule_name == "Options":
+                    if choice_names:
+                        option = choice_names[0].strip()
+                    for choice in choices:
+                        diet_tags.extend(
+                            tag.get("name", "") for tag in choice.get("dietTags", [])
+                        )
+                elif rule_name.strip().lower().startswith("make it"):
+                    if any("gluten free" in name.lower() for name in choice_names):
+                        gluten_free = True
+                elif rule_name == "Special instructions":
+                    for choice_name in choice_names:
+                        if choice_name.startswith("Name:"):
+                            customer_name, special_instructions = _parse_name_choice(choice_name)
+                        elif choice_name.startswith("Comment:"):
+                            special_instructions = choice_name[len("Comment:"):].strip()
+
+            orders.append({
+                "partner": "nanyang",
+                "customer_name": normalize_customer_name(customer_name),
+                "dish_name": category,
+                "option": option,
+                "options": [option] if option else [],
+                "special_instructions": special_instructions,
+                "gluten_free": gluten_free,
+                "diet_tags": diet_tags,
+            })
+
+    return orders
+
+
+def _parse_normal_orders(data):
     """
     Parse an already-decoded Hampr order-detail API response (a dict,
     e.g. from json.load/json.loads) into the same {customer_name,
@@ -722,6 +1176,49 @@ def parse_orders(data):
     return orders
 
 
+def _process_nanyang_order(order, result, output_dir):
+    """
+    One Nanyang order through resolve_nanyang() + generate_nanyang_label(),
+    appending to the same {generated, skipped, review_needed} result the
+    Ipoh path builds.
+    """
+
+    resolved = resolve_nanyang(order)
+    if resolved is None:
+        result["skipped"].append({
+            "customer_name": order["customer_name"],
+            "dish_name": order["dish_name"],
+            "reason": (
+                f"Can't determine template: no Nanyang dish resolver for "
+                f"category {order['dish_name']!r}."
+            ),
+        })
+        return
+
+    psd_filename, label_text, routing_flags = resolved
+    out_path = generate_nanyang_label(order, psd_filename, label_text, output_dir=output_dir)
+
+    result["generated"].append({
+        "customer_name": order["customer_name"],
+        "dish_label": label_text,
+        "variant": None,
+        "full_dish_name": label_text,
+        "out_path": out_path,
+    })
+
+    flags = name_review_flags(order["customer_name"]) + list(routing_flags)
+    if order.get("gluten_free"):
+        flags.append("ordered Gluten Free — verify template")
+    if order["special_instructions"]:
+        flags.append(f"special instructions: {order['special_instructions']}")
+    if flags:
+        result["review_needed"].append({
+            "customer_name": order["customer_name"],
+            "dish_label": label_text,
+            "flags": flags,
+        })
+
+
 def process_orders(orders, output_dir=None):
     """
     Run every order through its dish resolver and generate_label(),
@@ -754,11 +1251,19 @@ def process_orders(orders, output_dir=None):
     result = {"generated": [], "skipped": [], "review_needed": []}
 
     for order in orders:
+        if order.get("partner") == "nanyang":
+            _process_nanyang_order(order, result, output_dir)
+            continue
+
         resolver = DISH_RESOLVERS.get(order["dish_name"])
         if resolver is None:
             result["skipped"].append({
                 "customer_name": order["customer_name"],
                 "dish_name": order["dish_name"],
+                "reason": (
+                    f"Can't determine template: no dish resolver for "
+                    f"{order['dish_name']!r}."
+                ),
             })
             continue
 

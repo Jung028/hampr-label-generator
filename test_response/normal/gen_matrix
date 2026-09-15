@@ -1,0 +1,1056 @@
+{
+ "id": "gen-normal-matrix",
+ "eventDate": "2026-09-15",
+ "numberOfAttendees": 41,
+ "purchaseContentDetails": {
+  "partner": {
+   "id": 161,
+   "name": "Ipoh Town",
+   "slug": "ipoh-town",
+   "commissionRate": 0.19
+  },
+  "items": [
+   {
+    "item": {
+     "name": "Hainanese Chicken with Steamed Rice"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Breast"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Grace Lim",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Thigh"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Noah Reid",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Beef Rendang with Jasmine Rice"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ivy Koh",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Beef Rendang Roti Canai"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Leo Marsh",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Chicken Curry with Jasmine Rice"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Zara Ali",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Ipoh Hor Fun"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Owen Park",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Wonton Noodle Soup"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ruby Shah",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Har Mee"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Finn Doyle",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Vegan Ipoh Char Kway Teow"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Anya Rao",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Ipoh Char Kway Teow"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegetable, Egg & Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Cody Hale",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken (Sliced Pieces)"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Nina Fox",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Eli Bass",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Lara Vann",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Mee Goreng"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Kai Ross",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ada Cole",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Alex Tan",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegetable"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Priya Nair",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Sam Wong",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Nasi Goreng"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Jordan Lee",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Mia Chen",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ben Foster",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegetable"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Chloe Ng",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Vegan"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ravi Patel",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Wat Tan Hor (Kway Teow Siram)"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef (Sliced Pieces)"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ella Brooks",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken (Sliced Pieces)"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Tom Zhao",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Tofu"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Grace Lim",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Nasi Lemak"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken Curry"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Noah Reid",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Beef Rendang"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ivy Koh",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Laksa"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Chicken"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Leo Marsh",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Prawn"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Zara Ali",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Combination"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Owen Park",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     },
+     {
+      "config": [
+       {
+        "ruleName": "Options",
+        "selectedChoices": [
+         {
+          "name": "Steamed Wonton"
+         }
+        ]
+       },
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ruby Shah",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Vegan Mee Goreng"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Finn Doyle",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Tofu Salad"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Anya Rao",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Spring Roll"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Cody Hale",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Stir-fried Mixed Vegetables"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Nina Fox",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Tofu & Broccoli with Garlic Sauce"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Eli Bass",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Curry Vegetable"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Lara Vann",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Curry Fish"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Kai Ross",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Satay Chicken Salad"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Ada Cole",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   },
+   {
+    "item": {
+     "name": "Laksa Prawn"
+    },
+    "configs": [
+     {
+      "config": [
+       {
+        "ruleName": "Special instructions",
+        "selectedChoices": [
+         {
+          "name": "Name: Alex Tan",
+          "dietTags": [],
+          "serveTags": []
+         }
+        ]
+       }
+      ],
+      "quantity": 1,
+      "uuid": "cfg"
+     }
+    ],
+    "uuid": "item"
+   }
+  ]
+ },
+ "version": 1
+}
