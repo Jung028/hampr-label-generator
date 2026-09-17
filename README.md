@@ -74,8 +74,8 @@ wrong weight, wrong width, wrong apparent size, different wrapping. That
 is why Windows output looked wrong even though nothing was "missing" in
 the pip sense. No font install is needed now; it's not a package.
 
-`test_font_resolution.py` guards this — it fails if any template font
-stops resolving to `fonts/`.
+`tests/test_font_resolution.py` guards this — it fails if any template
+font stops resolving to `fonts/`.
 
 ## Structure
 
@@ -84,6 +84,8 @@ psd/           # PSD parsing/rendering (loader, layer/font handling, compositor)
 export/        # PNG export
 templates/     # Source .psd files for each dish
 output/        # Generated label PNGs (gitignored)
+tests/         # Plain-script regression checks (run directly, no pytest)
+commands/      # Double-click launchers (Start Label Generator .bat/.command)
 generate_labels.py
 ```
 
@@ -132,11 +134,11 @@ committed in `fonts/`, so there is nothing else to install for text to
 render at the correct size and weight. Verify with:
 
 ```
-python test_font_resolution.py
+python tests/test_font_resolution.py
 ```
 
-To start the web UI, double-click **`Start Label Generator.bat`**
-(Windows) or **`Start Label Generator.command`** (macOS), or run
+To start the web UI, double-click **`commands/Start Label Generator.bat`**
+(Windows) or **`commands/Start Label Generator.command`** (macOS), or run
 `python web/app.py` directly.
 
 ## Next steps (not built yet)

@@ -15,10 +15,12 @@ import json
 import os
 import sys
 
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+
 import generate_labels as g
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-NORMAL_DIR = os.path.join(HERE, "test_response", "normal")
+NORMAL_DIR = os.path.join(ROOT, "test_response", "normal")
 
 _failures = 0
 

@@ -7,7 +7,10 @@ Plain-script style: run directly, prints PASS/FAIL, exits non-zero on any
 failure.
 """
 
+import os
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from psd.renderer import _line_advance, _load_font_cached, fit_text_to_box
 from psd.text import find_font

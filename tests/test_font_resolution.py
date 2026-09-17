@@ -1,7 +1,7 @@
 """
 Standalone regression test for label font fidelity (no pytest needed):
 
-    .venv-1/bin/python test_font_resolution.py
+    .venv-1/bin/python tests/test_font_resolution.py
 
 Guards the root-cause fix for labels rendering in Helvetica instead of the
 template's real fonts (Arial Rounded MT Bold for the customer name,
@@ -16,11 +16,14 @@ Windows box) silently renders plain Arial at the wrong weight and size.
 import os
 import sys
 
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+
 from psd.loader import load_psd
 from psd.layers import find_customer_name_layer, find_dish_name_layer
 from psd.text import get_font_name, find_font, load_font, _BUNDLED_FONTS_DIR
 
-TEMPLATES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
+TEMPLATES = os.path.join(ROOT, "templates")
 
 # Every PostScript font name the 53 templates reference.
 ALL_TEMPLATE_FONTS = (

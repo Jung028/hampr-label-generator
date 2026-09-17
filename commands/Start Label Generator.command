@@ -2,7 +2,7 @@
 # Double-click in Finder to start the Hampr Label Generator and open it.
 # Leave the Terminal window open while you work; closing it stops the server.
 
-cd "$(dirname "$0")" || exit 1
+cd "$(dirname "$0")/.." || exit 1
 
 URL="http://127.0.0.1:5000/"
 

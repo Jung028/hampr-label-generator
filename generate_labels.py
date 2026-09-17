@@ -848,6 +848,24 @@ def _nanyang_wants_crustaceans(diet_tags):
     return any("seafood" in tag.lower() for tag in diet_tags)
 
 
+# Same reasoning as Crustaceans above, driven by the "Contains Egg" diet
+# tag instead of guessing from the dish/protein.
+def _nanyang_wants_eggs(diet_tags):
+    return any("egg" in tag.lower() for tag in diet_tags)
+
+
+# Unlike Crustaceans/Eggs, Gluten Free only ever turns ON (never forces
+# a template's own default off) — an explicit request can come from any
+# of three places: the diet tag on the chosen option, the "Make it
+# Yours: Gluten Free" selection, or free text in special instructions.
+def _nanyang_wants_gluten_free(order):
+    return (
+        any("gluten free" in tag.lower() for tag in order.get("diet_tags", []))
+        or bool(order.get("gluten_free"))
+        or "gluten free" in (order.get("special_instructions") or "").lower()
+    )
+
+
 _NANYANG_PROTEIN_WORDS = (
     "vegan", "vegetarian", "combination", "seafood", "prawn",
     "chicken", "beef", "fish", "tofu",
@@ -917,9 +935,10 @@ def _nanyang_dish_text(current_text, option):
 def generate_nanyang_label(order, psd_filename, label_text, output_dir=None):
     """
     Render one Nanyang label: swap the customer-name and (if present)
-    comment text, set the Crustaceans and Gluten Free icons from the
-    order's own diet tags, and leave every other icon exactly as the
-    template ships it.
+    comment text, set the Crustaceans and Eggs icons from the order's own
+    diet tags (plus special-instructions overrides), set Gluten Free from
+    the diet tag / Make-it-Yours selection / special-instructions text,
+    and leave every other icon exactly as the template ships it.
     """
 
     if output_dir is None:
@@ -980,11 +999,23 @@ def generate_nanyang_label(order, psd_filename, label_text, output_dir=None):
         if _mentions(order.get("special_instructions", ""), "no prawn", "no shrimp"):
             crustaceans.visible = False
 
+    # Eggs icon: same diet-tag-driven treatment as Crustaceans, plus the
+    # same "no egg" override used on the Ipoh Town path.
+    eggs = layer_by_name.get("Eggs") or layer_by_name.get("Egg Icon")
+    if eggs is not None:
+        eggs.visible = _nanyang_wants_eggs(order.get("diet_tags", []))
+        if _mentions(order.get("special_instructions", ""), "no egg"):
+            eggs.visible = False
+
+    # Gluten Free icon: an explicit customer request — the diet tag on
+    # the chosen option, the "Make it Yours: Gluten Free" selection, or
+    # "gluten free" typed into the special-instructions comment — should
+    # always turn it on. Nothing should ever force it off, since that
+    # could hide a fact the template author baked in on purpose (same
+    # rule as the Ipoh Town path in generate_label()).
     gluten_free = layer_by_name.get("Gluten Free") or layer_by_name.get("GlutenFreeLogo")
-    if gluten_free is not None:
-        gluten_free.visible = any(
-            "gluten free" in tag.lower() for tag in order.get("diet_tags", [])
-        )
+    if gluten_free is not None and _nanyang_wants_gluten_free(order):
+        gluten_free.visible = True
 
     image = render_psd(psd, text_layers)
 

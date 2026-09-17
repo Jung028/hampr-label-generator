@@ -12,10 +12,12 @@ import json
 import os
 import sys
 
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+
 import generate_labels as g
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-NANYANG_DIR = os.path.join(HERE, "test_response", "nanyang")
+NANYANG_DIR = os.path.join(ROOT, "test_response", "nanyang")
 
 _failures = 0
 
@@ -205,6 +207,38 @@ for diet_tags, expected in [
     check(
         f"_nanyang_wants_crustaceans({diet_tags!r}) is {expected}",
         g._nanyang_wants_crustaceans(diet_tags) is expected,
+    )
+
+
+# ---- Eggs rule -----------------------------------------------------
+
+for diet_tags, expected in [
+    ([], False),
+    (["Halal Friendly"], False),
+    (["Contains Egg"], True),
+    (["Contains Seafood"], False),
+    (["Contains Egg", "Contains Seafood"], True),
+]:
+    check(
+        f"_nanyang_wants_eggs({diet_tags!r}) is {expected}",
+        g._nanyang_wants_eggs(diet_tags) is expected,
+    )
+
+
+# ---- Gluten Free rule ------------------------------------------------
+
+for order, expected in [
+    ({"diet_tags": []}, False),
+    ({"diet_tags": ["Gluten Free"]}, True),
+    ({"diet_tags": [], "gluten_free": True}, True),
+    ({"diet_tags": [], "gluten_free": False}, False),
+    ({"diet_tags": [], "special_instructions": "gluten free please"}, True),
+    ({"diet_tags": [], "special_instructions": "no onion"}, False),
+    ({"diet_tags": [], "special_instructions": None}, False),
+]:
+    check(
+        f"_nanyang_wants_gluten_free({order!r}) is {expected}",
+        g._nanyang_wants_gluten_free(order) is expected,
     )
 
 

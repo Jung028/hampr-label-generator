@@ -2,7 +2,7 @@
 REM Double-click to start the Hampr Label Generator and open it in a browser.
 REM Leave this window open while you work; closing it stops the server.
 
-cd /d "%~dp0"
+cd /d "%~dp0.."
 
 set "URL=http://127.0.0.1:5000/"
 
