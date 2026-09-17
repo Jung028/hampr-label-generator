@@ -788,15 +788,25 @@ def _nanyang_stir_fried(order):
         if all(keyword in lowered for keyword in keywords):
             return psd, option, []
 
-    # Everything below is a best-effort guess — there is no template that
-    # matches the ordered sauce. Always attach a reason so the label
-    # lands in "requires review" and a human picks the real template.
+    # "Home-made Soy Sauce" is the menu's generic name for two different
+    # dishes, told apart only by protein (see the catering menu):
+    # "Marinated beef slices stir-fried with mushroom, broccoli, onion in
+    # our home-made soy sauce" and "Tender chicken pieces stir fried in
+    # our home made soy sauce with cashew nuts". No other protein has a
+    # home-made-soy-sauce dish on the menu, so anything else still needs
+    # a human to pick the template.
     if "home-made soy" in lowered or "home made soy" in lowered or "homemade soy" in lowered:
+        if "beef" in lowered:
+            return "3. Beef Mushroom Broccoli.psd", option, []
+        if "chicken" in lowered:
+            return "8. Cashew.psd", option, []
         return "6. Hoisin.psd", option, [
-            "Can't determine template: there is no 'Home-made Soy Sauce' "
-            "stir-fry PSD. Routed to Hoisin because it is the soy-bean-based "
-            "sauce of the set (Cashew was rejected — its template adds a "
-            "Nuts allergen icon). Confirm Hoisin is the right artwork.",
+            "Can't determine template: 'Home-made Soy Sauce' only has a "
+            "dedicated PSD for Beef (Mushroom & Broccoli) and Chicken "
+            "(Cashew) on the menu — {!r} matched neither. Rendered with "
+            "Hoisin as a placeholder — choose the correct template.".format(
+                option
+            ),
         ]
 
     return "1. Szechuan.psd", option or "Stir Fried", [
@@ -828,15 +838,14 @@ def resolve_nanyang(order):
     return resolver(order)
 
 
-# Protein choices that put shellfish on the plate — the Crustaceans icon
-# is turned on for these and off for everything else, whatever the
-# template happens to ship with. Fish on its own is not a crustacean.
-_NANYANG_SHELLFISH_KEYWORDS = ("seafood", "prawn", "shrimp", "combination")
-
-
-def _nanyang_wants_crustaceans(option):
-    lowered = option.lower()
-    return any(keyword in lowered for keyword in _NANYANG_SHELLFISH_KEYWORDS)
+# The Crustaceans icon is turned on whenever the order's own diet tags
+# (the "Contains Seafood" facts Hampr already attaches to the chosen
+# option — see dietTags in _parse_nanyang_orders) say the dish contains
+# seafood, and off otherwise. This is more reliable than guessing from
+# the protein name: e.g. Chicken Fried Rice is still tagged "Contains
+# Seafood" because the recipe includes shrimp.
+def _nanyang_wants_crustaceans(diet_tags):
+    return any("seafood" in tag.lower() for tag in diet_tags)
 
 
 _NANYANG_PROTEIN_WORDS = (
@@ -908,8 +917,9 @@ def _nanyang_dish_text(current_text, option):
 def generate_nanyang_label(order, psd_filename, label_text, output_dir=None):
     """
     Render one Nanyang label: swap the customer-name and (if present)
-    comment text, set the Crustaceans icon to match the chosen protein,
-    and leave every other icon exactly as the template ships it.
+    comment text, set the Crustaceans and Gluten Free icons from the
+    order's own diet tags, and leave every other icon exactly as the
+    template ships it.
     """
 
     if output_dir is None:
@@ -965,10 +975,16 @@ def generate_nanyang_label(order, psd_filename, label_text, output_dir=None):
 
     crustaceans = layer_by_name.get("Crustaceans") or layer_by_name.get("Crustaceans Icon")
     if crustaceans is not None:
-        crustaceans.visible = _nanyang_wants_crustaceans(order.get("option", ""))
+        crustaceans.visible = _nanyang_wants_crustaceans(order.get("diet_tags", []))
         # A "no prawn"/"no shrimp" note removes the icon for any dish.
         if _mentions(order.get("special_instructions", ""), "no prawn", "no shrimp"):
             crustaceans.visible = False
+
+    gluten_free = layer_by_name.get("Gluten Free") or layer_by_name.get("GlutenFreeLogo")
+    if gluten_free is not None:
+        gluten_free.visible = any(
+            "gluten free" in tag.lower() for tag in order.get("diet_tags", [])
+        )
 
     image = render_psd(psd, text_layers)
 

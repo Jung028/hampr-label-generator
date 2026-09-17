@@ -13,24 +13,32 @@ def _mm_to_px(mm, dpi=DPI):
 
 def _page_image(source, page_size_px):
     """
-    Place `source` on a white page of exactly `page_size_px`, scaled down
-    to fit (never up) and centered — the same "contain" behavior the
-    on-screen/print preview uses, so the PDF matches what users already
-    see, but without relying on a browser's print pipeline to honor a
-    custom @page size.
+    Fill a page of exactly `page_size_px` with `source` — scaled up or
+    down as needed and center-cropped to cover the whole page, so the
+    label always fills the physical die-cut area with no printed border.
+
+    The label PSDs aren't rendered at exactly the die-cut's aspect ratio
+    (e.g. 1078x768 vs. this label's 1193x862 target), and the previous
+    "shrink to fit, never enlarge" behavior left a visible white margin
+    on every side once the low-res render was centered on the full-size
+    page. Covering instead crops a sliver off one axis — imperceptible
+    at this scale — rather than leaving a border.
     """
     page_w, page_h = page_size_px
-    page = Image.new("RGB", page_size_px, "white")
-
     src = source.convert("RGBA")
-    scale = min(page_w / src.width, page_h / src.height, 1.0)
+
+    scale = max(page_w / src.width, page_h / src.height)
     fitted_w = max(1, round(src.width * scale))
     fitted_h = max(1, round(src.height * scale))
     if (fitted_w, fitted_h) != src.size:
         src = src.resize((fitted_w, fitted_h), Image.LANCZOS)
 
-    offset = ((page_w - fitted_w) // 2, (page_h - fitted_h) // 2)
-    page.paste(src, offset, src)
+    left = (fitted_w - page_w) // 2
+    top = (fitted_h - page_h) // 2
+    src = src.crop((left, top, left + page_w, top + page_h))
+
+    page = Image.new("RGB", page_size_px, "white")
+    page.paste(src, (0, 0), src)
     return page
 
 

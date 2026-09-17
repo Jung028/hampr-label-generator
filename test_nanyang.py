@@ -89,16 +89,33 @@ for category, option, expected_psd in ROUTING_CASES:
     got = resolved[0] if resolved else None
     check(f"{category!r} + {option!r} -> {expected_psd}", got == expected_psd)
 
-# Unrecognised sauces still resolve so a label prints, but always carry a
-# review flag whose text explains WHY the template couldn't be determined.
-soy = g.resolve_nanyang({"dish_name": "Stir Fried", "option": "Stir Fried Chicken with Home-made Soy Sauce"})
-check("Home-made Soy Sauce -> Hoisin", soy[0] == "6. Hoisin.psd")
+# "Home-made Soy Sauce" is the menu's generic name for two dishes told
+# apart only by protein: Beef (Mushroom & Broccoli) and Chicken (Cashew).
+# Both resolve cleanly, with no review flag needed.
+soy_chicken = g.resolve_nanyang(
+    {"dish_name": "Stir Fried", "option": "Stir Fried Chicken with Home-made Soy Sauce"}
+)
+check("Chicken + Home-made Soy Sauce -> Cashew", soy_chicken[0] == "8. Cashew.psd")
+check("Chicken + Home-made Soy Sauce carries no review flag", soy_chicken[2] == [])
+
+soy_beef = g.resolve_nanyang(
+    {"dish_name": "Stir Fried", "option": "Stir Fried Beef with Home-made Soy Sauce"}
+)
+check("Beef + Home-made Soy Sauce -> Beef Mushroom Broccoli", soy_beef[0] == "3. Beef Mushroom Broccoli.psd")
+check("Beef + Home-made Soy Sauce carries no review flag", soy_beef[2] == [])
+
+# Any other protein has no dedicated Home-made Soy Sauce dish on the menu,
+# so it still resolves (a label must print) but is flagged for review.
+soy_other = g.resolve_nanyang(
+    {"dish_name": "Stir Fried", "option": "Stir Fried Tofu with Home-made Soy Sauce"}
+)
 check(
     "Home-made Soy Sauce review flag says why it couldn't be determined",
-    soy[2]
-    and "determine template" in soy[2][0].lower()
-    and "Home-made Soy Sauce" in soy[2][0]
-    and "Hoisin" in soy[2][0],
+    soy_other[0] == "6. Hoisin.psd"
+    and soy_other[2]
+    and "determine template" in soy_other[2][0].lower()
+    and "Home-made Soy Sauce" in soy_other[2][0]
+    and "Hoisin" in soy_other[2][0],
 )
 
 unknown_sauce = g.resolve_nanyang(
@@ -176,15 +193,19 @@ check(
 
 # ---- Crustaceans rule --------------------------------------------
 
-for option, expected in [
-    ("Chicken Fried Rice", False),
-    ("Beef Tom Yum Fried Rice", False),
-    ("Tender Sweet & Sour Fish", False),
-    ("Seafood Singapore Noodles", True),
-    ("Combination Wat Tan Hor", True),
-    ("Prawn Hokkien Mee", True),
+for diet_tags, expected in [
+    ([], False),
+    (["Halal Friendly"], False),
+    (["Dairy Free"], False),
+    (["Contains Seafood"], True),
+    (["Vegan", "Dairy Free"], False),
+    (["Dairy Free", "Contains Seafood"], True),
+    (["Contains Seafood", "Contains Crustaceans"], True),
 ]:
-    check(f"_nanyang_wants_crustaceans({option!r}) is {expected}", g._nanyang_wants_crustaceans(option) is expected)
+    check(
+        f"_nanyang_wants_crustaceans({diet_tags!r}) is {expected}",
+        g._nanyang_wants_crustaceans(diet_tags) is expected,
+    )
 
 
 # ---- end-to-end: every test file renders with no skips --------------
@@ -247,12 +268,10 @@ for _o in _matrix_orders:
                 _corrected.endswith(f"- {_protein.capitalize()}"),
             )
 
-    _wants = g._nanyang_wants_crustaceans(_o.get("option", ""))
-    _expected = any(
-        k in _opt_lower for k in ("seafood", "prawn", "shrimp", "combination")
-    )
+    _wants = g._nanyang_wants_crustaceans(_o.get("diet_tags", []))
+    _expected = any("seafood" in tag.lower() for tag in _o.get("diet_tags", []))
     check(
-        f"gen_matrix: crustaceans({_o['option']!r}) == {_expected}",
+        f"gen_matrix: crustaceans({_o['option']!r}, tags={_o.get('diet_tags')!r}) == {_expected}",
         _wants is _expected,
     )
 
